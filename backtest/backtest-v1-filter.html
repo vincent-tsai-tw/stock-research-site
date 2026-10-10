@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>策略 v1 加大盤趨勢濾網（H11） · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li class="current"><a href="../backtest/backtest-v1-filter.html" aria-current="page">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li><a href="../event/event-study-reduction.html">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li><a href="../event/event-study-fill.html">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li><a href="../about/index.html">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">策略 v1 加大盤趨勢濾網（H11）</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">執行摘要</a><a href="#sec-2">判定</a><a href="#sec-3">績效比較</a><a href="#sec-4">空手期間</a><a href="#sec-5">穩健性檢查</a><a href="#sec-6">方法與限制</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">執行摘要</a><a href="#sec-2">判定</a><a href="#sec-3">績效比較</a><a href="#sec-4">空手期間</a><a href="#sec-5">穩健性檢查</a><a href="#sec-6">方法與限制</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">回測報告</p>
+<h1 class="headline">回測報告：策略 v1 加大盤趨勢濾網（H11）</h1>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<p>產生時間：2026-10-11 00:54　預先登記：H11（commit 3174a72）　非投資建議。</p>
+<h2 id="sec-1">執行摘要</h2>
+<ol>
+<li><strong>H11 待確認</strong>：加上 200 日均線濾網後，夏普值只在樣本外改善、樣本內未改善，最大回撤在樣本內外都改善。</li>
+<li>夏普值：樣本內 0.47 → 0.44、樣本外 0.99 → 1.06。</li>
+<li>最大回撤：樣本內 -36.47% → -31.42%、樣本外 -34.78% → -25.87%。</li>
+<li>年化報酬：樣本內 +9.60% → +8.04%、樣本外 +36.16% → +36.67%；空手期數比例 樣本內 24%、樣本外 9%。</li>
+<li>描述性版本（不判定，樣本內／樣本外）：120 日：夏普 0.31／1.05、最大回撤 -34.29%／-25.87%；60 日：夏普 0.40／1.01、最大回撤 -26.19%／-25.87%。</li>
+</ol>
+<h2 id="sec-2">判定（依預先登記規則）</h2>
+<p>規則：樣本內（2023-01-01 前）與樣本外都同時「夏普值較高」且「最大回撤較淺」為成立；只有其中一項在樣本內外都改善為待確認；其餘不成立。持平不算改善。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">指標</th>
+<th style="text-align: left;">樣本內（未加 → 加）</th>
+<th style="text-align: left;">樣本內</th>
+<th style="text-align: left;">樣本外（未加 → 加）</th>
+<th style="text-align: left;">樣本外</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">夏普值</td>
+<td style="text-align: left;">0.47 → 0.44</td>
+<td style="text-align: left;">未改善</td>
+<td style="text-align: left;">0.99 → 1.06</td>
+<td style="text-align: left;">改善</td>
+</tr>
+<tr>
+<td style="text-align: left;">最大回撤</td>
+<td style="text-align: left;">-36.47% → -31.42%</td>
+<td style="text-align: left;">改善</td>
+<td style="text-align: left;">-34.78% → -25.87%</td>
+<td style="text-align: left;">改善</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-3">績效比較</h2>
+<h3>樣本內</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">期數</th>
+<th style="text-align: left;">年化報酬</th>
+<th style="text-align: left;">夏普</th>
+<th style="text-align: left;">最大回撤</th>
+<th style="text-align: left;">空手期數比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">未加濾網（策略 v1）</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;"><span class="up">+9.60%</span></td>
+<td style="text-align: left;">0.47</td>
+<td style="text-align: left;"><span class="down">-36.47%</span></td>
+<td style="text-align: left;">0%</td>
+</tr>
+<tr>
+<td style="text-align: left;">200 日均線（H11 判定）</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;"><span class="up">+8.04%</span></td>
+<td style="text-align: left;">0.44</td>
+<td style="text-align: left;"><span class="down">-31.42%</span></td>
+<td style="text-align: left;">24%</td>
+</tr>
+<tr>
+<td style="text-align: left;">120 日均線（描述）</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;"><span class="up">+4.50%</span></td>
+<td style="text-align: left;">0.31</td>
+<td style="text-align: left;"><span class="down">-34.29%</span></td>
+<td style="text-align: left;">33%</td>
+</tr>
+<tr>
+<td style="text-align: left;">60 日均線（描述）</td>
+<td style="text-align: left;">97</td>
+<td style="text-align: left;"><span class="up">+6.50%</span></td>
+<td style="text-align: left;">0.40</td>
+<td style="text-align: left;"><span class="down">-26.19%</span></td>
+<td style="text-align: left;">38%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>樣本外</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">期數</th>
+<th style="text-align: left;">年化報酬</th>
+<th style="text-align: left;">夏普</th>
+<th style="text-align: left;">最大回撤</th>
+<th style="text-align: left;">空手期數比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">未加濾網（策略 v1）</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;"><span class="up">+36.16%</span></td>
+<td style="text-align: left;">0.99</td>
+<td style="text-align: left;"><span class="down">-34.78%</span></td>
+<td style="text-align: left;">0%</td>
+</tr>
+<tr>
+<td style="text-align: left;">200 日均線（H11 判定）</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;"><span class="up">+36.67%</span></td>
+<td style="text-align: left;">1.06</td>
+<td style="text-align: left;"><span class="down">-25.87%</span></td>
+<td style="text-align: left;">9%</td>
+</tr>
+<tr>
+<td style="text-align: left;">120 日均線（描述）</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;"><span class="up">+35.92%</span></td>
+<td style="text-align: left;">1.05</td>
+<td style="text-align: left;"><span class="down">-25.87%</span></td>
+<td style="text-align: left;">16%</td>
+</tr>
+<tr>
+<td style="text-align: left;">60 日均線（描述）</td>
+<td style="text-align: left;">45</td>
+<td style="text-align: left;"><span class="up">+34.86%</span></td>
+<td style="text-align: left;">1.01</td>
+<td style="text-align: left;"><span class="down">-25.87%</span></td>
+<td style="text-align: left;">20%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>全部</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">期數</th>
+<th style="text-align: left;">年化報酬</th>
+<th style="text-align: left;">夏普</th>
+<th style="text-align: left;">最大回撤</th>
+<th style="text-align: left;">空手期數比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">未加濾網（策略 v1）</td>
+<td style="text-align: left;">142</td>
+<td style="text-align: left;"><span class="up">+17.40%</span></td>
+<td style="text-align: left;">0.66</td>
+<td style="text-align: left;"><span class="down">-36.47%</span></td>
+<td style="text-align: left;">0%</td>
+</tr>
+<tr>
+<td style="text-align: left;">200 日均線（H11 判定）</td>
+<td style="text-align: left;">142</td>
+<td style="text-align: left;"><span class="up">+16.40%</span></td>
+<td style="text-align: left;">0.68</td>
+<td style="text-align: left;"><span class="down">-31.42%</span></td>
+<td style="text-align: left;">19%</td>
+</tr>
+<tr>
+<td style="text-align: left;">120 日均線（描述）</td>
+<td style="text-align: left;">142</td>
+<td style="text-align: left;"><span class="up">+13.58%</span></td>
+<td style="text-align: left;">0.61</td>
+<td style="text-align: left;"><span class="down">-34.29%</span></td>
+<td style="text-align: left;">27%</td>
+</tr>
+<tr>
+<td style="text-align: left;">60 日均線（描述）</td>
+<td style="text-align: left;">142</td>
+<td style="text-align: left;"><span class="up">+14.78%</span></td>
+<td style="text-align: left;">0.65</td>
+<td style="text-align: left;"><span class="down">-26.19%</span></td>
+<td style="text-align: left;">32%</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">空手期間（200 日均線）</h2>
+<p>共 7 段、27 期，回場 7 次（每次回場視為全部重新買進，計一次完整來回成本）。訊號日：2015-11-02～2016-01-26（4 期）、2016-05-03（1 期）、2018-07-12（1 期）、2018-10-05～2019-03-11（6 期）、2020-04-06～2020-05-05（2 期）、2022-04-21～2023-01-05（10 期）、2025-03-12～2025-05-12（3 期）。</p>
+<h2 id="sec-5">穩健性檢查（描述，不改變判定）</h2>
+<p>加權指數資料從 2015-01-05 開始，200 日均線到 2015-11-02 才成形；之前的 9 期濾網無法判斷，判定中視為持股（與策略 v1 相同）。下表只看 2015-11-02 起的樣本內期間：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">版本</th>
+<th style="text-align: left;">期數</th>
+<th style="text-align: left;">年化報酬</th>
+<th style="text-align: left;">夏普</th>
+<th style="text-align: left;">最大回撤</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">未加濾網</td>
+<td style="text-align: left;">88</td>
+<td style="text-align: left;"><span class="up">+9.42%</span></td>
+<td style="text-align: left;">0.46</td>
+<td style="text-align: left;"><span class="down">-36.47%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">200 日均線</td>
+<td style="text-align: left;">88</td>
+<td style="text-align: left;"><span class="up">+7.71%</span></td>
+<td style="text-align: left;">0.43</td>
+<td style="text-align: left;"><span class="down">-31.42%</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-6">方法與限制</h2>
+<ul>
+<li>策略 v1：營收年增率（公布後）＋60 日動能等權重排名，每 20 個交易日換股，持有前 20 檔等權重；來回成本 0.471% 依換手比例計入。換股日 2015-02-02～2026-08-31，共 142 期。未加濾網的數字與 <code>reports/backtest-v1-strategy.md</code> 完全一致（程式每次執行都會核對）。</li>
+<li>濾網：訊號日收盤後比較加權指數收盤與其 N 個交易日簡單均線（含訊號日當天，只用該日以前的資料）；收盤低於均線則該期空手，否則持股。持股在次一交易日開盤才進場，所以沒有偷看未來。若訊號日沒有指數資料，取該日之前最近一筆（不超過 7 天）。</li>
+<li>空手期報酬為 0（未計現金利息）、不計成本；空手後回場的那一期換手率為 100%。</li>
+<li>均線未成形的期數（視為持股）：200 日 9 期、120 日 5 期、60 日 2 期。</li>
+<li>夏普值＝每期平均報酬 ÷ 標準差 × √12.5，未扣無風險利率；最大回撤以每期期末淨值計算，期間內的盤中回撤不會反映。</li>
+<li>120 日與 60 日均線版本依預先登記只作描述，不用來判定，也不會因結果改用其他參數。</li>
+<li>未計入滑價與市場衝擊；上櫃與小型股的實際成本會更高。</li>
+<li>本報告為研究紀錄，非投資建議；是否把濾網納入策略由 Vincent 決定。</li>
+</ul>
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes"></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>2026 第 41 週（10/5–10/8） · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li class="current"><a href="../weekly/weekly-2026-10-08.html" aria-current="page">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li><a href="../backtest/backtest-v1-filter.html">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li><a href="../event/event-study-reduction.html">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li><a href="../event/event-study-fill.html">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li><a href="../about/index.html">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">2026 第 41 週（10/5–10/8）</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">指數</a><a href="#sec-2">法人週合計</a><a href="#sec-3">產業週流向</a><a href="#sec-4">外資週買超前 1…</a><a href="#sec-5">外資週賣超前 1…</a><a href="#sec-6">下週事件</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">指數</a><a href="#sec-2">法人週合計</a><a href="#sec-3">產業週流向</a><a href="#sec-4">外資週買超前 1…</a><a href="#sec-5">外資週賣超前 1…</a><a href="#sec-6">下週事件</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">每週回顧 · 資料截至 2026-10-08</p>
+<h1 class="headline"><span class="clause">本週加權指數上漲 1.73%，</span><span class="clause">上市外資賣超 236.6 億。</span></h1>
+<p class="subhead"><span class="lead">本週外資流入電子零組件業、塑膠工業、電機機械。</span>流出半導體業、光電業、通信網路業。</p>
+<ul class="stats" aria-label="關鍵數字"><li class="stat up"><p class="stat-value">+1.73<span class="unit">%</span></p><p class="stat-label">加權指數</p><p class="stat-note">收 49,313.44，+837.70 點</p></li><li class="stat down"><p class="stat-value">−0.05<span class="unit">%</span></p><p class="stat-label">櫃買指數</p><p class="stat-note">收 426.71，−0.22 點</p></li><li class="stat down"><p class="stat-value">−236.6<span class="unit">億</span></p><p class="stat-label">上市外資</p><p class="stat-note">投信 −198.7 億</p></li><li class="stat down"><p class="stat-value">−21.8<span class="unit">億</span></p><p class="stat-label">上櫃外資</p><p class="stat-note">投信 −54.8 億</p></li></ul>
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<h2 id="sec-1">指數</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">指數</th>
+<th style="text-align: left;">週收盤</th>
+<th style="text-align: left;">週漲跌</th>
+<th style="text-align: left;">週漲跌幅</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">加權指數</td>
+<td style="text-align: left;">49,313.44</td>
+<td style="text-align: left;"><span class="up">+837.70</span></td>
+<td style="text-align: left;"><span class="up">+1.73%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">櫃買指數</td>
+<td style="text-align: left;">426.71</td>
+<td style="text-align: left;"><span class="down">−0.22</span></td>
+<td style="text-align: left;"><span class="down">−0.05%</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-2">法人週合計</h2>
+<p>交易所公布的三大法人買賣金額，本週各交易日加總，單位億元。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">市場</th>
+<th style="text-align: left;">外資(億)</th>
+<th style="text-align: left;">投信(億)</th>
+<th style="text-align: left;">自營商(億)</th>
+<th style="text-align: left;">天數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-236.6</span></td>
+<td style="text-align: left;"><span class="down">-198.7</span></td>
+<td style="text-align: left;"><span class="down">-138.6</span></td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;"><span class="down">-21.8</span></td>
+<td style="text-align: left;"><span class="down">-54.8</span></td>
+<td style="text-align: left;"><span class="up">+18.8</span></td>
+<td style="text-align: left;">4</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-3">產業週流向</h2>
+<p>本週外資淨流入最多與最少的產業（不含 ETF，以淨股數乘收盤估算）。流入：電子零組件業、塑膠工業、電機機械；流出：半導體業、光電業、通信網路業。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">產業</th>
+<th style="text-align: left;">外資(億)</th>
+<th style="text-align: left;">檔數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">電子零組件業</td>
+<td style="text-align: left;"><span class="up">+456.6</span></td>
+<td style="text-align: left;">222</td>
+</tr>
+<tr>
+<td style="text-align: left;">塑膠工業</td>
+<td style="text-align: left;"><span class="up">+110.7</span></td>
+<td style="text-align: left;">26</td>
+</tr>
+<tr>
+<td style="text-align: left;">電機機械</td>
+<td style="text-align: left;"><span class="up">+26.7</span></td>
+<td style="text-align: left;">101</td>
+</tr>
+<tr>
+<td style="text-align: left;">金融保險</td>
+<td style="text-align: left;"><span class="up">+23.5</span></td>
+<td style="text-align: left;">31</td>
+</tr>
+<tr>
+<td style="text-align: left;">紡織纖維</td>
+<td style="text-align: left;"><span class="up">+22.0</span></td>
+<td style="text-align: left;">57</td>
+</tr>
+<tr>
+<td style="text-align: left;">玻璃陶瓷</td>
+<td style="text-align: left;"><span class="up">+12.6</span></td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">電器電纜</td>
+<td style="text-align: left;"><span class="up">+9.4</span></td>
+<td style="text-align: left;">18</td>
+</tr>
+<tr>
+<td style="text-align: left;">文化創意業</td>
+<td style="text-align: left;"><span class="up">+9.3</span></td>
+<td style="text-align: left;">27</td>
+</tr>
+<tr>
+<td style="text-align: left;">半導體業</td>
+<td style="text-align: left;"><span class="down">-583.2</span></td>
+<td style="text-align: left;">201</td>
+</tr>
+<tr>
+<td style="text-align: left;">光電業</td>
+<td style="text-align: left;"><span class="down">-256.5</span></td>
+<td style="text-align: left;">124</td>
+</tr>
+<tr>
+<td style="text-align: left;">通信網路業</td>
+<td style="text-align: left;"><span class="down">-28.6</span></td>
+<td style="text-align: left;">95</td>
+</tr>
+<tr>
+<td style="text-align: left;">電腦及週邊設備業</td>
+<td style="text-align: left;"><span class="down">-23.9</span></td>
+<td style="text-align: left;">113</td>
+</tr>
+<tr>
+<td style="text-align: left;">其他電子業</td>
+<td style="text-align: left;"><span class="down">-20.5</span></td>
+<td style="text-align: left;">101</td>
+</tr>
+<tr>
+<td style="text-align: left;">油電燃氣業</td>
+<td style="text-align: left;"><span class="down">-18.1</span></td>
+<td style="text-align: left;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">航運業</td>
+<td style="text-align: left;"><span class="down">-6.8</span></td>
+<td style="text-align: left;">34</td>
+</tr>
+<tr>
+<td style="text-align: left;">其他</td>
+<td style="text-align: left;"><span class="down">-4.4</span></td>
+<td style="text-align: left;">82</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">外資週買超前 10</h2>
+<p>普通股、20 日均成交金額 5,000 萬元以上，依本週外資估計金額排序。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">代號</th>
+<th style="text-align: left;">名稱</th>
+<th style="text-align: left;">市場</th>
+<th style="text-align: left;">週外資(張)</th>
+<th style="text-align: left;">週外資(億)</th>
+<th style="text-align: left;">週漲跌(未還原)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">3037</td>
+<td style="text-align: left;">欣興</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+10,287</span></td>
+<td style="text-align: left;"><span class="up">+134.5</span></td>
+<td style="text-align: left;"><span class="down">-2.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4958</td>
+<td style="text-align: left;">臻鼎-KY</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+19,709</span></td>
+<td style="text-align: left;"><span class="up">+115.0</span></td>
+<td style="text-align: left;"><span class="up">+5.5%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2308</td>
+<td style="text-align: left;">台達電</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+5,373</span></td>
+<td style="text-align: left;"><span class="up">+108.8</span></td>
+<td style="text-align: left;"><span class="up">+4.2%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3665</td>
+<td style="text-align: left;">貿聯-KY</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+4,253</span></td>
+<td style="text-align: left;"><span class="up">+102.7</span></td>
+<td style="text-align: left;"><span class="down">-7.1%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2408</td>
+<td style="text-align: left;">南亞科</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+18,183</span></td>
+<td style="text-align: left;"><span class="up">+98.0</span></td>
+<td style="text-align: left;"><span class="up">+1.1%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3105</td>
+<td style="text-align: left;">穩懋</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;"><span class="up">+14,284</span></td>
+<td style="text-align: left;"><span class="up">+86.2</span></td>
+<td style="text-align: left;"><span class="down">-1.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2344</td>
+<td style="text-align: left;">華邦電</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+35,650</span></td>
+<td style="text-align: left;"><span class="up">+64.5</span></td>
+<td style="text-align: left;"><span class="down">-1.1%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2313</td>
+<td style="text-align: left;">華通</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+23,342</span></td>
+<td style="text-align: left;"><span class="up">+58.8</span></td>
+<td style="text-align: left;"><span class="up">+9.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2383</td>
+<td style="text-align: left;">台光電</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+927</span></td>
+<td style="text-align: left;"><span class="up">+55.7</span></td>
+<td style="text-align: left;"><span class="up">+15.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3231</td>
+<td style="text-align: left;">緯創</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="up">+27,611</span></td>
+<td style="text-align: left;"><span class="up">+52.6</span></td>
+<td style="text-align: left;"><span class="up">+1.1%</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-5">外資週賣超前 10</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">代號</th>
+<th style="text-align: left;">名稱</th>
+<th style="text-align: left;">市場</th>
+<th style="text-align: left;">週外資(張)</th>
+<th style="text-align: left;">週外資(億)</th>
+<th style="text-align: left;">週漲跌(未還原)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2454</td>
+<td style="text-align: left;">聯發科</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-8,406</span></td>
+<td style="text-align: left;"><span class="down">-401.1</span></td>
+<td style="text-align: left;"><span class="down">-5.3%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2303</td>
+<td style="text-align: left;">聯電</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-111,968</span></td>
+<td style="text-align: left;"><span class="down">-169.4</span></td>
+<td style="text-align: left;"><span class="down">-8.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2409</td>
+<td style="text-align: left;">友達</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-434,833</span></td>
+<td style="text-align: left;"><span class="down">-166.1</span></td>
+<td style="text-align: left;"><span class="down">-9.5%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2330</td>
+<td style="text-align: left;">台積電</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-5,368</span></td>
+<td style="text-align: left;"><span class="down">-135.4</span></td>
+<td style="text-align: left;"><span class="up">+2.0%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2317</td>
+<td style="text-align: left;">鴻海</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-44,258</span></td>
+<td style="text-align: left;"><span class="down">-111.3</span></td>
+<td style="text-align: left;"><span class="down">-0.8%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2327</td>
+<td style="text-align: left;">國巨*</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-16,904</span></td>
+<td style="text-align: left;"><span class="down">-106.0</span></td>
+<td style="text-align: left;"><span class="up">+1.4%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3008</td>
+<td style="text-align: left;">大立光</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-1,227</span></td>
+<td style="text-align: left;"><span class="down">-83.1</span></td>
+<td style="text-align: left;"><span class="up">+5.9%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6770</td>
+<td style="text-align: left;">力積電</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-89,120</span></td>
+<td style="text-align: left;"><span class="down">-65.4</span></td>
+<td style="text-align: left;"><span class="down">-5.6%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3081</td>
+<td style="text-align: left;">聯亞</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;"><span class="down">-1,354</span></td>
+<td style="text-align: left;"><span class="down">-40.4</span></td>
+<td style="text-align: left;"><span class="up">+1.2%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2059</td>
+<td style="text-align: left;">川湖</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;"><span class="down">-346</span></td>
+<td style="text-align: left;"><span class="down">-38.6</span></td>
+<td style="text-align: left;"><span class="down">-12.6%</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-6">下週事件</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">類別</th>
+<th style="text-align: left;">事件</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2026-10-12</td>
+<td style="text-align: left;">月營收</td>
+<td style="text-align: left;">9 月營收公布截止</td>
+<td style="text-align: left;">每月 10 日前公布上月營收；遇假日順延</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-12</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: left;">2 檔個股除權息</td>
+<td style="text-align: left;">佳和、精華</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-13</td>
+<td style="text-align: left;">股東會</td>
+<td style="text-align: left;">1 家上市公司股東會（1 場臨時會）</td>
+<td style="text-align: left;">台泥臨時會</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-13</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: left;">2 檔個股除權息</td>
+<td style="text-align: left;">中華化、床的世界</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-14</td>
+<td style="text-align: left;">美國CPI</td>
+<td style="text-align: left;">美國 2026-09 CPI</td>
+<td style="text-align: left;">台北時間 20:30（夏令）或 21:30</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-14</td>
+<td style="text-align: left;">股東會</td>
+<td style="text-align: left;">1 家上市公司股東會（1 場臨時會）</td>
+<td style="text-align: left;">漢康-KY創臨時會</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-14</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: left;">1 檔個股除權息</td>
+<td style="text-align: left;">聯光通</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-15</td>
+<td style="text-align: left;">股東會</td>
+<td style="text-align: left;">2 家上市公司股東會（2 場臨時會）</td>
+<td style="text-align: left;">華建臨時會、鼎炫-KY臨時會</td>
+</tr>
+<tr>
+<td style="text-align: left;">2026-10-15</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: left;">2 檔個股除權息</td>
+<td style="text-align: left;">強盛新、長科*</td>
+</tr>
+</tbody>
+</table></div>
+
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes">
+<ul>
+<li>本週交易日：2026-10-05、2026-10-06、2026-10-07、2026-10-08；比較基準為 2026-10-02 收盤。</li>
+<li>週漲跌用原始收盤價，未還原除權息，當週除權息的個股會顯示偏低。</li>
+<li>個股與產業的外資金額為淨股數乘收盤的估計；市場合計為交易所公布金額。</li>
+<li>產生時間 2026-10-08 20:18。非投資建議，決策與下單由 Vincent 自行負責。</li>
+</ul></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Phase 1.2b 公司行為資料驗收報告 · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li><a href="../backtest/backtest-v1-filter.html">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li><a href="../event/event-study-reduction.html">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li><a href="../event/event-study-fill.html">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li class="current"><a href="../quality/actions-1.2b-data-quality.html" aria-current="page">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li><a href="../about/index.html">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">Phase 1.2b 公司行為資料驗收報告</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">驗收結論：通過</a><a href="#sec-2">摘要</a><a href="#sec-3">各類事件一致率</a><a href="#sec-4">因子統計</a><a href="#sec-5">before_p…</a><a href="#sec-6">未被事件解釋的超…</a><a href="#sec-7">因子超出合理範圍</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">驗收結論：通過</a><a href="#sec-2">摘要</a><a href="#sec-3">各類事件一致率</a><a href="#sec-4">因子統計</a><a href="#sec-5">before_p…</a><a href="#sec-6">未被事件解釋的超…</a><a href="#sec-7">因子超出合理範圍</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">資料驗收</p>
+<h1 class="headline">Phase 1.2b 公司行為資料驗收報告</h1>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<p>產生時間：2026-10-10 11:40　資料區間：2015-01-01 ～ 2026-10-07</p>
+<h2 id="sec-1">驗收結論：通過</h2>
+<h2 id="sec-2">摘要</h2>
+<ul>
+<li>公司行為 manifest 覆蓋 2565 / 2565 檔；分割表 有；事件總數 22161</li>
+<li>事件 before_price 與前日收盤交叉驗證：可比對 22159 / 22161，一致率 99.93%（門檻 99%）；不可比對 2 件（事件早於價格史起點或該股無價格檔）</li>
+<li>反向驗證：普通股單日收盤變動超過 10.5% 共 5413 次，其中 24.94% 有同日公司行為事件；新上市前五日（無漲跌幅限制）238 次；其餘未解釋 3825 次（恢復交易首日等屬正常，其餘可能是事件表缺漏）</li>
+<li>因子超出合理範圍的事件：6 件（警示，不計入門檻）</li>
+</ul>
+<h2 id="sec-3">各類事件一致率</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">類別</th>
+<th style="text-align: right;">事件數</th>
+<th style="text-align: right;">可比對</th>
+<th style="text-align: right;">一致</th>
+<th style="text-align: left;">一致率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">減資</td>
+<td style="text-align: right;">543</td>
+<td style="text-align: right;">543</td>
+<td style="text-align: right;">543</td>
+<td style="text-align: left;">100.00%</td>
+</tr>
+<tr>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: right;">21583</td>
+<td style="text-align: right;">21581</td>
+<td style="text-align: right;">21565</td>
+<td style="text-align: left;">99.93%</td>
+</tr>
+<tr>
+<td style="text-align: left;">分割／面額變更</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">100.00%</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">因子統計</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">類別</th>
+<th style="text-align: right;">事件數</th>
+<th style="text-align: right;">最小因子</th>
+<th style="text-align: right;">中位因子</th>
+<th style="text-align: right;">最大因子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">減資</td>
+<td style="text-align: right;">543</td>
+<td style="text-align: right;">0.9344</td>
+<td style="text-align: right;">1.3386</td>
+<td style="text-align: right;">10.9278</td>
+</tr>
+<tr>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: right;">21583</td>
+<td style="text-align: right;">0.2338</td>
+<td style="text-align: right;">0.9677</td>
+<td style="text-align: right;">1.0000</td>
+</tr>
+<tr>
+<td style="text-align: left;">分割／面額變更</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">0.0417</td>
+<td style="text-align: right;">0.2500</td>
+<td style="text-align: right;">7.0000</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-5">before_price 與前日收盤不一致（最多 30 件，依差距排序）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">kind</th>
+<th style="text-align: left;">detail</th>
+<th style="text-align: right;">before_price</th>
+<th style="text-align: right;">prev_close</th>
+<th style="text-align: right;">rel_diff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">8921</td>
+<td style="text-align: left;">沈氏</td>
+<td style="text-align: left;">2017-07-14</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">15.4</td>
+<td style="text-align: right;">14.65</td>
+<td style="text-align: right;">0.0487013</td>
+</tr>
+<tr>
+<td style="text-align: left;">00774C</td>
+<td style="text-align: left;">新光中政金綠債+R</td>
+<td style="text-align: left;">2022-04-22</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">息</td>
+<td style="text-align: right;">9.39</td>
+<td style="text-align: right;">8.99</td>
+<td style="text-align: right;">0.0425985</td>
+</tr>
+<tr>
+<td style="text-align: left;">00774C</td>
+<td style="text-align: left;">新光中政金綠債+R</td>
+<td style="text-align: left;">2021-10-21</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">息</td>
+<td style="text-align: right;">9.26</td>
+<td style="text-align: right;">8.99</td>
+<td style="text-align: right;">0.0291577</td>
+</tr>
+<tr>
+<td style="text-align: left;">00774C</td>
+<td style="text-align: left;">新光中政金綠債+R</td>
+<td style="text-align: left;">2022-10-21</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">息</td>
+<td style="text-align: right;">9.33</td>
+<td style="text-align: right;">9.12</td>
+<td style="text-align: right;">0.022508</td>
+</tr>
+<tr>
+<td style="text-align: left;">8917</td>
+<td style="text-align: left;">欣泰</td>
+<td style="text-align: left;">2017-07-20</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr>
+<td style="text-align: left;">00833B</td>
+<td style="text-align: left;">第一金美債20+</td>
+<td style="text-align: left;">2020-10-23</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">45.48</td>
+<td style="text-align: right;">46.1</td>
+<td style="text-align: right;">0.0136324</td>
+</tr>
+<tr>
+<td style="text-align: left;">6482</td>
+<td style="text-align: left;">弘煜科</td>
+<td style="text-align: left;">2018-09-04</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除權</td>
+<td style="text-align: right;">31.95</td>
+<td style="text-align: right;">32.35</td>
+<td style="text-align: right;">0.0125196</td>
+</tr>
+<tr>
+<td style="text-align: left;">00774C</td>
+<td style="text-align: left;">新光中政金綠債+R</td>
+<td style="text-align: left;">2021-04-22</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">息</td>
+<td style="text-align: right;">9.08</td>
+<td style="text-align: right;">8.97</td>
+<td style="text-align: right;">0.0121145</td>
+</tr>
+<tr>
+<td style="text-align: left;">5543</td>
+<td style="text-align: left;">桓鼎-KY</td>
+<td style="text-align: left;">2017-07-07</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">23.8</td>
+<td style="text-align: right;">24.05</td>
+<td style="text-align: right;">0.0105042</td>
+</tr>
+<tr>
+<td style="text-align: left;">6242</td>
+<td style="text-align: left;">立康</td>
+<td style="text-align: left;">2016-08-31</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: right;">49.5</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">0.010101</td>
+</tr>
+<tr>
+<td style="text-align: left;">6708</td>
+<td style="text-align: left;">天擎</td>
+<td style="text-align: left;">2024-08-30</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">40.75</td>
+<td style="text-align: right;">40.35</td>
+<td style="text-align: right;">0.00981595</td>
+</tr>
+<tr>
+<td style="text-align: left;">6103</td>
+<td style="text-align: left;">合邦</td>
+<td style="text-align: left;">2025-08-26</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">42</td>
+<td style="text-align: right;">42.4</td>
+<td style="text-align: right;">0.00952381</td>
+</tr>
+<tr>
+<td style="text-align: left;">006203</td>
+<td style="text-align: left;">元大MSCI台灣</td>
+<td style="text-align: left;">2017-07-31</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">息</td>
+<td style="text-align: right;">38.13</td>
+<td style="text-align: right;">37.79</td>
+<td style="text-align: right;">0.00891686</td>
+</tr>
+<tr>
+<td style="text-align: left;">4706</td>
+<td style="text-align: left;">大恭</td>
+<td style="text-align: left;">2025-07-02</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">28.15</td>
+<td style="text-align: right;">27.9</td>
+<td style="text-align: right;">0.00888099</td>
+</tr>
+<tr>
+<td style="text-align: left;">00853B</td>
+<td style="text-align: left;">統一美債10年Aa-A</td>
+<td style="text-align: left;">2020-09-22</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">38.87</td>
+<td style="text-align: right;">39.16</td>
+<td style="text-align: right;">0.00746077</td>
+</tr>
+<tr>
+<td style="text-align: left;">1259</td>
+<td style="text-align: left;">安心</td>
+<td style="text-align: left;">2026-06-25</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除息</td>
+<td style="text-align: right;">57.6</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">0.00694444</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-6">未被事件解釋的超漲跌幅跳動（最多 30 次，依變動排序）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">prev_close</th>
+<th style="text-align: right;">close</th>
+<th style="text-align: right;">change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">6131</td>
+<td style="text-align: left;">鈞泰</td>
+<td style="text-align: left;">2019-04-10</td>
+<td style="text-align: right;">13.35</td>
+<td style="text-align: right;">3.42</td>
+<td style="text-align: right;"><span class="down">-0.74382</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">4949</td>
+<td style="text-align: left;">有成精密</td>
+<td style="text-align: left;">2017-02-09</td>
+<td style="text-align: right;">6.44</td>
+<td style="text-align: right;">1.72</td>
+<td style="text-align: right;"><span class="down">-0.732919</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6885</td>
+<td style="text-align: left;">全福生技</td>
+<td style="text-align: left;">2023-12-22</td>
+<td style="text-align: right;">73.8</td>
+<td style="text-align: right;">29.45</td>
+<td style="text-align: right;"><span class="down">-0.600949</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6531</td>
+<td style="text-align: left;">愛普*</td>
+<td style="text-align: left;">2015-09-01</td>
+<td style="text-align: right;">125.98</td>
+<td style="text-align: right;">57.51</td>
+<td style="text-align: right;"><span class="down">-0.543499</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6919</td>
+<td style="text-align: left;">康霈*</td>
+<td style="text-align: left;">2024-03-29</td>
+<td style="text-align: right;">484.5</td>
+<td style="text-align: right;">257</td>
+<td style="text-align: right;"><span class="down">-0.469556</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7855</td>
+<td style="text-align: left;">和運租車</td>
+<td style="text-align: left;">2026-08-11</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">43.75</td>
+<td style="text-align: right;"><span class="down">-0.466463</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">3293</td>
+<td style="text-align: left;">鈊象</td>
+<td style="text-align: left;">2024-07-26</td>
+<td style="text-align: right;">1465</td>
+<td style="text-align: right;">786</td>
+<td style="text-align: right;"><span class="down">-0.463481</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2754</td>
+<td style="text-align: left;">亞洲藏壽司</td>
+<td style="text-align: left;">2020-09-17</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">108</td>
+<td style="text-align: right;"><span class="down">-0.431579</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6903</td>
+<td style="text-align: left;">巨漢</td>
+<td style="text-align: left;">2023-06-28</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">177</td>
+<td style="text-align: right;"><span class="down">-0.367857</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6592</td>
+<td style="text-align: left;">和潤企業</td>
+<td style="text-align: left;">2019-12-09</td>
+<td style="text-align: right;">153.53</td>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;"><span class="down">-0.361688</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">4441</td>
+<td style="text-align: left;">振大環球</td>
+<td style="text-align: left;">2025-04-07</td>
+<td style="text-align: right;">277.5</td>
+<td style="text-align: right;">179</td>
+<td style="text-align: right;"><span class="down">-0.354955</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">4413</td>
+<td style="text-align: left;">飛寶企業</td>
+<td style="text-align: left;">2017-01-17</td>
+<td style="text-align: right;">16.5</td>
+<td style="text-align: right;">10.7</td>
+<td style="text-align: right;"><span class="down">-0.351515</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7751</td>
+<td style="text-align: left;">竑騰</td>
+<td style="text-align: left;">2025-04-07</td>
+<td style="text-align: right;">324.5</td>
+<td style="text-align: right;">212.5</td>
+<td style="text-align: right;"><span class="down">-0.345146</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6199</td>
+<td style="text-align: left;">天品</td>
+<td style="text-align: left;">2016-07-19</td>
+<td style="text-align: right;">18.45</td>
+<td style="text-align: right;">12.1</td>
+<td style="text-align: right;"><span class="down">-0.344173</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2254</td>
+<td style="text-align: left;">巨鎧精密-創</td>
+<td style="text-align: left;">2022-07-25</td>
+<td style="text-align: right;">253.5</td>
+<td style="text-align: right;">167.5</td>
+<td style="text-align: right;"><span class="down">-0.33925</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6272</td>
+<td style="text-align: left;">驊陞</td>
+<td style="text-align: left;">2025-04-07</td>
+<td style="text-align: right;">52.9</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;"><span class="down">-0.338374</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">5205</td>
+<td style="text-align: left;">中茂</td>
+<td style="text-align: left;">2020-07-02</td>
+<td style="text-align: right;">13.95</td>
+<td style="text-align: right;">9.23</td>
+<td style="text-align: right;"><span class="down">-0.338351</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">3485</td>
+<td style="text-align: left;">敘豐</td>
+<td style="text-align: left;">2021-04-26</td>
+<td style="text-align: right;">50.5</td>
+<td style="text-align: right;">33.5</td>
+<td style="text-align: right;"><span class="down">-0.336634</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7818</td>
+<td style="text-align: left;">溢泰實業</td>
+<td style="text-align: left;">2026-05-18</td>
+<td style="text-align: right;">96</td>
+<td style="text-align: right;">63.8</td>
+<td style="text-align: right;"><span class="down">-0.335417</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7769</td>
+<td style="text-align: left;">鴻勁</td>
+<td style="text-align: left;">2025-04-07</td>
+<td style="text-align: right;">898</td>
+<td style="text-align: right;">597</td>
+<td style="text-align: right;"><span class="down">-0.335189</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">4744</td>
+<td style="text-align: left;">皇將</td>
+<td style="text-align: left;">2015-12-02</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;"><span class="down">-0.333333</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">5205</td>
+<td style="text-align: left;">中茂</td>
+<td style="text-align: left;">2021-09-10</td>
+<td style="text-align: right;">21.7</td>
+<td style="text-align: right;">14.5</td>
+<td style="text-align: right;"><span class="down">-0.331797</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6691</td>
+<td style="text-align: left;">洋基工程</td>
+<td style="text-align: left;">2021-07-26</td>
+<td style="text-align: right;">349</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;"><span class="down">-0.323782</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7750</td>
+<td style="text-align: left;">新代</td>
+<td style="text-align: left;">2025-04-07</td>
+<td style="text-align: right;">562</td>
+<td style="text-align: right;">380.5</td>
+<td style="text-align: right;"><span class="down">-0.322954</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6577</td>
+<td style="text-align: left;">勁豐</td>
+<td style="text-align: left;">2017-03-21</td>
+<td style="text-align: right;">125</td>
+<td style="text-align: right;">85.7</td>
+<td style="text-align: right;"><span class="down">-0.3144</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6534</td>
+<td style="text-align: left;">正瀚-創</td>
+<td style="text-align: left;">2017-09-19</td>
+<td style="text-align: right;">279.2</td>
+<td style="text-align: right;">192.22</td>
+<td style="text-align: right;"><span class="down">-0.311533</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7711</td>
+<td style="text-align: left;">永擎</td>
+<td style="text-align: left;">2025-11-19</td>
+<td style="text-align: right;">403</td>
+<td style="text-align: right;">278</td>
+<td style="text-align: right;"><span class="down">-0.310174</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">6103</td>
+<td style="text-align: left;">合邦</td>
+<td style="text-align: left;">2016-05-18</td>
+<td style="text-align: right;">21.7</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;"><span class="down">-0.308756</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">7819</td>
+<td style="text-align: left;">精誠金融</td>
+<td style="text-align: left;">2025-04-07</td>
+<td style="text-align: right;">228.5</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: right;"><span class="down">-0.299781</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2254</td>
+<td style="text-align: left;">巨鎧精密-創</td>
+<td style="text-align: left;">2023-10-20</td>
+<td style="text-align: right;">110.5</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: right;"><span class="down">-0.294118</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-7">因子超出合理範圍（最多 30 件）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">stock_id</th>
+<th style="text-align: left;">name</th>
+<th style="text-align: left;">date</th>
+<th style="text-align: left;">kind</th>
+<th style="text-align: left;">detail</th>
+<th style="text-align: right;">before_price</th>
+<th style="text-align: right;">reference_price</th>
+<th style="text-align: right;">factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1808</td>
+<td style="text-align: left;">潤隆</td>
+<td style="text-align: left;">2024-09-26</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">權息</td>
+<td style="text-align: right;">119.5</td>
+<td style="text-align: right;">52.95</td>
+<td style="text-align: right;">0.443096</td>
+</tr>
+<tr>
+<td style="text-align: right;">3293</td>
+<td style="text-align: left;">鈊象</td>
+<td style="text-align: left;">2022-07-27</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: right;">782</td>
+<td style="text-align: right;">366</td>
+<td style="text-align: right;">0.468031</td>
+</tr>
+<tr>
+<td style="text-align: right;">3293</td>
+<td style="text-align: left;">鈊象</td>
+<td style="text-align: left;">2024-07-24</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: right;">1465</td>
+<td style="text-align: right;">715</td>
+<td style="text-align: right;">0.488055</td>
+</tr>
+<tr>
+<td style="text-align: right;">4303</td>
+<td style="text-align: left;">信立</td>
+<td style="text-align: left;">2018-08-29</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除權息</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">38.57</td>
+<td style="text-align: right;">0.233758</td>
+</tr>
+<tr>
+<td style="text-align: right;">5314</td>
+<td style="text-align: left;">世紀*</td>
+<td style="text-align: left;">2026-08-14</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">除權</td>
+<td style="text-align: right;">61.3</td>
+<td style="text-align: right;">14.75</td>
+<td style="text-align: right;">0.24062</td>
+</tr>
+<tr>
+<td style="text-align: right;">6669</td>
+<td style="text-align: left;">緯穎</td>
+<td style="text-align: left;">2026-09-02</td>
+<td style="text-align: left;">dividend</td>
+<td style="text-align: left;">權</td>
+<td style="text-align: right;">7800</td>
+<td style="text-align: right;">2614.99</td>
+<td style="text-align: right;">0.335255</td>
+</tr>
+</tbody>
+</table></div>
+
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes">
+<ul>
+<li>事件日為新基準首日（除權息日、減資恢復買賣日、分割後首日），before_price 為交易所公告的前一交易日收盤；與本地價格史的前一筆收盤比對，容差 0.5%。</li>
+<li>因子 = 參考價 / 前收盤；回溯還原把事件日之前的價格乘上之後所有事件因子的乘積。</li>
+<li>本報告為資料品質檢查，非投資建議。</li>
+</ul></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>除權息當日填息與之後 20 日的超額報酬（H14） · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li><a href="../backtest/backtest-v1-filter.html">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li><a href="../event/event-study-reduction.html">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li class="current"><a href="../event/event-study-fill.html" aria-current="page">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li><a href="../about/index.html">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">除權息當日填息與之後 20 日的超額報酬（H14）</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">執行摘要</a><a href="#sec-2">預先登記的判定</a><a href="#sec-3">事件計數</a><a href="#sec-4">數字驗證</a><a href="#sec-5">各期間超額報酬</a><a href="#sec-6">子群描述</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">執行摘要</a><a href="#sec-2">預先登記的判定</a><a href="#sec-3">事件計數</a><a href="#sec-4">數字驗證</a><a href="#sec-5">各期間超額報酬</a><a href="#sec-6">子群描述</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">事件研究</p>
+<h1 class="headline">事件研究：除權息當日填息與之後 20 日的超額報酬（H14）</h1>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<p>產生時間：2026-10-11 01:27　預先登記：H14（commit 4c1710f，2026-10-11 01:10）　非投資建議。</p>
+<h2 id="sec-1">執行摘要</h2>
+<ul>
+<li>H14 當日填息者第 1～20 日累積超額報酬高於未填息者：<strong>不成立</strong>。樣本內差 +0.36%（Welch t 0.84），樣本外差 +0.75%（t 1.34，門檻 3）。</li>
+<li>樣本外：當日填息 774 次平均 +0.08%，未填息 5,423 次平均 -0.67%。</li>
+<li>樣本 16,784 次除權息（普通股、前後窗口完整，1,942 檔），當日填息 1,652 次（9.8%）；另排除 285 次（見事件計數）。</li>
+<li>數字驗證：前一日收盤與事件表 before_price 相同 99.96%；16,784 次逐筆與交易所日檔（第二來源）重算，填息旗標一致 100.00%；納入全市場休市日的敏感度版本判定為「不成立」。</li>
+<li>意涵：當日填息不是可用的選股訊號。逐年 12 年中 7 年差為正；t 值未處理同日事件相關（除權息集中在 6～9 月），實際顯著性還低於表上數字。</li>
+</ul>
+<h2 id="sec-2">預先登記的判定（CAR[+1, +20]，除權息日收盤後才進場的部分）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">期間</th>
+<th style="text-align: right;">填息 樣本</th>
+<th style="text-align: left;">填息 平均</th>
+<th style="text-align: right;">未填息 樣本</th>
+<th style="text-align: left;">未填息 平均</th>
+<th style="text-align: left;">差（填息−未填息）</th>
+<th style="text-align: right;">Welch t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: left;">除權息日 2023-01-01 前</td>
+<td style="text-align: right;">878</td>
+<td style="text-align: left;"><span class="down">-0.27%</span></td>
+<td style="text-align: right;">9709</td>
+<td style="text-align: left;"><span class="down">-0.64%</span></td>
+<td style="text-align: left;"><span class="up">+0.36%</span></td>
+<td style="text-align: right;">0.84</td>
+</tr>
+<tr>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: left;">2023-01-01 起</td>
+<td style="text-align: right;">774</td>
+<td style="text-align: left;"><span class="up">+0.08%</span></td>
+<td style="text-align: right;">5423</td>
+<td style="text-align: left;"><span class="down">-0.67%</span></td>
+<td style="text-align: left;"><span class="up">+0.75%</span></td>
+<td style="text-align: right;">1.34</td>
+</tr>
+<tr>
+<td style="text-align: left;">全部</td>
+<td style="text-align: left;">2015 起</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="down">-0.11%</span></td>
+<td style="text-align: right;">15132</td>
+<td style="text-align: left;"><span class="down">-0.65%</span></td>
+<td style="text-align: left;"><span class="up">+0.54%</span></td>
+<td style="text-align: right;">1.56</td>
+</tr>
+</tbody>
+</table></div>
+<p>判定：<strong>不成立</strong>（樣本內外差都須為正，且樣本外 Welch t ≥ 3；t 介於 2～3 為待確認；樣本外任一組少於 30 次只描述）。</p>
+<h3>敏感度（不改變判定依據，只檢查結論是否穩健）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">版本</th>
+<th style="text-align: right;">事件</th>
+<th style="text-align: left;">樣本內差</th>
+<th style="text-align: left;">樣本外差</th>
+<th style="text-align: left;">判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">預先登記（排除全市場休市日）</td>
+<td style="text-align: right;">16784</td>
+<td style="text-align: left;">+0.36%（t 0.84）</td>
+<td style="text-align: left;">+0.75%（t 1.34）</td>
+<td style="text-align: left;">不成立</td>
+</tr>
+<tr>
+<td style="text-align: left;">納入全市場休市日 168 次（第 0 日＝復市日）</td>
+<td style="text-align: right;">16952</td>
+<td style="text-align: left;">+0.36%（t 0.83）</td>
+<td style="text-align: left;">+0.73%（t 1.32）</td>
+<td style="text-align: left;">不成立</td>
+</tr>
+<tr>
+<td style="text-align: left;">填息旗標改用交易所日檔</td>
+<td style="text-align: right;">16784</td>
+<td style="text-align: left;">+0.36%（t 0.84）</td>
+<td style="text-align: left;">+0.75%（t 1.34）</td>
+<td style="text-align: left;">不成立</td>
+</tr>
+</tbody>
+</table></div>
+<p>登記內容沒有處理「除權息日全市場臨時休市」（11 個休市日，多為颱風假）：預先登記版本因當天沒有收盤而排除；敏感度版本改以復市日為第 0 日（與 research.events.study 的第 0 日慣例相同）。</p>
+<h2 id="sec-3">事件計數</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: right;">次數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">普通股除權息事件（去重後）</td>
+<td style="text-align: right;">17069</td>
+</tr>
+<tr>
+<td style="text-align: left;">排除：除權息日全市場臨時休市（多為颱風假；敏感度分析另計）</td>
+<td style="text-align: right;">169</td>
+</tr>
+<tr>
+<td style="text-align: left;">排除：前後窗口不完整（掛牌未滿 6 日或除權息日後不足 20 日）</td>
+<td style="text-align: right;">77</td>
+</tr>
+<tr>
+<td style="text-align: left;">排除：個股除權息日無成交（停牌等）</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr>
+<td style="text-align: left;">排除：無前一交易日收盤</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">納入：當日填息</td>
+<td style="text-align: right;">1652</td>
+</tr>
+<tr>
+<td style="text-align: left;">納入：未填息</td>
+<td style="text-align: right;">15132</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">數字驗證</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">檢查</th>
+<th style="text-align: left;">結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">前一交易日收盤 = 事件表 before_price（差 &lt; 0.005）</td>
+<td style="text-align: left;">99.96%（門檻 ≥ 99%）</td>
+</tr>
+<tr>
+<td style="text-align: left;">交易所日檔可比對的事件</td>
+<td style="text-align: left;">16,784 / 16,784（100.00%）</td>
+</tr>
+<tr>
+<td style="text-align: left;">填息旗標與交易所日檔一致</td>
+<td style="text-align: left;">100.00%</td>
+</tr>
+<tr>
+<td style="text-align: left;">前一日與除權息日收盤都與交易所日檔相同</td>
+<td style="text-align: left;">100.00%</td>
+</tr>
+<tr>
+<td style="text-align: left;">填息天數 = 0 與當日填息旗標不一致的事件</td>
+<td style="text-align: left;">0 次</td>
+</tr>
+<tr>
+<td style="text-align: left;">填息天數分組：只還原分割減資 vs 原始收盤，分組不同的事件</td>
+<td style="text-align: left;">0 次</td>
+</tr>
+<tr>
+<td style="text-align: left;">等權重市場日報酬與官方指數的相關係數（基準合理性）</td>
+<td style="text-align: left;">上市 0.80、上櫃 0.93（2015-01-12～2026-10-07，2,861 日）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-5">各期間超額報酬（全部樣本，描述）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">期間</th>
+<th style="text-align: right;">樣本</th>
+<th style="text-align: left;">平均超額</th>
+<th style="text-align: right;">t 值</th>
+<th style="text-align: left;">為正比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">當日填息</td>
+<td style="text-align: left;">[-5, -1]</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="down">-0.04%</span></td>
+<td style="text-align: right;"><span class="down">-0.2</span></td>
+<td style="text-align: left;">43.2%</td>
+</tr>
+<tr>
+<td style="text-align: left;">當日填息</td>
+<td style="text-align: left;">[+0, +0]</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="up">+3.61%</span></td>
+<td style="text-align: right;">43.93</td>
+<td style="text-align: left;">96.5%</td>
+</tr>
+<tr>
+<td style="text-align: left;">當日填息</td>
+<td style="text-align: left;">[+1, +5]</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="up">+0.22%</span></td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: left;">44.9%</td>
+</tr>
+<tr>
+<td style="text-align: left;">當日填息</td>
+<td style="text-align: left;">[+1, +10]</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="up">+0.21%</span></td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: left;">44.2%</td>
+</tr>
+<tr>
+<td style="text-align: left;">當日填息</td>
+<td style="text-align: left;">[+1, +20]</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="down">-0.11%</span></td>
+<td style="text-align: right;"><span class="down">-0.31</span></td>
+<td style="text-align: left;">42.3%</td>
+</tr>
+<tr>
+<td style="text-align: left;">未填息</td>
+<td style="text-align: left;">[-5, -1]</td>
+<td style="text-align: right;">15132</td>
+<td style="text-align: left;"><span class="up">+0.15%</span></td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: left;">48.7%</td>
+</tr>
+<tr>
+<td style="text-align: left;">未填息</td>
+<td style="text-align: left;">[+0, +0]</td>
+<td style="text-align: right;">15132</td>
+<td style="text-align: left;"><span class="down">-0.02%</span></td>
+<td style="text-align: right;"><span class="down">-1.36</span></td>
+<td style="text-align: left;">53.3%</td>
+</tr>
+<tr>
+<td style="text-align: left;">未填息</td>
+<td style="text-align: left;">[+1, +5]</td>
+<td style="text-align: right;">15132</td>
+<td style="text-align: left;"><span class="down">-0.44%</span></td>
+<td style="text-align: right;"><span class="down">-11.09</span></td>
+<td style="text-align: left;">39.6%</td>
+</tr>
+<tr>
+<td style="text-align: left;">未填息</td>
+<td style="text-align: left;">[+1, +10]</td>
+<td style="text-align: right;">15132</td>
+<td style="text-align: left;"><span class="down">-0.61%</span></td>
+<td style="text-align: right;"><span class="down">-10.98</span></td>
+<td style="text-align: left;">39.0%</td>
+</tr>
+<tr>
+<td style="text-align: left;">未填息</td>
+<td style="text-align: left;">[+1, +20]</td>
+<td style="text-align: right;">15132</td>
+<td style="text-align: left;"><span class="down">-0.65%</span></td>
+<td style="text-align: right;"><span class="down">-8.41</span></td>
+<td style="text-align: left;">40.5%</td>
+</tr>
+</tbody>
+</table></div>
+<p>第 0 日的差是分組定義本身造成的（填息＝當天漲幅至少等於除權息金額），不是可交易的報酬。</p>
+<h2 id="sec-6">子群描述（不據以判定）</h2>
+<h3>填息所需天數（全部樣本）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">占比</th>
+<th style="text-align: right;">樣本</th>
+<th style="text-align: left;">平均 CAR[+1,+20]</th>
+<th style="text-align: right;">t 值</th>
+<th style="text-align: left;">為正比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">當天</td>
+<td style="text-align: left;">9.8%</td>
+<td style="text-align: right;">1652</td>
+<td style="text-align: left;"><span class="down">-0.11%</span></td>
+<td style="text-align: right;"><span class="down">-0.31</span></td>
+<td style="text-align: left;">42.3%</td>
+</tr>
+<tr>
+<td style="text-align: left;">1～5 天</td>
+<td style="text-align: left;">19.1%</td>
+<td style="text-align: right;">3212</td>
+<td style="text-align: left;"><span class="up">+3.96%</span></td>
+<td style="text-align: right;">18.83</td>
+<td style="text-align: left;">60.7%</td>
+</tr>
+<tr>
+<td style="text-align: left;">6～20 天</td>
+<td style="text-align: left;">16.7%</td>
+<td style="text-align: right;">2803</td>
+<td style="text-align: left;"><span class="up">+5.34%</span></td>
+<td style="text-align: right;">30.83</td>
+<td style="text-align: left;">72.9%</td>
+</tr>
+<tr>
+<td style="text-align: left;">20 天以上</td>
+<td style="text-align: left;">54.3%</td>
+<td style="text-align: right;">9117</td>
+<td style="text-align: left;"><span class="down">-4.11%</span></td>
+<td style="text-align: right;"><span class="down">-60.38</span></td>
+<td style="text-align: left;">23.5%</td>
+</tr>
+</tbody>
+</table></div>
+<p>「20 天以上」含至今仍未填息的 1,693 次。除了「當天」以外，分組用到第 1～20 日的價格，與 CAR[+1, +20] 有機械性關聯（要填息就得上漲），只能描述、不能當成進場訊號。</p>
+<h3>上市、上櫃</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: right;">填息 樣本</th>
+<th style="text-align: left;">填息 平均</th>
+<th style="text-align: right;">未填息 樣本</th>
+<th style="text-align: left;">未填息 平均</th>
+<th style="text-align: left;">差（填息−未填息）</th>
+<th style="text-align: right;">Welch t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">上市</td>
+<td style="text-align: right;">901</td>
+<td style="text-align: left;"><span class="down">-0.20%</span></td>
+<td style="text-align: right;">8823</td>
+<td style="text-align: left;"><span class="down">-0.57%</span></td>
+<td style="text-align: left;"><span class="up">+0.37%</span></td>
+<td style="text-align: right;">0.87</td>
+</tr>
+<tr>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: right;">751</td>
+<td style="text-align: left;"><span class="up">+0.01%</span></td>
+<td style="text-align: right;">6309</td>
+<td style="text-align: left;"><span class="down">-0.75%</span></td>
+<td style="text-align: left;"><span class="up">+0.76%</span></td>
+<td style="text-align: right;">1.34</td>
+</tr>
+</tbody>
+</table></div>
+<h3>成交金額（除權息日前 20 個交易日平均）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: right;">填息 樣本</th>
+<th style="text-align: left;">填息 平均</th>
+<th style="text-align: right;">未填息 樣本</th>
+<th style="text-align: left;">未填息 平均</th>
+<th style="text-align: left;">差（填息−未填息）</th>
+<th style="text-align: right;">Welch t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">20 日均成交金額 ≥ 5,000 萬</td>
+<td style="text-align: right;">838</td>
+<td style="text-align: left;"><span class="down">-0.52%</span></td>
+<td style="text-align: right;">5114</td>
+<td style="text-align: left;"><span class="down">-0.75%</span></td>
+<td style="text-align: left;"><span class="up">+0.23%</span></td>
+<td style="text-align: right;">0.41</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt; 5,000 萬</td>
+<td style="text-align: right;">814</td>
+<td style="text-align: left;"><span class="up">+0.32%</span></td>
+<td style="text-align: right;">10018</td>
+<td style="text-align: left;"><span class="down">-0.59%</span></td>
+<td style="text-align: left;"><span class="up">+0.92%</span></td>
+<td style="text-align: right;">2.17</td>
+</tr>
+<tr>
+<td style="text-align: left;">≥ 5,000 萬・樣本內</td>
+<td style="text-align: right;">357</td>
+<td style="text-align: left;"><span class="down">-1.04%</span></td>
+<td style="text-align: right;">2943</td>
+<td style="text-align: left;"><span class="down">-0.90%</span></td>
+<td style="text-align: left;"><span class="down">-0.13%</span></td>
+<td style="text-align: right;"><span class="down">-0.18</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">≥ 5,000 萬・樣本外</td>
+<td style="text-align: right;">481</td>
+<td style="text-align: left;"><span class="down">-0.14%</span></td>
+<td style="text-align: right;">2171</td>
+<td style="text-align: left;"><span class="down">-0.55%</span></td>
+<td style="text-align: left;"><span class="up">+0.40%</span></td>
+<td style="text-align: right;">0.5</td>
+</tr>
+</tbody>
+</table></div>
+<h3>逐年</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">年</th>
+<th style="text-align: right;">事件</th>
+<th style="text-align: left;">當日填息比例</th>
+<th style="text-align: left;">填息 平均</th>
+<th style="text-align: left;">未填息 平均</th>
+<th style="text-align: left;">差</th>
+<th style="text-align: right;">Welch t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">1172</td>
+<td style="text-align: left;">9.9%</td>
+<td style="text-align: left;"><span class="down">-0.22%</span></td>
+<td style="text-align: left;"><span class="up">+0.58%</span></td>
+<td style="text-align: left;"><span class="down">-0.80%</span></td>
+<td style="text-align: right;"><span class="down">-0.73</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">1163</td>
+<td style="text-align: left;">6.1%</td>
+<td style="text-align: left;"><span class="up">+1.41%</span></td>
+<td style="text-align: left;"><span class="down">-0.79%</span></td>
+<td style="text-align: left;"><span class="up">+2.19%</span></td>
+<td style="text-align: right;">1.56</td>
+</tr>
+<tr>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">1242</td>
+<td style="text-align: left;">6.5%</td>
+<td style="text-align: left;"><span class="up">+0.43%</span></td>
+<td style="text-align: left;"><span class="down">-0.78%</span></td>
+<td style="text-align: left;"><span class="up">+1.21%</span></td>
+<td style="text-align: right;">0.89</td>
+</tr>
+<tr>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">1287</td>
+<td style="text-align: left;">7.1%</td>
+<td style="text-align: left;"><span class="down">-2.52%</span></td>
+<td style="text-align: left;"><span class="down">-0.44%</span></td>
+<td style="text-align: left;"><span class="down">-2.08%</span></td>
+<td style="text-align: right;"><span class="down">-1.9</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">1346</td>
+<td style="text-align: left;">6.0%</td>
+<td style="text-align: left;"><span class="up">+1.25%</span></td>
+<td style="text-align: left;"><span class="down">-0.80%</span></td>
+<td style="text-align: left;"><span class="up">+2.04%</span></td>
+<td style="text-align: right;">1.73</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">1365</td>
+<td style="text-align: left;">9.8%</td>
+<td style="text-align: left;"><span class="up">+1.55%</span></td>
+<td style="text-align: left;"><span class="down">-1.52%</span></td>
+<td style="text-align: left;"><span class="up">+3.07%</span></td>
+<td style="text-align: right;">2.02</td>
+</tr>
+<tr>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">11.6%</td>
+<td style="text-align: left;"><span class="down">-2.21%</span></td>
+<td style="text-align: left;"><span class="down">-0.97%</span></td>
+<td style="text-align: left;"><span class="down">-1.24%</span></td>
+<td style="text-align: right;"><span class="down">-1.32</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">1543</td>
+<td style="text-align: left;">8.6%</td>
+<td style="text-align: left;"><span class="down">-0.38%</span></td>
+<td style="text-align: left;"><span class="down">-0.25%</span></td>
+<td style="text-align: left;"><span class="down">-0.13%</span></td>
+<td style="text-align: right;"><span class="down">-0.12</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">1549</td>
+<td style="text-align: left;">10.3%</td>
+<td style="text-align: left;"><span class="up">+0.30%</span></td>
+<td style="text-align: left;"><span class="down">-0.36%</span></td>
+<td style="text-align: left;"><span class="up">+0.66%</span></td>
+<td style="text-align: right;">0.6</td>
+</tr>
+<tr>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">1507</td>
+<td style="text-align: left;">13.5%</td>
+<td style="text-align: left;"><span class="down">-1.08%</span></td>
+<td style="text-align: left;"><span class="down">-0.95%</span></td>
+<td style="text-align: left;"><span class="down">-0.13%</span></td>
+<td style="text-align: right;"><span class="down">-0.14</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">1639</td>
+<td style="text-align: left;">11.0%</td>
+<td style="text-align: left;"><span class="up">+1.13%</span></td>
+<td style="text-align: left;"><span class="down">-0.58%</span></td>
+<td style="text-align: left;"><span class="up">+1.71%</span></td>
+<td style="text-align: right;">1.65</td>
+</tr>
+<tr>
+<td style="text-align: right;">2026</td>
+<td style="text-align: right;">1502</td>
+<td style="text-align: left;">15.3%</td>
+<td style="text-align: left;"><span class="up">+0.13%</span></td>
+<td style="text-align: left;"><span class="down">-0.82%</span></td>
+<td style="text-align: left;"><span class="up">+0.95%</span></td>
+<td style="text-align: right;">0.75</td>
+</tr>
+</tbody>
+</table></div>
+
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes">
+<ul>
+<li>預先登記：H14（commit 4c1710f，2026-10-11 01:10:40），登記時沒有任何當日填息分組的報酬結果；本報告依登記內容執行，未改定義、窗口或門檻。</li>
+<li>事件：FinMind 除權息結果中的普通股事件（現增除權已用交易所官方參考價修正），同一檔同一天只算一次。當日填息＝除權息日原始收盤 ≥ 前一個有成交交易日的原始收盤（同一份日資料：FinMind 資料倉），收盤相等算填息。</li>
+<li>超額報酬＝個股還原價報酬減等權重市場（全部普通股，排除漲跌幅限制外的跳動與新掛牌前五日），與除息、減資、月營收事件研究相同（research.backtest.market）。</li>
+<li>填息天數用只還原分割與減資的收盤（個股頁填息欄的算法，research.events.gapfill），避免之後的分割把價格水準切開；與原始收盤算出的分組差異見數字驗證。</li>
+<li>交易所日檔（證交所與櫃買中心每日行情）作第二來源逐筆重算前一日收盤、除權息日收盤與填息旗標，不可比對 0 次。資料倉曾用交易所日檔補過 44 列缺漏（data/acceptance/price_holes_filled.csv），其中落在納入事件除權息日或前一日的 0 列；其餘事件兩個來源互相獨立。上市櫃別缺漏 0 次。</li>
+<li>前一日收盤與 before_price 不同的 7 次照登記定義用前一日收盤，不改用 before_price。</li>
+<li>t 值未處理同日、同週事件的相關（每年除權息集中在 6～9 月），只作粗略參考。</li>
+<li>未計交易成本；CAR 是相對等權重市場的超額報酬，不是實際可得報酬。</li>
+<li>本報告為事件研究，非投資建議。</li>
+</ul></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

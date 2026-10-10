@@ -1,0 +1,131 @@
+{
+ "built": "2026-10-11 01:31",
+ "pages": [
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-08",
+   "title": "2026-10-08 晨報",
+   "label": "10月8日 週四",
+   "path": "brief/brief-2026-10-08.html"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-07",
+   "title": "2026-10-07 晨報",
+   "label": "10月7日 週三",
+   "path": "brief/brief-2026-10-07.html"
+  },
+  {
+   "section": "weekly",
+   "slug": "weekly-2026-10-08",
+   "title": "每週回顧：2026 第 41 週（10/5–10/8）",
+   "label": "2026 第 41 週（10/5–10/8）",
+   "path": "weekly/weekly-2026-10-08.html"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-tradability",
+   "title": "策略 v1 可交易性與容量檢查",
+   "label": "策略 v1 可交易性與容量檢查",
+   "path": "backtest/backtest-v1-tradability.html"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-strategy",
+   "title": "回測報告 v1：策略 v1（營收年增率（公布後）、60 日動能）",
+   "label": "策略 v1（營收年增率（公布後）、60 日動能）",
+   "path": "backtest/backtest-v1-strategy.html"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-foreign-streak",
+   "title": "回測報告 v1：法人連買（外資連續買超）",
+   "label": "法人連買（外資連續買超）",
+   "path": "backtest/backtest-v1-foreign-streak.html"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-filter",
+   "title": "回測報告：策略 v1 加大盤趨勢濾網（H11）",
+   "label": "策略 v1 加大盤趨勢濾網（H11）",
+   "path": "backtest/backtest-v1-filter.html"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-study-v1",
+   "title": "因子研究 v1：單因子分組表",
+   "label": "單因子分組表",
+   "path": "factor/factor-study-v1.html"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-robustness",
+   "title": "因子穩健度：市場、流動性、年度與因子重疊（描述性）",
+   "label": "市場、流動性、年度與因子重疊（描述性）",
+   "path": "factor/factor-robustness.html"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-revenue",
+   "title": "事件研究：月營收公布後的超額報酬",
+   "label": "月營收公布後的超額報酬",
+   "path": "event/event-study-revenue.html"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-reduction",
+   "title": "事件研究：減資恢復買賣前後的超額報酬",
+   "label": "減資恢復買賣前後的超額報酬",
+   "path": "event/event-study-reduction.html"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-macro",
+   "title": "事件研究：FOMC、美國 CPI 與台指期結算日的台股波動",
+   "label": "FOMC、美國 CPI 與台指期結算日的台股波動",
+   "path": "event/event-study-macro.html"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-fill",
+   "title": "事件研究：除權息當日填息與之後 20 日的超額報酬（H14）",
+   "label": "除權息當日填息與之後 20 日的超額報酬（H14）",
+   "path": "event/event-study-fill.html"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-dividend",
+   "title": "事件研究：除息日前後的超額報酬",
+   "label": "除息日前後的超額報酬",
+   "path": "event/event-study-dividend.html"
+  },
+  {
+   "section": "quality",
+   "slug": "universe-1.2-data-quality",
+   "title": "Phase 1.2 全市場資料驗收報告",
+   "label": "Phase 1.2 全市場資料驗收報告",
+   "path": "quality/universe-1.2-data-quality.html"
+  },
+  {
+   "section": "quality",
+   "slug": "pilot-1.2-data-quality",
+   "title": "Phase 1.2 試點資料品質報告",
+   "label": "Phase 1.2 試點資料品質報告",
+   "path": "quality/pilot-1.2-data-quality.html"
+  },
+  {
+   "section": "quality",
+   "slug": "exchange-1.2c-data-quality",
+   "title": "Phase 1.2c 交易所資料與 FinMind 全歷史比對",
+   "label": "Phase 1.2c 交易所資料與 FinMind 全歷史比對",
+   "path": "quality/exchange-1.2c-data-quality.html"
+  },
+  {
+   "section": "quality",
+   "slug": "actions-1.2b-data-quality",
+   "title": "Phase 1.2b 公司行為資料驗收報告",
+   "label": "Phase 1.2b 公司行為資料驗收報告",
+   "path": "quality/actions-1.2b-data-quality.html"
+  }
+ ]
+}

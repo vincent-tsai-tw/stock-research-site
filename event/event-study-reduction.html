@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>減資恢復買賣前後的超額報酬 · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li><a href="../backtest/backtest-v1-filter.html">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li class="current"><a href="../event/event-study-reduction.html" aria-current="page">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li><a href="../event/event-study-fill.html">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li><a href="../about/index.html">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">減資恢復買賣前後的超額報酬</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">執行摘要</a><a href="#sec-2">預先登記的判定</a><a href="#sec-3">各期間</a><a href="#sec-4">平均累積超額報酬…</a><a href="#sec-5">子群描述</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">執行摘要</a><a href="#sec-2">預先登記的判定</a><a href="#sec-3">各期間</a><a href="#sec-4">平均累積超額報酬…</a><a href="#sec-5">子群描述</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">事件研究</p>
+<h1 class="headline">事件研究：減資恢復買賣前後的超額報酬</h1>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<p>產生時間：2026-10-10 11:43　預先登記：H7（2026-10-10 11:08，commit c94005e）　非投資建議。</p>
+<h2 id="sec-1">執行摘要</h2>
+<ul>
+<li>H7a 彌補虧損減資，恢復買賣起 20 日超額報酬預期為負：<strong>待確認</strong>。樣本內 -1.86%（220 次，t -1.30），樣本外 -5.51%（58 次，t -2.00）。</li>
+<li>H7b 退還現金減資，預期為正：<strong>不成立</strong>。樣本內 -2.18%（202 次，t -2.59），樣本外 -2.61%（45 次，t -1.49）。</li>
+<li>樣本 525 次減資（普通股、前後窗口完整），380 檔；樣本外（2023-01-01 起）103 次。</li>
+<li>第 0 日是恢復買賣日，報酬從減資參考價算起；基準是同期等權重市場，涵蓋整段停牌。</li>
+</ul>
+<h2 id="sec-2">預先登記的判定（第 0 日到第 20 日）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">假設</th>
+<th style="text-align: left;">減資原因</th>
+<th style="text-align: left;">預期</th>
+<th style="text-align: left;">樣本內</th>
+<th style="text-align: left;">樣本外</th>
+<th style="text-align: left;">判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">H7a</td>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">負</td>
+<td style="text-align: left;">-1.86%（220 次，t -1.30）</td>
+<td style="text-align: left;">-5.51%（58 次，t -2.00）</td>
+<td style="text-align: left;">待確認</td>
+</tr>
+<tr>
+<td style="text-align: left;">H7b</td>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">正</td>
+<td style="text-align: left;">-2.18%（202 次，t -2.59）</td>
+<td style="text-align: left;">-2.61%（45 次，t -1.49）</td>
+<td style="text-align: left;">不成立</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-3">各期間（全部樣本）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">期間</th>
+<th style="text-align: right;">樣本</th>
+<th style="text-align: left;">平均超額</th>
+<th style="text-align: right;">t 值</th>
+<th style="text-align: left;">為正比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">[-5, -1]</td>
+<td style="text-align: right;">278</td>
+<td style="text-align: left;"><span class="up">+0.38%</span></td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: left;">47%</td>
+</tr>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">[+0, +0]</td>
+<td style="text-align: right;">278</td>
+<td style="text-align: left;"><span class="down">-1.84%</span></td>
+<td style="text-align: right;"><span class="down">-4.5</span></td>
+<td style="text-align: left;">38%</td>
+</tr>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">[+1, +20]</td>
+<td style="text-align: right;">278</td>
+<td style="text-align: left;"><span class="down">-0.79%</span></td>
+<td style="text-align: right;"><span class="down">-0.7</span></td>
+<td style="text-align: left;">42%</td>
+</tr>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">[+0, +20]</td>
+<td style="text-align: right;">278</td>
+<td style="text-align: left;"><span class="down">-2.62%</span></td>
+<td style="text-align: right;"><span class="down">-2.1</span></td>
+<td style="text-align: left;">38%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">[-5, -1]</td>
+<td style="text-align: right;">247</td>
+<td style="text-align: left;"><span class="down">-0.85%</span></td>
+<td style="text-align: right;"><span class="down">-2.4</span></td>
+<td style="text-align: left;">40%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">[+0, +0]</td>
+<td style="text-align: right;">247</td>
+<td style="text-align: left;"><span class="down">-0.53%</span></td>
+<td style="text-align: right;"><span class="down">-1.9</span></td>
+<td style="text-align: left;">39%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">[+1, +20]</td>
+<td style="text-align: right;">247</td>
+<td style="text-align: left;"><span class="down">-1.73%</span></td>
+<td style="text-align: right;"><span class="down">-2.6</span></td>
+<td style="text-align: left;">37%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">[+0, +20]</td>
+<td style="text-align: right;">247</td>
+<td style="text-align: left;"><span class="down">-2.26%</span></td>
+<td style="text-align: right;"><span class="down">-3</span></td>
+<td style="text-align: left;">38%</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">平均累積超額報酬走勢（全部樣本）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">第 -1 日</th>
+<th style="text-align: left;">第 +0 日</th>
+<th style="text-align: left;">第 +1 日</th>
+<th style="text-align: left;">第 +5 日</th>
+<th style="text-align: left;">第 +10 日</th>
+<th style="text-align: left;">第 +20 日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;"><span class="up">+0.38%</span></td>
+<td style="text-align: left;"><span class="down">-1.45%</span></td>
+<td style="text-align: left;"><span class="down">-2.98%</span></td>
+<td style="text-align: left;"><span class="down">-4.23%</span></td>
+<td style="text-align: left;"><span class="down">-3.90%</span></td>
+<td style="text-align: left;"><span class="down">-2.24%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;"><span class="down">-0.85%</span></td>
+<td style="text-align: left;"><span class="down">-1.38%</span></td>
+<td style="text-align: left;"><span class="down">-2.06%</span></td>
+<td style="text-align: left;"><span class="down">-2.48%</span></td>
+<td style="text-align: left;"><span class="down">-2.90%</span></td>
+<td style="text-align: left;"><span class="down">-3.11%</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-5">子群描述（不據以判定）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">市場</th>
+<th style="text-align: right;">樣本</th>
+<th style="text-align: left;">平均超額</th>
+<th style="text-align: right;">t 值</th>
+<th style="text-align: left;">為正比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: right;">127</td>
+<td style="text-align: left;"><span class="down">-4.62%</span></td>
+<td style="text-align: right;"><span class="down">-2.8</span></td>
+<td style="text-align: left;">37%</td>
+</tr>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: right;">151</td>
+<td style="text-align: left;"><span class="down">-0.94%</span></td>
+<td style="text-align: right;"><span class="down">-0.5</span></td>
+<td style="text-align: left;">38%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: right;">173</td>
+<td style="text-align: left;"><span class="down">-1.94%</span></td>
+<td style="text-align: right;"><span class="down">-2.3</span></td>
+<td style="text-align: left;">40%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: left;"><span class="down">-3.02%</span></td>
+<td style="text-align: right;"><span class="down">-1.9</span></td>
+<td style="text-align: left;">32%</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">群組</th>
+<th style="text-align: left;">停牌前成交金額</th>
+<th style="text-align: right;">樣本</th>
+<th style="text-align: left;">平均超額</th>
+<th style="text-align: right;">t 值</th>
+<th style="text-align: left;">為正比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">≥ 5,000 萬</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: left;"><span class="down">-6.69%</span></td>
+<td style="text-align: right;"><span class="down">-1.7</span></td>
+<td style="text-align: left;">32%</td>
+</tr>
+<tr>
+<td style="text-align: left;">彌補虧損</td>
+<td style="text-align: left;">&lt; 5,000 萬</td>
+<td style="text-align: right;">259</td>
+<td style="text-align: left;"><span class="down">-2.33%</span></td>
+<td style="text-align: right;"><span class="down">-1.7</span></td>
+<td style="text-align: left;">38%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">≥ 5,000 萬</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;"><span class="down">-4.05%</span></td>
+<td style="text-align: right;"><span class="down">-2.7</span></td>
+<td style="text-align: left;">35%</td>
+</tr>
+<tr>
+<td style="text-align: left;">退還現金</td>
+<td style="text-align: left;">&lt; 5,000 萬</td>
+<td style="text-align: right;">159</td>
+<td style="text-align: left;"><span class="down">-1.27%</span></td>
+<td style="text-align: right;"><span class="down">-1.6</span></td>
+<td style="text-align: left;">39%</td>
+</tr>
+</tbody>
+</table></div>
+
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes">
+<ul>
+<li>成立條件（事先登記）：樣本內外都符合預期方向，且樣本外 t ≥ 3；t 介於 2～3 為待確認；樣本外少於 30 次只描述。</li>
+<li>[+1, +20] 是恢復日收盤後才進場的可交易部分；第 0 日的反應在停牌期間無法交易。</li>
+<li>減資恢復買賣首五日無漲跌幅限制，第 0 日的波動可能很大；等權重市場已排除這類跳動。</li>
+<li>t 值未處理同日或同週事件的相關，只作粗略參考。減資股多為小型股，實際交易成本較高。</li>
+<li>本報告為事件研究，非投資建議。</li>
+</ul></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

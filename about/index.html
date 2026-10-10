@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>說明與定義 · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li><a href="../backtest/backtest-v1-filter.html">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li><a href="../event/event-study-reduction.html">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li><a href="../event/event-study-fill.html">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li class="current"><a href="../about/index.html" aria-current="page">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">說明與定義</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">資料來源與更新時…</a><a href="#sec-2">數字定義</a><a href="#sec-3">資料檢查</a><a href="#sec-4">免責</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">資料來源與更新時…</a><a href="#sec-2">數字定義</a><a href="#sec-3">資料檢查</a><a href="#sec-4">免責</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">關於本站</p>
+<h1 class="headline">每個數字從哪裡來、怎麼算。</h1>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<h2 id="sec-1">資料來源與更新時間</h2>
+<div class="table-wrap"><table class="text-table">
+<thead>
+<tr>
+<th>資料</th>
+<th>來源</th>
+<th>更新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>個股價量、三大法人買賣超</td>
+<td>證交所 MI_INDEX、T86；櫃買中心日行情、三大法人明細</td>
+<td>每個交易日 17:30 起，兩市場都公布才寫入，未到齊每 15 分鐘重試到 21:00</td>
+</tr>
+<tr>
+<td>2015 年起的歷史價量與法人</td>
+<td>FinMind，已與交易所資料全量比對</td>
+<td>一次性下載，之後由交易所資料接續</td>
+</tr>
+<tr>
+<td>市場三大法人金額</td>
+<td>證交所三大法人買賣金額統計表、櫃買中心三大法人買賣金額彙總表</td>
+<td>每個交易日</td>
+</tr>
+<tr>
+<td>指數、成交金額、漲跌家數</td>
+<td>證交所 MI_INDEX 與 FMTQIK、櫃買中心當日彙總與指數月報</td>
+<td>每個交易日</td>
+</tr>
+<tr>
+<td>外資持股比率</td>
+<td>證交所 MI_QFIIS、櫃買中心外資持股排行</td>
+<td>證交所晚上才公布，通常落後一天</td>
+</tr>
+<tr>
+<td>融資融券</td>
+<td>證交所 MI_MARGN、櫃買中心融資融券餘額</td>
+<td>晚上公布，通常落後一天</td>
+</tr>
+<tr>
+<td>千張大戶、股東人數</td>
+<td>集保結算所股權分散表</td>
+<td>每週一次，自 2026-10-02 那週起累積</td>
+</tr>
+<tr>
+<td>公司資料、股東會</td>
+<td>證交所與櫃買中心開放資料</td>
+<td>每個交易日</td>
+</tr>
+<tr>
+<td>除權息預告、重大訊息</td>
+<td>證交所與櫃買中心的預告表與重大訊息</td>
+<td>每個交易日</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-2">數字定義</h2>
+<ul>
+<li><strong>外資</strong>：外資及陸資，不含外資自營商。<strong>自營商</strong>：自行買賣與避險兩者合計。</li>
+<li><strong>張</strong>：1,000 股。買賣超換算成張時四捨五入，成交量取整張。</li>
+<li><strong>市場資金</strong>（晨報頭條、四個大數字、法人週合計）：交易所公布的買賣金額。</li>
+<li><strong>外資金額（排行、產業、個股週排行）</strong>：淨股數乘當日收盤的估計，與官方金額會有小差距。</li>
+<li><strong>漲跌</strong>：交易所公布的漲跌價差，相對於參考價。除權息等交易所標示不比價的日子顯示「不比價」。</li>
+<li><strong>走勢圖價格</strong>：已還原分割與減資，未扣除股利，與看盤報價一致；月線、季線是這個價格的 20 日、60 日簡單平均。</li>
+<li><strong>本益比、殖利率、股價淨值比</strong>（個股頁）：證交所「個股日本益比、殖利率及股價淨值比」（BWIBBU）與櫃買「本益比分析」，交易所以當日收盤計算後公布；本益比在近四季虧損時交易所留空，頁面顯示「—」；只顯示最新交易日的數字。</li>
+<li><strong>月營收</strong>（個股頁）：近 24 個月，FinMind 月營收（公司當時公布的數字）。2026-10-10 與證交所、櫃買開放資料（t187ap05_L、mopsfin_t187ap05_O）核對 5,864 個數字：當月營收全部一致；37 個不同都是公司事後重編去年或上月的數字（例如併購後重編），FinMind 保留原公布值，回測用的正是這個。營收為負或為 0 的月份（多為證券商）資料源沒有，圖上會缺那一個月。</li>
+<li><strong>除權息與填息</strong>（個股頁）：最近 8 次除權息。「前一日收盤」與「參考價」取自 FinMind 除權息結果，已還原其後的分割與減資；回到前一日收盤所需的交易日數，以除權息當天為 0。2025-01～2026-09 上市 2,595 件與證交所除權除息計算結果表（TWT49U）核對，前一日收盤全部一致；參考價有 87 件不同，全是現金增資除權：資料源只扣股利、未扣認購權利價值，這類事件改用證交所與櫃買公布的除權息參考價（走勢以外的研究還原價也一併修正）；官方資料尚未涵蓋的最新事件以「—」表示。填息日數另以交易所每日收盤重算 6,028 件，全部一致。</li>
+<li><strong>走勢圖起點</strong>：由興櫃轉上市櫃的股票，走勢從掛牌日開始，興櫃期間的行情不列入（興櫃沒有漲跌幅限制、成交稀少）。掛牌日取自交易所每日行情第一次列出該股的日期，與公司基本資料的上市櫃日期交叉核對。</li>
+<li><strong>外資持股比率</strong>：交易所公布值（證交所截斷到小數兩位）。訊號研究只用前一個交易日已公布的比率。</li>
+<li><strong>券資比</strong>：融券餘額除以融資餘額。<strong>融資餘額（大盤卡）</strong>：交易所公布的融資金額。</li>
+<li><strong>千張大戶</strong>：持股 1,000 張以上的股權比例（集保分級 15，採公布值）；<strong>400 張以上</strong>：分級 12 到 15 的股數合計除以總股數。</li>
+<li><strong>連買賣</strong>：外資淨買超（或淨賣超）持續的交易日數，到最新一日為止。</li>
+<li><strong>週漲跌</strong>（每週回顧）：用原始收盤價計算，未還原除權息，當週除權息的個股會偏低。</li>
+</ul>
+<h2 id="sec-3">資料檢查</h2>
+<ul>
+<li>每天寫晨報時自動做交叉檢查：逐檔漲跌重算的家數對交易所公布的家數、指數日報對月報、融資逐檔合計對市場合計、個股加總的外資金額對官方金額。結果寫在晨報頁尾，沒通過會列出明細。</li>
+<li>每次發布前檢查整個網站：必要頁面、斷掉的連結、資料檔中的無效數值、K 線日期順序與排行筆數，有問題就不發布。</li>
+</ul>
+<h2 id="sec-4">免責</h2>
+<p>本站是個人研究紀錄，非投資建議。內容由程式自動產生，可能有延遲或錯誤；投資決策與下單由使用者自行負責。</p>
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes"></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

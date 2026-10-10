@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>策略 v1 可交易性與容量檢查 · 台股研究</title>
+<meta name="build" content="2026-10-11 01:31">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group"><h2>每日晨報</h2>
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul></div>
+<div class="side-group"><h2>市場與個股</h2><ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul></div>
+<div class="side-group"><h2>事件</h2><ul><li><a href="../events/index.html">未來事件</a></li></ul></div>
+<div class="side-group"><h2>每週回顧</h2>
+<ul>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul></div>
+<div class="side-group"><h2>進度報告</h2>
+<p class="soon">即將推出</p></div>
+<div class="side-group"><h2>回測報告</h2>
+<ul>
+<li class="current"><a href="../backtest/backtest-v1-tradability.html" aria-current="page">策略 v1 可交易性與容量檢查</a></li>
+<li><a href="../backtest/backtest-v1-strategy.html">策略 v1（營收年增率（公布後）、60 日動能）</a></li>
+<li><a href="../backtest/backtest-v1-foreign-streak.html">法人連買（外資連續買超）</a></li>
+<li><a href="../backtest/backtest-v1-filter.html">策略 v1 加大盤趨勢濾網（H11）</a></li>
+</ul></div>
+<div class="side-group"><h2>因子研究</h2>
+<ul>
+<li><a href="../factor/factor-study-v1.html">單因子分組表</a></li>
+<li><a href="../factor/factor-robustness.html">市場、流動性、年度與因子重疊（描述性）</a></li>
+</ul></div>
+<div class="side-group"><h2>事件研究</h2>
+<ul>
+<li><a href="../event/event-study-revenue.html">月營收公布後的超額報酬</a></li>
+<li><a href="../event/event-study-reduction.html">減資恢復買賣前後的超額報酬</a></li>
+<li><a href="../event/event-study-macro.html">FOMC、美國 CPI 與台指期結算日的台股波動</a></li>
+<li><a href="../event/event-study-fill.html">除權息當日填息與之後 20 日的超額報酬（H14）</a></li>
+<li><a href="../event/event-study-dividend.html">除息日前後的超額報酬</a></li>
+</ul></div>
+<div class="side-group"><h2>資料驗收</h2>
+<ul>
+<li><a href="../quality/universe-1.2-data-quality.html">Phase 1.2 全市場資料驗收報告</a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html">Phase 1.2 試點資料品質報告</a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html">Phase 1.2c 交易所資料與 FinMind 全歷史比對</a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html">Phase 1.2b 公司行為資料驗收報告</a></li>
+</ul></div>
+<div class="side-group"><h2>關於</h2><ul><li><a href="../about/index.html">說明與定義</a></li></ul></div>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">策略 v1 可交易性與容量檢查</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">執行摘要</a><a href="#sec-2">1. 進場日開盤…</a><a href="#sec-3">2. 資金容量</a><a href="#sec-4">3. 成本敏感度</a><a href="#sec-5">驗證</a><a href="#sec-6">附註</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="切換深色或淺色"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">執行摘要</a><a href="#sec-2">1. 進場日開盤…</a><a href="#sec-3">2. 資金容量</a><a href="#sec-4">3. 成本敏感度</a><a href="#sec-5">驗證</a><a href="#sec-6">附註</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">回測報告</p>
+<h1 class="headline">策略 v1 可交易性與容量檢查</h1>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<p>產生時間：2026-10-11 01:02　非投資建議。本報告是事後的敏感度檢查，不是預先登記的檢定；數字只描述 v1 在實務限制下的變化，不改變 v1 在 reports/backtest-v1-strategy.md 的「未通過」判定。</p>
+<h2 id="sec-1">執行摘要</h2>
+<ol>
+<li><strong>結論</strong>：漲停買不到影響很小（樣本內外年化變動都在 1 個百分點內）；資金在 0.50 億以內任何一期都不受成交量限制；真正的風險是交易成本：讓年化報酬等於基準的來回成本，樣本內只有 1.26%，全期 1.55%，樣本外 2.19%（目前假設 0.471%）。</li>
+<li><strong>漲停</strong>：1675 次新買進中有 21 次（1.3%）進場日開盤即漲停，其中全日鎖死 9 次（樣本外比例 1.5%）。跳過後全期年化 +17.40% → +17.28%（只跳過鎖死者 +16.88%），樣本外 +36.16% → +37.10%（+36.12%）。</li>
+<li><strong>容量</strong>：每檔不超過 20 日均成交金額的 5%，等權重 20 檔可投入總額中位數 樣本內 0.56 億、樣本外 0.63 億，第 10 百分位 0.51 億／0.52 億；最新一期（2026-10-07）0.55 億，受限於 6152 百一。</li>
+<li><strong>上櫃</strong>：平均每期 10.2／20 檔是上櫃（占選股 51.0%），容量最小那檔是上櫃的期數占 69.0%；最新一期 11 檔上櫃。上櫃的滑價一般較大，實際成本宜以 0.8%～1.2% 情境看待。</li>
+<li><strong>成本</strong>：來回成本 0.471% → 0.8% → 1.2%，年化超額 樣本內 +6.26% → +3.61% → +0.48%、樣本外 +15.93% → +12.73% → +8.94%、全期 +8.98% → +6.17% → +2.84%。</li>
+</ol>
+<h2 id="sec-2">1. 進場日開盤漲停</h2>
+<p>選股在訊號日次一交易日開盤買進；若當天開盤就在漲停價，實務上多半排不到。判定：開盤 ≥ 前一日收盤 ×（1 + 漲幅限制 − 0.5%）且開盤等於當日最高（2015-06-01 前漲幅限制 7%，之後 10%）；原始未還原價。排除訊號日後到進場日之間有除權息／減資／分割（參考價不是前日收盤）與上市前 5 日。「新買進」是上一期沒有持有、這一期真的要買的選股；延續持有的選股不需要買，開盤漲停不影響。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">期間</th>
+<th style="text-align: right;">選股次數</th>
+<th style="text-align: right;">可判斷</th>
+<th style="text-align: left;">排除（公司行為／新上市／無進場）</th>
+<th style="text-align: left;">開盤漲停</th>
+<th style="text-align: left;">全日鎖漲停</th>
+<th style="text-align: right;">新買進</th>
+<th style="text-align: left;">新買進中開盤漲停</th>
+<th style="text-align: left;">新買進中全日鎖漲停</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: right;">1940</td>
+<td style="text-align: right;">1934</td>
+<td style="text-align: left;">6／0／0</td>
+<td style="text-align: left;">21（1.1%）</td>
+<td style="text-align: left;">9（0.5%）</td>
+<td style="text-align: right;">1152</td>
+<td style="text-align: left;">13（1.1%）</td>
+<td style="text-align: left;">5（0.4%）</td>
+</tr>
+<tr>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">898</td>
+<td style="text-align: left;">2／0／0</td>
+<td style="text-align: left;">12（1.3%）</td>
+<td style="text-align: left;">5（0.6%）</td>
+<td style="text-align: right;">523</td>
+<td style="text-align: left;">8（1.5%）</td>
+<td style="text-align: left;">4（0.8%）</td>
+</tr>
+<tr>
+<td style="text-align: left;">全部</td>
+<td style="text-align: right;">2840</td>
+<td style="text-align: right;">2832</td>
+<td style="text-align: left;">8／0／0</td>
+<td style="text-align: left;">33（1.2%）</td>
+<td style="text-align: left;">14（0.5%）</td>
+<td style="text-align: right;">1675</td>
+<td style="text-align: left;">21（1.3%）</td>
+<td style="text-align: left;">9（0.5%）</td>
+</tr>
+</tbody>
+</table></div>
+<p>開盤漲停的新買進，持有期（20 日，自開盤價起算）平均報酬 +0.21%；其餘新買進 +1.54%。</p>
+<h3>跳過後的績效（等權重分配給其餘選股）</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">情境</th>
+<th style="text-align: left;">期間</th>
+<th style="text-align: right;">期數</th>
+<th style="text-align: left;">年化報酬</th>
+<th style="text-align: left;">基準年化</th>
+<th style="text-align: left;">年化超額</th>
+<th style="text-align: left;">每期平均超額</th>
+<th style="text-align: right;">超額 t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">原始 v1</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;"><span class="up">+9.60%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+6.26%</span></td>
+<td style="text-align: left;"><span class="up">+0.61%</span></td>
+<td style="text-align: right;">1.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">原始 v1</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;"><span class="up">+36.16%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+15.93%</span></td>
+<td style="text-align: left;"><span class="up">+1.33%</span></td>
+<td style="text-align: right;">1.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">原始 v1</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: left;"><span class="up">+17.40%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+8.98%</span></td>
+<td style="text-align: left;"><span class="up">+0.84%</span></td>
+<td style="text-align: right;">1.91</td>
+</tr>
+<tr>
+<td style="text-align: left;">跳過開盤漲停的新買進</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;"><span class="up">+9.08%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+5.74%</span></td>
+<td style="text-align: left;"><span class="up">+0.57%</span></td>
+<td style="text-align: right;">1.22</td>
+</tr>
+<tr>
+<td style="text-align: left;">跳過開盤漲停的新買進</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;"><span class="up">+37.10%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+16.86%</span></td>
+<td style="text-align: left;"><span class="up">+1.39%</span></td>
+<td style="text-align: right;">1.44</td>
+</tr>
+<tr>
+<td style="text-align: left;">跳過開盤漲停的新買進</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: left;"><span class="up">+17.28%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+8.86%</span></td>
+<td style="text-align: left;"><span class="up">+0.83%</span></td>
+<td style="text-align: right;">1.88</td>
+</tr>
+<tr>
+<td style="text-align: left;">只跳過全日鎖漲停的新買進</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;"><span class="up">+8.90%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+5.56%</span></td>
+<td style="text-align: left;"><span class="up">+0.56%</span></td>
+<td style="text-align: right;">1.19</td>
+</tr>
+<tr>
+<td style="text-align: left;">只跳過全日鎖漲停的新買進</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;"><span class="up">+36.12%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+15.88%</span></td>
+<td style="text-align: left;"><span class="up">+1.34%</span></td>
+<td style="text-align: right;">1.38</td>
+</tr>
+<tr>
+<td style="text-align: left;">只跳過全日鎖漲停的新買進</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: left;"><span class="up">+16.88%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+8.46%</span></td>
+<td style="text-align: left;"><span class="up">+0.80%</span></td>
+<td style="text-align: right;">1.82</td>
+</tr>
+<tr>
+<td style="text-align: left;">所有開盤漲停選股都跳過（對照）</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;"><span class="up">+7.43%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+4.09%</span></td>
+<td style="text-align: left;"><span class="up">+0.44%</span></td>
+<td style="text-align: right;">0.96</td>
+</tr>
+<tr>
+<td style="text-align: left;">所有開盤漲停選股都跳過（對照）</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;"><span class="up">+35.78%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+15.55%</span></td>
+<td style="text-align: left;"><span class="up">+1.29%</span></td>
+<td style="text-align: right;">1.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">所有開盤漲停選股都跳過（對照）</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: left;"><span class="up">+15.71%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+7.29%</span></td>
+<td style="text-align: left;"><span class="up">+0.71%</span></td>
+<td style="text-align: right;">1.65</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>「跳過開盤漲停的新買進」（主要情境）：當期不買、其餘等權重；下期若再入選視為新買進；已持有的不受影響。</li>
+<li>「只跳過全日鎖漲停」：開盤漲停但盤中打開的，掛漲停價仍可能成交（價格與回測的開盤價相同），只有全日鎖死才一定買不到；這是買不到筆數的下限。鎖死的新買進持有期平均報酬 +14.63%（7／9 筆為正），盤中打開的則是 -10.60%，所以跳過的筆數較少、對報酬的影響卻不一定較小。</li>
+<li>「所有開盤漲停選股都跳過」：連已持有的也剔除，不符合實際操作，只作對照。</li>
+</ul>
+<h2 id="sec-3">2. 資金容量</h2>
+<p>每檔部位不超過該股 20 日平均成交金額的 5%；等權重下整個組合最多可投入 20 × 5% × 當期選股中最小的 20 日均成交金額（20 × 5% = 1，即等於最小那檔的 20 日均成交金額）。v1 的合格門檻是 20 日均成交金額 ≥ 5,000 萬元，所以容量不會低於 0.50 億。市場別依交易所每日名單（membership）判定當日在哪個市場。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">期間</th>
+<th style="text-align: right;">期數</th>
+<th style="text-align: left;">容量中位數</th>
+<th style="text-align: left;">第 10 百分位</th>
+<th style="text-align: left;">最小</th>
+<th style="text-align: left;">容量 ≥ 1 億的期數</th>
+<th style="text-align: left;">交易所資料重算中位數</th>
+<th style="text-align: right;">每期上櫃檔數（平均）</th>
+<th style="text-align: left;">上櫃占選股</th>
+<th style="text-align: left;">限制檔為上櫃的期數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: right;">97</td>
+<td style="text-align: left;">0.56 億</td>
+<td style="text-align: left;">0.51 億</td>
+<td style="text-align: left;">0.50 億</td>
+<td style="text-align: left;">1.0%</td>
+<td style="text-align: left;">0.55 億</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: left;">50.8%</td>
+<td style="text-align: left;">67.0%</td>
+</tr>
+<tr>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;">0.63 億</td>
+<td style="text-align: left;">0.52 億</td>
+<td style="text-align: left;">0.50 億</td>
+<td style="text-align: left;">6.7%</td>
+<td style="text-align: left;">0.63 億</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: left;">51.2%</td>
+<td style="text-align: left;">73.3%</td>
+</tr>
+<tr>
+<td style="text-align: left;">全部</td>
+<td style="text-align: right;">142</td>
+<td style="text-align: left;">0.57 億</td>
+<td style="text-align: left;">0.51 億</td>
+<td style="text-align: left;">0.50 億</td>
+<td style="text-align: left;">2.8%</td>
+<td style="text-align: left;">0.56 億</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: left;">51.0%</td>
+<td style="text-align: left;">69.0%</td>
+</tr>
+</tbody>
+</table></div>
+<h3>最新一期（2026-10-07）：可投入 0.55 億，限制檔 6152 百一</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">代號</th>
+<th style="text-align: left;">名稱</th>
+<th style="text-align: left;">市場</th>
+<th style="text-align: left;">20 日均成交金額</th>
+<th style="text-align: left;">單檔上限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">6152</td>
+<td style="text-align: left;">百一</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">0.55 億</td>
+<td style="text-align: left;">0.03 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6588</td>
+<td style="text-align: left;">東典光電</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">2.32 億</td>
+<td style="text-align: left;">0.12 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6547</td>
+<td style="text-align: left;">高端疫苗</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">2.66 億</td>
+<td style="text-align: left;">0.13 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">7792</td>
+<td style="text-align: left;">安葆</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">3.64 億</td>
+<td style="text-align: left;">0.18 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6179</td>
+<td style="text-align: left;">亞通</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">4.85 億</td>
+<td style="text-align: left;">0.24 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">3234</td>
+<td style="text-align: left;">光環</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">5.61 億</td>
+<td style="text-align: left;">0.28 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">2221</td>
+<td style="text-align: left;">大甲</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">6.60 億</td>
+<td style="text-align: left;">0.33 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">3498</td>
+<td style="text-align: left;">陽程</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">7.05 億</td>
+<td style="text-align: left;">0.35 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6933</td>
+<td style="text-align: left;">AMAX-KY</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">7.28 億</td>
+<td style="text-align: left;">0.36 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">7711</td>
+<td style="text-align: left;">永擎</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">7.42 億</td>
+<td style="text-align: left;">0.37 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">2305</td>
+<td style="text-align: left;">全友</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">9.89 億</td>
+<td style="text-align: left;">0.49 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">5314</td>
+<td style="text-align: left;">世紀*</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">11.36 億</td>
+<td style="text-align: left;">0.57 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">3693</td>
+<td style="text-align: left;">營邦</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">13.57 億</td>
+<td style="text-align: left;">0.68 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">1709</td>
+<td style="text-align: left;">和益</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">16.53 億</td>
+<td style="text-align: left;">0.83 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6672</td>
+<td style="text-align: left;">騰輝電子-KY</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">26.58 億</td>
+<td style="text-align: left;">1.33 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6187</td>
+<td style="text-align: left;">萬潤</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">32.31 億</td>
+<td style="text-align: left;">1.62 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">2059</td>
+<td style="text-align: left;">川湖</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">58.84 億</td>
+<td style="text-align: left;">2.94 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">3081</td>
+<td style="text-align: left;">聯亞</td>
+<td style="text-align: left;">上櫃</td>
+<td style="text-align: left;">99.88 億</td>
+<td style="text-align: left;">4.99 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">3443</td>
+<td style="text-align: left;">創意</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">113.28 億</td>
+<td style="text-align: left;">5.66 億</td>
+</tr>
+<tr>
+<td style="text-align: right;">6213</td>
+<td style="text-align: left;">聯茂</td>
+<td style="text-align: left;">上市</td>
+<td style="text-align: left;">114.67 億</td>
+<td style="text-align: left;">5.73 億</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">3. 成本敏感度</h2>
+<p>來回成本依換手比例計入（只算換進的檔數），基準不計成本，與原報告相同。0.8% 與 1.2% 代表加計滑價與市場衝擊後的情境。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">來回成本</th>
+<th style="text-align: left;">期間</th>
+<th style="text-align: left;">年化報酬</th>
+<th style="text-align: left;">基準年化</th>
+<th style="text-align: left;">年化超額</th>
+<th style="text-align: left;">每期平均超額</th>
+<th style="text-align: right;">超額 t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0.471%</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: left;"><span class="up">+9.60%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+6.26%</span></td>
+<td style="text-align: left;"><span class="up">+0.61%</span></td>
+<td style="text-align: right;">1.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.471%</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: left;"><span class="up">+36.16%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+15.93%</span></td>
+<td style="text-align: left;"><span class="up">+1.33%</span></td>
+<td style="text-align: right;">1.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.471%</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: left;"><span class="up">+17.40%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+8.98%</span></td>
+<td style="text-align: left;"><span class="up">+0.84%</span></td>
+<td style="text-align: right;">1.91</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.800%</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: left;"><span class="up">+6.95%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+3.61%</span></td>
+<td style="text-align: left;"><span class="up">+0.42%</span></td>
+<td style="text-align: right;">0.89</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.800%</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: left;"><span class="up">+32.97%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+12.73%</span></td>
+<td style="text-align: left;"><span class="up">+1.14%</span></td>
+<td style="text-align: right;">1.19</td>
+</tr>
+<tr>
+<td style="text-align: left;">0.800%</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: left;"><span class="up">+14.59%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+6.17%</span></td>
+<td style="text-align: left;"><span class="up">+0.65%</span></td>
+<td style="text-align: right;">1.47</td>
+</tr>
+<tr>
+<td style="text-align: left;">1.200%</td>
+<td style="text-align: left;">樣本內</td>
+<td style="text-align: left;"><span class="up">+3.81%</span></td>
+<td style="text-align: left;"><span class="up">+3.34%</span></td>
+<td style="text-align: left;"><span class="up">+0.48%</span></td>
+<td style="text-align: left;"><span class="up">+0.18%</span></td>
+<td style="text-align: right;">0.38</td>
+</tr>
+<tr>
+<td style="text-align: left;">1.200%</td>
+<td style="text-align: left;">樣本外</td>
+<td style="text-align: left;"><span class="up">+29.18%</span></td>
+<td style="text-align: left;"><span class="up">+20.24%</span></td>
+<td style="text-align: left;"><span class="up">+8.94%</span></td>
+<td style="text-align: left;"><span class="up">+0.91%</span></td>
+<td style="text-align: right;">0.94</td>
+</tr>
+<tr>
+<td style="text-align: left;">1.200%</td>
+<td style="text-align: left;">全部</td>
+<td style="text-align: left;"><span class="up">+11.26%</span></td>
+<td style="text-align: left;"><span class="up">+8.42%</span></td>
+<td style="text-align: left;"><span class="up">+2.84%</span></td>
+<td style="text-align: left;"><span class="up">+0.41%</span></td>
+<td style="text-align: right;">0.93</td>
+</tr>
+</tbody>
+</table></div>
+<p>損益兩平來回成本（年化報酬等於基準）：樣本內 1.26%、樣本外 2.19%、全期 1.55%。</p>
+<p>合併情境（跳過開盤漲停的新買進＋來回成本 1.2%）：年化 樣本內 +3.33%、樣本外 +30.05%、全期 +11.14%；年化超額 樣本內 -0.01%、樣本外 +9.81%、全期 +2.72%。</p>
+<h2 id="sec-5">驗證</h2>
+<ul>
+<li>重現原報告：以 data/factors/panel.parquet 重跑 run_portfolio，樣本內／樣本外／全部年化 +9.60%／+36.16%／+17.40%，與 reports/backtest-v1-strategy.md 一致：是；不跳過任何選股時，本報告的重算逐期等於原回測。</li>
+<li>進場日對齊：以股價檔還原價重算每筆選股的 20 日持有報酬，與 panel 不一致 0 筆（共 2840 筆，容差 1e-9），所以檢查的進場日就是回測買進的那天。</li>
+<li>開盤漲停第二來源：用交易所每日行情檔（證交所／櫃買）重算同一規則，可比對 2832／2832 筆，判定一致 2832 筆（100.0%）。</li>
+<li>門檻規則與精確漲停價（參考價 ×（1 + 漲幅限制）依升降單位向下取整）一致 2830／2832 筆；不一致的 2 筆（1708 2022-02-22、5464 2021-07-26）開在當日最高但比漲停價低一檔。改用精確漲停價時，主要情境的年化 樣本內 +9.06%、樣本外 +37.10%、全期 +17.26%。</li>
+<li>20 日均成交金額第二來源（交易所每日行情檔逐檔滾動 20 日）：上市 1393 筆，交易所／FinMind 中位數 1.000，差距 5% 以內 100.0%；上櫃 1447 筆，交易所／FinMind 中位數 0.995，差距 5% 以內 98.3%。櫃買日行情不含零股，所以上櫃略低；以交易所資料重算的容量見上表。</li>
+<li>判定狀態筆數：{'ok': 2832, 'action': 8}。</li>
+</ul>
+<h2 id="sec-6">附註</h2>
+<ul>
+<li>非投資建議。本報告是事後的敏感度檢查，不是預先登記的假設檢定；不能據此調整策略後再宣稱有效。</li>
+<li>容量只看成交金額，未考慮委買委賣深度、盤中衝擊與同時賣出的部位；20 日均成交金額取自 FinMind（含零股）。</li>
+<li>原回測對延續持有的選股以次日開盤價重新起算報酬，訊號日收盤到次日開盤的跳空不計入；本報告沿用。</li>
+<li>開盤漲停但盤中打開時，能否以漲停價成交取決於排隊順序，這裡無法驗證。</li>
+<li>明細：data/backtests/strategy-v1/tradability_entries.csv、tradability_capacity.csv。</li>
+</ul>
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="notes"></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-11 01:31。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var r=document.documentElement,cur=r.getAttribute("data-theme"),dark=cur?cur==="dark":window.matchMedia("(prefers-color-scheme: dark)").matches,next=dark?"light":"dark";r.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>
