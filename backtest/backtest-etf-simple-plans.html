@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>單筆、定期定額、大跌加碼、再平衡與正2＋現金 · 台股研究</title>
+<meta name="build" content="2026-10-17 10:32">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group" data-group="brief"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-brief"><span>每日晨報</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-brief">
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-16.html">10月16日 週五</a></li>
+<li><a href="../brief/brief-2026-10-15.html">10月15日 週四</a></li>
+<li><a href="../brief/brief-2026-10-14.html">10月14日 週三</a></li>
+<li><a href="../brief/brief-2026-10-13.html">10月13日 週二</a></li>
+<li><a href="../brief/brief-2026-10-12.html">10月12日 週一</a></li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="tools"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-tools"><span>市場與個股</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-tools">
+<ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul>
+</div></div>
+<div class="side-group" data-group="calendar"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-calendar"><span>事件</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-calendar">
+<ul><li><a href="../events/index.html">未來事件</a></li></ul>
+</div></div>
+<div class="side-group" data-group="views"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-views"><span>觀點</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-views">
+<ul><li><a href="../podcasts/index.html">股癌觀點</a></li></ul>
+</div></div>
+<div class="side-group" data-group="weekly"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-weekly"><span>每週回顧</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-weekly">
+<ul>
+<li><a href="../weekly/weekly-2026-10-16.html">2026 第 42 週（10/12–10/16）</a></li>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="progress"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-progress"><span>進度報告</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-progress">
+<ul>
+<li><a href="../progress/progress-2026-10-11.html">國慶連假 10/8～10/11</a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="backtest"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-backtest"><span>回測報告</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-backtest">
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html" title="研究性質：探索性 — 事後敏感度檢查，不改 v1 判定；年化報酬等於基準的來回成本樣本內只有 1.26%">策略 v1 可交易性與容量檢查 <span class="cap cap-exploratory">探索性</span></a></li>
+<li class="dim"><a href="../backtest/backtest-v1-strategy.html" title="判定：不成立 — 未通過：樣本內外每期平均超額 +0.61%／+1.33%，但超額 t 只有 1.3／1.4">策略 v1（營收年增率（公布後）、60 日動能） <span class="cap cap-rejected">不成立</span></a></li>
+<li><a href="../backtest/backtest-v1-filter.html" title="預先登記判定：待確認 — H11 濾網：最大回撤樣本內外都改善，夏普值樣本內 0.47 → 0.44 未改善">策略 v1 加大盤趨勢濾網（H11） <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../backtest/backtest-v1-diagnosis.html" title="研究性質：探索性 — 不改 v1 判定；照樣本外估計 t ≥ 3 需 16.7 年資料，前 5 期占樣本外超額 127%">為什麼沒有通過，以及下一步 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../backtest/backtest-simple-rules-h18.html" title="預先登記判定：待確認 — H18c 均線持有：最大回撤樣本內外都較淺（-15.6% vs -34.0%、-21.3% vs -27.5%），樣本外夏普 1.72 低於 1.80；H18a、H18b 樣本外 9、3 筆少於 10，只描述">H18 預先登記判定 <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../backtest/backtest-market-drop.html" title="研究性質：探索性 — 描述性：2015 年起 0050 跌 3% 後持有 20 日超額 +3.74%（t 4.25），2003 年起只有 +0.69%（t 0.60）；當成獨立策略輸給買進持有">大盤單日跌 3% 買進 0050／00631L 回測 <span class="cap cap-exploratory">探索性</span></a></li>
+<li class="current"><a href="../backtest/backtest-etf-simple-plans.html" aria-current="page" title="研究性質：探索性 — 描述性：2003-06 起單筆持有 0050 年化 +14.73%、定期定額 IRR +16.72%；大跌加碼與定期定額的 IRR 差距在 0.25 個百分點以內；00631L 50%＋現金 50% 2015 起年化 +19.31%（0050 單筆 +20.85%）">單筆、定期定額、大跌加碼、再平衡與正2＋現金 <span class="cap cap-exploratory">探索性</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="factor"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-factor"><span>因子研究</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-factor">
+<ul>
+<li><a href="../factor/factor-study-v1.html" title="預先登記判定：部分成立 — H2 動能、H4 營收年增率、H6 持股持有 20 日成立（營收年增率樣本外 t 6.5）；H16a 借券賣出餘額持有 20 日成立（樣本外 t −4.1）；H3、H12、H13、H16b 不成立">單因子分組表 <span class="cap cap-partial">部分成立</span></a></li>
+<li><a href="../factor/factor-sbl-robustness.html" title="研究性質：探索性 — 描述性：H16a 20 日樣本外 −0.92% 扣掉五個控制後 −0.98%（t −4.4）；v1 排除借券最高五分之一後樣本外超額 +1.33% → +1.29%，不改判定">價差來源、獨立性與只做多的用途（探索性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../factor/factor-robustness.html" title="研究性質：探索性 — 描述性：營收、兩個動能與外資持股變化四個因子在 20 組子群中有 20 組樣本外價差為正（t ≥ 2 有 19 組），不改變判定">市場、流動性、年度與因子重疊（描述性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../factor/factor-revenue-accel-robustness.html" title="研究性質：探索性 — 描述性：營收加速 20 日樣本外 +0.42% 扣掉營收年增率後 −0.38%（t −2.1）；加進 v1 後樣本外每期超額 +1.33% → +1.11%，不改 H4 判定">價差來源、與營收年增率的獨立性、定義敏感度（探索性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../factor/factor-industry-momentum.html" title="預先登記判定：待確認 — H15 持有 20 日待確認（樣本外 +0.89%，t 2.4）；5、10 日不成立，不作為選股因子">產業動能（H15） <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../factor/factor-correlation.html" title="研究性質：探索性 — 只描述因子重疊與殘差價差，不重新判定；v1 兩因子樣本外等級相關 0.20">等級相關與殘差化價差（探索性） <span class="cap cap-exploratory">探索性</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="event"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-event"><span>事件研究</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-event">
+<ul>
+<li><a href="../event/event-study-revenue.html" title="研究性質：探索性 — 未預先登記；年增率 ≥ 50% 組 [0, +10] 樣本外平均超額 +1.86%，&lt; −20% 組 −0.95%">月營收公布後的超額報酬 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../event/event-study-revenue-decay.html" title="研究性質：探索性 — 描述性：晚 1 天進場少 0.46%／0.78%（樣本內／外），不改變 H4 判定">月營收訊號的衰減（描述性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../event/event-study-reduction.html" title="預先登記判定：待確認 — H7a 彌補虧損待確認（樣本外 −5.51%，t −2.00）；H7b 退還現金不成立">減資恢復買賣前後的超額報酬 <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../event/event-study-market-drop-cross-section.html" title="研究性質：探索性 — 描述性：大跌後個股 20 日平均 +6.40%（平常日 +0.96%）；高 β、當天跌最多、成交金額大者反彈較多（β 價差 +6.98%，t 5.02），但 β 效果隨大盤是否反彈而定">大盤單日跌 3% 後的個股橫斷面 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../event/event-study-dividend.html" title="研究性質：探索性 — 未預先登記；除息後 10 日平均累積超額 −0.19%（t −3.2），事件集中使 t 高估">除息日前後的超額報酬 <span class="cap cap-exploratory">探索性</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="quality"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-quality"><span>資料驗收</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-quality">
+<ul>
+<li><a href="../quality/valuation-data-quality.html" title="資料驗收：通過 — 5／5 項門檻達標；FinMind 抽樣 85,195 組一致率最低 99.9988%">估值資料（本益比、殖利率、股價淨值比）品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/universe-1.2-data-quality.html" title="資料驗收：通過 — 硬錯誤 0 檔；證交所 22,364 組比對收盤價與法人一致率 100.00%">Phase 1.2 全市場資料驗收報告 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/tdcc-data-quality.html" title="資料驗收：通過 — 5／5 項門檻達標；已存 2 週，價量檔普通股在集保檔缺 0 檔，與發行股數相差 1% 以內最低 94.4%；分級加總恆等式未判定">集保股權分散資料品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/sbl-data-quality.html" title="資料驗收：通過 — 8／8 項門檻達標；2,867 個交易日缺 0 天，恆等式一致率最低 99.9987%；FinMind 抽樣 30 檔 76,657 列各欄全同">借券賣出資料品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html" title="資料驗收：探索性 — 試點 50 檔，未設驗收門檻；與證交所 310 組比對收盤與法人一致 100.0%">Phase 1.2 試點資料品質報告 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../quality/margin-data-quality.html" title="資料驗收：通過 — 6／6 項門檻達標；相鄰交易日前日餘額一致率 融資 99.47%、融券 99.94%">融資融券資料品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html" title="資料驗收：通過 — 2866 個交易日全量比對，價量與法人一致率 100.000%（含 1400 個以交易所值取代的法人數字）">Phase 1.2c 交易所資料與 FinMind 全歷史比對 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html" title="資料驗收：通過 — 公司行為 22161 件，與前日收盤一致率 99.93%（門檻 99%）">Phase 1.2b 公司行為資料驗收報告 <span class="cap cap-passed">通過</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="archive" data-default="closed"><h2><button class="side-toggle" type="button" aria-expanded="false" aria-controls="side-archive"><span>封存</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-archive" hidden>
+<ul>
+<li class="side-sub">回測報告</li>
+<li class="dim"><a href="../backtest/backtest-v1-foreign-streak.html" title="預先登記判定：不成立 — H1：樣本外平均 +0.15%、勝率 44.6%，不如隨機基準（5 次抽樣平均）的 +0.24%、47.1%">法人連買（外資連續買超） <span class="cap cap-rejected">不成立</span></a></li>
+<li class="side-sub">事件研究</li>
+<li class="dim"><a href="../event/event-study-macro.html" title="預先登記判定：不成立 — H8～H10：FOMC、美國 CPI、結算日的樣本外差 t 1.23／0.39／0.66，都未達 3">FOMC、美國 CPI 與台指期結算日的台股波動 <span class="cap cap-rejected">不成立</span></a></li>
+<li class="dim"><a href="../event/event-study-fill.html" title="預先登記判定：不成立 — H14 當日填息：樣本外差 +0.75%（Welch t 1.34），未達 3">除權息當日填息與之後 20 日的超額報酬（H14） <span class="cap cap-rejected">不成立</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="about"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-about"><span>關於</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-about">
+<ul><li><a href="../about/index.html">說明與定義</a></li></ul>
+</div></div>
+<script>
+(function(){
+  var KEY="side-collapsed", OPEN="side-expanded", me=document.currentScript;
+  var nav=(me&&me.parentNode)||document.querySelector(".side-body");
+  if(!nav)return;
+  function stored(k){
+    try{var v=JSON.parse(localStorage.getItem(k)||"[]");return Array.isArray(v)?v:[];}
+    catch(e){return [];}
+  }
+  function remember(k,key,on){
+    var list=stored(k).filter(function(x){return x!==key;});if(on)list.push(key);
+    try{localStorage.setItem(k,JSON.stringify(list));}catch(err){}
+  }
+  function show(group,open){
+    var btn=group.querySelector(".side-toggle"), box=group.querySelector(".side-items");
+    if(!btn||!box)return;
+    btn.setAttribute("aria-expanded",String(open));box.hidden=!open;
+  }
+  function closedByDefault(g){return g.getAttribute("data-default")==="closed";}
+  var folded=stored(KEY), opened=stored(OPEN);
+  Array.prototype.forEach.call(nav.querySelectorAll(".side-group[data-group]"),function(g){
+    var key=g.getAttribute("data-group");
+    if(g.querySelector('[aria-current="page"]'))show(g,true);
+    else if(folded.indexOf(key)>=0)show(g,false);
+    else if(closedByDefault(g)&&opened.indexOf(key)>=0)show(g,true);
+  });
+  nav.addEventListener("click",function(e){
+    var btn=e.target.closest?e.target.closest(".side-toggle"):null;if(!btn)return;
+    var g=btn.closest(".side-group"), key=g.getAttribute("data-group");
+    var open=btn.getAttribute("aria-expanded")!=="true";
+    show(g,open);
+    remember(KEY,key,!open);
+    if(closedByDefault(g))remember(OPEN,key,open);
+  });
+})();
+</script>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">單筆、定期定額、大跌加碼、再平衡與正2＋現金</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">執行摘要</a><a href="#sec-2">一、方案與規則</a><a href="#sec-3">二、2003-0…</a><a href="#sec-4">三、2015-0…</a><a href="#sec-5">四、定期定額與大…</a><a href="#sec-6">五、正2＋現金：…</a><a href="#sec-7">六、不同起點的 …</a><a href="#sec-8">七、資料與交叉驗…</a><a href="#sec-9">八、限制</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="深色模式" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">執行摘要</a><a href="#sec-2">一、方案與規則</a><a href="#sec-3">二、2003-0…</a><a href="#sec-4">三、2015-0…</a><a href="#sec-5">四、定期定額與大…</a><a href="#sec-6">五、正2＋現金：…</a><a href="#sec-7">六、不同起點的 …</a><a href="#sec-8">七、資料與交叉驗…</a><a href="#sec-9">八、限制</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">回測報告</p>
+<h1 class="headline">0050 簡單方案比較：單筆、定期定額、大跌加碼、再平衡與正2＋現金</h1>
+<p class="verdict" role="note"><span class="verdict-basis">研究性質：</span><span class="cap cap-exploratory">探索性</span><span class="vh"> — </span><span class="verdict-reason">描述性：2003-06 起單筆持有 0050 年化 +14.73%、定期定額 IRR +16.72%；大跌加碼與定期定額的 IRR 差距在 0.25 個百分點以內；00631L 50%＋現金 50% 2015 起年化 +19.31%（0050 單筆 +20.85%）</span></p>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<blockquote>
+<p><strong>探索性，未預先登記，不構成判定。</strong> 本報告比較一般人可以自己照表操作的 0050 方案（策略 v2 方向：簡單、手動、只用大盤 ETF），所有方案的規則都在看結果之前寫定，沒有挑選參數；只描述歷史結果，不判定哪個方案成立。</p>
+</blockquote>
+<p>產生時間：2026-10-16 01:21　探索性：未預先登記</p>
+<p>資料窗口：0050 含息還原價 2003-06-30～2026-10-15（另以 2015-01-05 起分開計算）；00631L 2015-01-05 起；加權指數 1999-01-05 起（FinMind＋交易所指數檔）</p>
+<p>非投資建議；本站不是持牌顧問，決策與下單由使用者自行負責。</p>
+<h2 id="sec-1">執行摘要</h2>
+<ol>
+<li><strong>2003-06 起（2003-06-30～2026-10-15）</strong>：單筆買進持有 0050 年化 +14.73%、最大回撤 −55.8%、回本 39 個月；每月定期定額 IRR +16.72%、帳面最多虧 −32.2%（2008-11-20）；兩者的錢投入時間不同，十年滾動起點中單筆 IRR 較高 3／13 次。</li>
+<li><strong>大跌加碼與定期定額的 IRR 差距都在 0.25 個百分點以內</strong>：方案 3（同預算）+16.67%、方案 3'（加碼另備）+16.68%，對方案 2 的 +16.72%；2015 起分別 +25.86%、+26.26% 對 +26.01%。</li>
+<li><strong>留現金降低回撤也降低報酬</strong>：80／20 年化 +12.23%、最大回撤 −46.1%；60／40 +9.51%、-35.7%（2003-06 起，現金不計息）。</li>
+<li><strong>正2 50%＋現金 50%</strong>：2015 起實際年化 +19.31%、最大回撤 −31.1%，對 0050 單筆 +20.85%、-34.0%；00631L 實際每年比 2 倍模擬少 3.14%，持有超過一天就不是 0050 報酬的 2 倍。</li>
+<li>手動操作：單筆全期 1 次、再平衡每年約 1 次（正2 方案約 4 次）、定期定額每年約 12 次；手續費與稅讓 IRR 少 0.04 個百分點以內。以上為描述性比較，非投資建議。</li>
+</ol>
+<h2 id="sec-2">一、方案與規則</h2>
+<p>共同設定：價格用 0050 含息還原價（除息再投入、2025-06-18 一拆四已還原），報酬即總報酬；所有買賣都以當天收盤價成交（盤中或收盤集合競價下單）；現金不計利息；樣本最後一天把全部持股以收盤價賣出換回現金（這筆賣出只是結算，不算手動操作）。成本：買進手續費 0.1425%×6 折＝0.0855%；賣出手續費同＋ETF 證券交易稅 0.1%；未計券商最低手續費（常見 20 元，定期定額多有 1 元優惠）與滑價。</p>
+<ol>
+<li><strong>單筆買進持有</strong>：第一天收盤投入 100 萬元買 0050，之後不動。</li>
+<li><strong>每月定期定額</strong>：每個月 0050 的第一個交易日收盤投入 1 萬元（樣本第一天算當月第一個交易日）。</li>
+<li><strong>定期定額＋大跌加碼（同預算）</strong>：存款與方案 2 完全相同（每月第一個交易日存 1 萬元），帳上另外保留一個月的金額當<strong>預備金</strong>。規則：(a) 每月存入的錢先把預備金補滿，剩下的當天買 0050（所以第一個月只存不買，預備金用掉後的下一個月也只補預備金、不買）；(b) 加權指數收盤比前一交易日跌 3.0% 以上的交易日 D，若預備金是滿的，就在 D 之後 0050 的第一個交易日收盤把預備金全部買進（這個月的投入加倍）；預備金不滿就不加碼，等下次補滿。效果等於把下個月的錢提前在大跌後投入。
+3'. <strong>定期定額＋大跌加碼（加碼另備）</strong>：定期部分同方案 2；大跌後的下一個交易日另外拿 1 萬元新錢買進，每個日曆月最多加碼一次。總投入比方案 2 多，所以只比較資金加權年化（IRR）與倍數，不比較期末金額。2026-10-15 的訊號在樣本最後一天，還沒有可以加碼的下一個收盤。</li>
+<li><strong>0050／現金 80／20、60／40</strong>：第一天投入 100 萬元，0050 占 80%（或 60%）、其餘現金；每年 0050 的第一個交易日收盤把比重調回 80／20（或 60／40）。</li>
+<li><strong>00631L 50%＋現金 50%</strong>：第一天投入 100 萬元，00631L（元大台灣50正2）與現金各半，每季（1、4、7、10 月）第一個交易日調回各半；對照組是方案 1（0050 100%）。2015 年起用 00631L 實際行情；2003-06～2014 年 00631L 還沒掛牌，用 0050 每日報酬×2 模擬，並扣掉 2015 年起實際基金落後模擬的幅度（見第五節）。</li>
+</ol>
+<p><strong>指標</strong>：</p>
+<ul>
+<li><strong>資金加權年化（IRR）</strong>：把每一筆存款（負）與期末價值（正）依實際日期折現為 0 的年報酬率（日曆日、365.25 天一年）；單筆方案只有一進一出，IRR 等於年化報酬。定期定額的錢是陸續投入的，IRR 才是投資人實際賺到的年化報酬。</li>
+<li><strong>時間加權年化</strong>：扣除存款影響的單位淨值年化報酬（像基金淨值），衡量方案本身的報酬；定期定額全數買 0050，所以和 0050 本身幾乎相同。</li>
+<li><strong>最大回撤、回本時間、最長水下期、最差 12 個月</strong>：都用單位淨值計算。回本時間＝最大回撤前的高點到再回到該高點；最長水下期＝任何一段低於前高的最長期間；最差 12 個月＝任何連續 12 個日曆月的最差報酬。</li>
+<li><strong>最大帳面虧損</strong>：帳戶價值相對「到當天為止累計投入」的最低點，是定期定額投資人實際看到的虧損。</li>
+<li><strong>手動操作</strong>：下單筆數（一次再平衡算一筆，期末結算不算）與每年平均。</li>
+<li><strong>成本拖累</strong>：同一方案不計任何手續費與稅時的 IRR 減去實際 IRR。</li>
+</ul>
+<h2 id="sec-3">二、2003-06-30～2026-10-15 結果</h2>
+<p>報酬與操作（單筆類方案投入 100 萬，定期定額每月 1 萬；方案 5 為模擬（扣除實際落差））：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">方案</th>
+<th style="text-align: left;">總投入</th>
+<th style="text-align: left;">期末價值</th>
+<th style="text-align: left;">倍數</th>
+<th style="text-align: left;">資金加權年化（IRR）</th>
+<th style="text-align: left;">時間加權年化</th>
+<th style="text-align: left;">手動操作</th>
+<th style="text-align: left;">交易成本合計</th>
+<th style="text-align: left;">成本拖累（IRR）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 單筆買進持有 0050</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">2,454 萬</td>
+<td style="text-align: left;">24.54</td>
+<td style="text-align: left;"><span class="up">+14.73%</span></td>
+<td style="text-align: left;"><span class="up">+14.73%</span></td>
+<td style="text-align: left;">全期 1 次</td>
+<td style="text-align: left;">4.6 萬</td>
+<td style="text-align: left;">0.01 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 每月定期定額</td>
+<td style="text-align: left;">281 萬</td>
+<td style="text-align: left;">2,818 萬</td>
+<td style="text-align: left;">10.03</td>
+<td style="text-align: left;"><span class="up">+16.72%</span></td>
+<td style="text-align: left;"><span class="up">+14.70%</span></td>
+<td style="text-align: left;">全期 281 次（每年 12.1）</td>
+<td style="text-align: left;">5.5 萬</td>
+<td style="text-align: left;">0.02 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 定期定額＋大跌加碼（同預算）</td>
+<td style="text-align: left;">281 萬</td>
+<td style="text-align: left;">2,799 萬</td>
+<td style="text-align: left;">9.96</td>
+<td style="text-align: left;"><span class="up">+16.67%</span></td>
+<td style="text-align: left;"><span class="up">+14.18%</span></td>
+<td style="text-align: left;">全期 280 次（每年 12.0）</td>
+<td style="text-align: left;">5.4 萬</td>
+<td style="text-align: left;">0.02 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">3' 定期定額＋大跌加碼（加碼另備）</td>
+<td style="text-align: left;">336 萬</td>
+<td style="text-align: left;">3,451 萬</td>
+<td style="text-align: left;">10.27</td>
+<td style="text-align: left;"><span class="up">+16.68%</span></td>
+<td style="text-align: left;"><span class="up">+14.70%</span></td>
+<td style="text-align: left;">全期 336 次（每年 14.4）</td>
+<td style="text-align: left;">6.7 萬</td>
+<td style="text-align: left;">0.02 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">4a 0050／現金 80／20 每年再平衡</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">1,471 萬</td>
+<td style="text-align: left;">14.71</td>
+<td style="text-align: left;"><span class="up">+12.23%</span></td>
+<td style="text-align: left;"><span class="up">+12.23%</span></td>
+<td style="text-align: left;">全期 24 次（每年 1.0）</td>
+<td style="text-align: left;">2.9 萬</td>
+<td style="text-align: left;">0.02 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">4b 0050／現金 60／40 每年再平衡</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">830 萬</td>
+<td style="text-align: left;">8.30</td>
+<td style="text-align: left;"><span class="up">+9.51%</span></td>
+<td style="text-align: left;"><span class="up">+9.51%</span></td>
+<td style="text-align: left;">全期 24 次（每年 1.0）</td>
+<td style="text-align: left;">1.6 萬</td>
+<td style="text-align: left;">0.02 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">5 00631L 50%＋現金 50% 每季再平衡（模擬）</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">1,702 萬</td>
+<td style="text-align: left;">17.02</td>
+<td style="text-align: left;"><span class="up">+12.94%</span></td>
+<td style="text-align: left;"><span class="up">+12.94%</span></td>
+<td style="text-align: left;">全期 95 次（每年 4.1）</td>
+<td style="text-align: left;">3.9 萬</td>
+<td style="text-align: left;">0.03 個百分點</td>
+</tr>
+</tbody>
+</table></div>
+<p>風險（單位淨值；最大帳面虧損用帳戶價值對累計投入）：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">方案</th>
+<th style="text-align: left;">最大回撤</th>
+<th style="text-align: left;">回撤期間</th>
+<th style="text-align: left;">回到前高</th>
+<th style="text-align: left;">回本時間</th>
+<th style="text-align: left;">最長水下期</th>
+<th style="text-align: left;">最差 12 個月</th>
+<th style="text-align: left;">最大帳面虧損</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 單筆買進持有 0050</td>
+<td style="text-align: left;"><span class="down">−55.8%</span></td>
+<td style="text-align: left;">2007-10-29→2008-11-20</td>
+<td style="text-align: left;">2011-01-28</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">−53.9%（至 2008-10-27）</td>
+<td style="text-align: left;">−2.3%（2008-11-20）</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 每月定期定額</td>
+<td style="text-align: left;"><span class="down">−55.8%</span></td>
+<td style="text-align: left;">2007-10-29→2008-11-20</td>
+<td style="text-align: left;">2011-01-28</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">−53.9%（至 2008-10-27）</td>
+<td style="text-align: left;">−32.2%（2008-11-20）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 定期定額＋大跌加碼（同預算）</td>
+<td style="text-align: left;"><span class="down">−55.6%</span></td>
+<td style="text-align: left;">2007-10-29→2008-11-20</td>
+<td style="text-align: left;">2011-01-28</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">−53.8%（至 2008-10-27）</td>
+<td style="text-align: left;">−32.6%（2008-11-20）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3' 定期定額＋大跌加碼（加碼另備）</td>
+<td style="text-align: left;"><span class="down">−55.8%</span></td>
+<td style="text-align: left;">2007-10-29→2008-11-20</td>
+<td style="text-align: left;">2011-01-28</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">39 個月</td>
+<td style="text-align: left;">−53.9%（至 2008-10-27）</td>
+<td style="text-align: left;">−32.9%（2008-11-20）</td>
+</tr>
+<tr>
+<td style="text-align: left;">4a 0050／現金 80／20 每年再平衡</td>
+<td style="text-align: left;"><span class="down">−46.1%</span></td>
+<td style="text-align: left;">2007-10-29→2008-11-20</td>
+<td style="text-align: left;">2010-12-17</td>
+<td style="text-align: left;">38 個月</td>
+<td style="text-align: left;">38 個月</td>
+<td style="text-align: left;">−44.4%（至 2008-10-27）</td>
+<td style="text-align: left;">−0.1%（2003-06-30）</td>
+</tr>
+<tr>
+<td style="text-align: left;">4b 0050／現金 60／40 每年再平衡</td>
+<td style="text-align: left;"><span class="down">−35.7%</span></td>
+<td style="text-align: left;">2007-10-29→2008-11-20</td>
+<td style="text-align: left;">2010-11-05</td>
+<td style="text-align: left;">36 個月</td>
+<td style="text-align: left;">36 個月</td>
+<td style="text-align: left;">−34.3%（至 2008-10-27）</td>
+<td style="text-align: left;">−0.1%（2003-06-30）</td>
+</tr>
+<tr>
+<td style="text-align: left;">5 00631L 50%＋現金 50% 每季再平衡（模擬）</td>
+<td style="text-align: left;"><span class="down">−55.8%</span></td>
+<td style="text-align: left;">2007-10-29→2009-01-21</td>
+<td style="text-align: left;">2014-06-19</td>
+<td style="text-align: left;">80 個月</td>
+<td style="text-align: left;">80 個月</td>
+<td style="text-align: left;">−52.8%（至 2008-10-27）</td>
+<td style="text-align: left;">−12.6%（2009-01-21）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">三、2015-01-05～2026-10-15 結果</h2>
+<p>報酬與操作（單筆類方案投入 100 萬，定期定額每月 1 萬；方案 5 用 00631L 實際行情）：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">方案</th>
+<th style="text-align: left;">總投入</th>
+<th style="text-align: left;">期末價值</th>
+<th style="text-align: left;">倍數</th>
+<th style="text-align: left;">資金加權年化（IRR）</th>
+<th style="text-align: left;">時間加權年化</th>
+<th style="text-align: left;">手動操作</th>
+<th style="text-align: left;">交易成本合計</th>
+<th style="text-align: left;">成本拖累（IRR）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 單筆買進持有 0050</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">930 萬</td>
+<td style="text-align: left;">9.30</td>
+<td style="text-align: left;"><span class="up">+20.85%</span></td>
+<td style="text-align: left;"><span class="up">+20.85%</span></td>
+<td style="text-align: left;">全期 1 次</td>
+<td style="text-align: left;">1.8 萬</td>
+<td style="text-align: left;">0.03 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 每月定期定額</td>
+<td style="text-align: left;">142 萬</td>
+<td style="text-align: left;">747 萬</td>
+<td style="text-align: left;">5.26</td>
+<td style="text-align: left;"><span class="up">+26.01%</span></td>
+<td style="text-align: left;"><span class="up">+20.81%</span></td>
+<td style="text-align: left;">全期 142 次（每年 12.1）</td>
+<td style="text-align: left;">1.5 萬</td>
+<td style="text-align: left;">0.04 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 定期定額＋大跌加碼（同預算）</td>
+<td style="text-align: left;">142 萬</td>
+<td style="text-align: left;">740 萬</td>
+<td style="text-align: left;">5.21</td>
+<td style="text-align: left;"><span class="up">+25.86%</span></td>
+<td style="text-align: left;"><span class="up">+20.45%</span></td>
+<td style="text-align: left;">全期 141 次（每年 12.0）</td>
+<td style="text-align: left;">1.5 萬</td>
+<td style="text-align: left;">0.04 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">3' 定期定額＋大跌加碼（加碼另備）</td>
+<td style="text-align: left;">163 萬</td>
+<td style="text-align: left;">831 萬</td>
+<td style="text-align: left;">5.10</td>
+<td style="text-align: left;"><span class="up">+26.26%</span></td>
+<td style="text-align: left;"><span class="up">+20.81%</span></td>
+<td style="text-align: left;">全期 163 次（每年 13.8）</td>
+<td style="text-align: left;">1.7 萬</td>
+<td style="text-align: left;">0.04 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">4a 0050／現金 80／20 每年再平衡</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">638 萬</td>
+<td style="text-align: left;">6.38</td>
+<td style="text-align: left;"><span class="up">+17.05%</span></td>
+<td style="text-align: left;"><span class="up">+17.05%</span></td>
+<td style="text-align: left;">全期 12 次（每年 1.0）</td>
+<td style="text-align: left;">1.2 萬</td>
+<td style="text-align: left;">0.03 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">4b 0050／現金 60／40 每年再平衡</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">425 萬</td>
+<td style="text-align: left;">4.25</td>
+<td style="text-align: left;"><span class="up">+13.07%</span></td>
+<td style="text-align: left;"><span class="up">+13.07%</span></td>
+<td style="text-align: left;">全期 12 次（每年 1.0）</td>
+<td style="text-align: left;">0.8 萬</td>
+<td style="text-align: left;">0.03 個百分點</td>
+</tr>
+<tr>
+<td style="text-align: left;">5 00631L 50%＋現金 50% 每季再平衡</td>
+<td style="text-align: left;">100 萬</td>
+<td style="text-align: left;">800 萬</td>
+<td style="text-align: left;">8.00</td>
+<td style="text-align: left;"><span class="up">+19.31%</span></td>
+<td style="text-align: left;"><span class="up">+19.31%</span></td>
+<td style="text-align: left;">全期 48 次（每年 4.1）</td>
+<td style="text-align: left;">1.7 萬</td>
+<td style="text-align: left;">0.04 個百分點</td>
+</tr>
+</tbody>
+</table></div>
+<p>風險（單位淨值；最大帳面虧損用帳戶價值對累計投入）：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">方案</th>
+<th style="text-align: left;">最大回撤</th>
+<th style="text-align: left;">回撤期間</th>
+<th style="text-align: left;">回到前高</th>
+<th style="text-align: left;">回本時間</th>
+<th style="text-align: left;">最長水下期</th>
+<th style="text-align: left;">最差 12 個月</th>
+<th style="text-align: left;">最大帳面虧損</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 單筆買進持有 0050</td>
+<td style="text-align: left;"><span class="down">−34.0%</span></td>
+<td style="text-align: left;">2022-01-17→2022-10-25</td>
+<td style="text-align: left;">2024-02-15</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">−26.4%（至 2022-10-25）</td>
+<td style="text-align: left;">−13.7%（2015-08-24）</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 每月定期定額</td>
+<td style="text-align: left;"><span class="down">−34.0%</span></td>
+<td style="text-align: left;">2022-01-17→2022-10-25</td>
+<td style="text-align: left;">2024-02-15</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">−26.4%（至 2022-10-25）</td>
+<td style="text-align: left;">−16.5%（2015-08-24）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3 定期定額＋大跌加碼（同預算）</td>
+<td style="text-align: left;"><span class="down">−33.7%</span></td>
+<td style="text-align: left;">2022-01-17→2022-10-25</td>
+<td style="text-align: left;">2024-02-15</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">−26.2%（至 2022-10-25）</td>
+<td style="text-align: left;">−14.8%（2015-08-24）</td>
+</tr>
+<tr>
+<td style="text-align: left;">3' 定期定額＋大跌加碼（加碼另備）</td>
+<td style="text-align: left;"><span class="down">−34.0%</span></td>
+<td style="text-align: left;">2022-01-17→2022-10-25</td>
+<td style="text-align: left;">2024-02-15</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">25 個月</td>
+<td style="text-align: left;">−26.4%（至 2022-10-25）</td>
+<td style="text-align: left;">−14.7%（2015-08-24）</td>
+</tr>
+<tr>
+<td style="text-align: left;">4a 0050／現金 80／20 每年再平衡</td>
+<td style="text-align: left;"><span class="down">−27.4%</span></td>
+<td style="text-align: left;">2022-01-17→2022-10-25</td>
+<td style="text-align: left;">2024-01-29</td>
+<td style="text-align: left;">24 個月</td>
+<td style="text-align: left;">24 個月</td>
+<td style="text-align: left;">−20.7%（至 2022-10-26）</td>
+<td style="text-align: left;">−11.0%（2016-01-21）</td>
+</tr>
+<tr>
+<td style="text-align: left;">4b 0050／現金 60／40 每年再平衡</td>
+<td style="text-align: left;"><span class="down">−20.7%</span></td>
+<td style="text-align: left;">2022-01-17→2022-10-25</td>
+<td style="text-align: left;">2024-01-25</td>
+<td style="text-align: left;">24 個月</td>
+<td style="text-align: left;">24 個月</td>
+<td style="text-align: left;">−15.2%（至 2022-10-26）</td>
+<td style="text-align: left;">−8.3%（2016-01-21）</td>
+</tr>
+<tr>
+<td style="text-align: left;">5 00631L 50%＋現金 50% 每季再平衡</td>
+<td style="text-align: left;"><span class="down">−31.1%</span></td>
+<td style="text-align: left;">2024-07-11→2025-04-09</td>
+<td style="text-align: left;">2025-09-10</td>
+<td style="text-align: left;">14 個月</td>
+<td style="text-align: left;">18 個月</td>
+<td style="text-align: left;">−21.4%（至 2022-10-26）</td>
+<td style="text-align: left;">−15.9%（2015-08-24）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-5">四、定期定額與大跌加碼的細節</h2>
+<p>「加碼那幾筆」與「定期那幾筆」都取自方案 3'：每一筆買進各自持有到樣本最後一天，分別算 IRR，看大跌後投入的錢是否比每月固定投入的錢賺得多。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">樣本</th>
+<th style="text-align: left;">跌 3% 訊號</th>
+<th style="text-align: left;">同預算加碼次數</th>
+<th style="text-align: left;">加碼另備次數</th>
+<th style="text-align: left;">加碼那幾筆的 IRR</th>
+<th style="text-align: left;">定期那幾筆的 IRR</th>
+<th style="text-align: left;">方案 3 減方案 2（IRR）</th>
+<th style="text-align: left;">方案 3' 減方案 2（IRR）</th>
+<th style="text-align: left;">方案 3 平均現金比重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2003-06 起</td>
+<td style="text-align: left;">106 天（58 個月）</td>
+<td style="text-align: left;">55 次</td>
+<td style="text-align: left;">55 次（多投入 55 萬）</td>
+<td style="text-align: left;"><span class="up">+16.54%</span></td>
+<td style="text-align: left;"><span class="up">+16.72%</span></td>
+<td style="text-align: left;">−0.05 個百分點</td>
+<td style="text-align: left;">−0.03 個百分點</td>
+<td style="text-align: left;">1.5%</td>
+</tr>
+<tr>
+<td style="text-align: left;">2015 起</td>
+<td style="text-align: left;">37 天（23 個月）</td>
+<td style="text-align: left;">21 次</td>
+<td style="text-align: left;">21 次（多投入 21 萬）</td>
+<td style="text-align: left;"><span class="up">+29.45%</span></td>
+<td style="text-align: left;"><span class="up">+26.01%</span></td>
+<td style="text-align: left;">−0.14 個百分點</td>
+<td style="text-align: left;">+0.25 個百分點</td>
+<td style="text-align: left;">3.3%</td>
+</tr>
+</tbody>
+</table></div>
+<p>2003-06 起加碼的錢 IRR +16.54%，低於定期的錢 +16.72%（55 次加碼中 2008 年占 7 次，大跌常接連出現，先加碼的錢之後可能再跌）；2015 起加碼的錢 +29.45%，高於定期的錢 +26.01%。同預算版本的加碼只是把下個月的錢提早投入（最多約一個月），而預備金平均占帳戶 1.5%（2003-06 起）／3.3%（2015 起），沒有大跌時不賺報酬；與方案 2 的 IRR 差 −0.05／−0.14 個百分點。</p>
+<h2 id="sec-6">五、正2＋現金：每日重設槓桿</h2>
+<p>00631L（元大台灣50正2）的目標是每天的漲跌等於臺灣 50 指數（0050 追蹤的同一個指數）當天漲跌的 2 倍，隔天重新計算，所以持有超過一天的報酬<strong>不是</strong>同期 0050 報酬的 2 倍：例如指數第一天 +10%、第二天 −10%，兩天合計 −1%（1.1×0.9），正2 是 1.2×0.8，合計 −4%，不是 −2%。大盤來回震盪時正2 會被侵蝕：以連續複利（對數）計，每日 2 倍的年化報酬約比 0050 的 2 倍少「年化波動率的平方」。2015 年起 0050 每日報酬的年化波動率 19.5%（平方 3.8%），模擬正2 的對數年化報酬實際比 0050 的 2 倍少 3.8%。一路上漲時，複利會讓累積報酬遠超過「0050 累積報酬×2」（下表）。實際基金另有經理費、期貨轉倉與追蹤誤差。</p>
+<p>2015-01-05～2026-10-15 的實際數字（單筆、不計交易成本前的價格倍數）：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">累積倍數</th>
+<th style="text-align: left;">年化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0050（2015 起）</td>
+<td style="text-align: left;">9.33</td>
+<td style="text-align: left;"><span class="up">+20.88%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">「0050 報酬×2」（以為的兩倍）</td>
+<td style="text-align: left;">17.66</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">0050 每日報酬×2、每日重設（模擬，無費用）</td>
+<td style="text-align: left;">55.68</td>
+<td style="text-align: left;"><span class="up">+40.69%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">00631L 實際（含息還原）</td>
+<td style="text-align: left;">38.24</td>
+<td style="text-align: left;"><span class="up">+36.27%</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>00631L 實際比每日 2 倍模擬每年少 3.14%（2015 年起），這個落差在 2003-06～2014 的模擬裡逐日扣掉。全部資金單筆持有正2 時，模擬不扣落差，2003-06 起年化 +26.26%、最大回撤 −83.1%；扣落差後年化 +22.25%、最大回撤 −83.7%。</p>
+<p><strong>50%＋現金 50% 的意思</strong>：一半的錢買正2，曝險約等於全部買 0050（0.5×2＝1），另一半現金可以不動。但兩次再平衡之間曝險會漂移：正2 漲，比重變大、曝險超過 1；跌則低於 1。每季調回各半時，等於漲多賣、跌多買。實際曝險（正2 比重×2）：2015 起 介於 0.65～1.33（中位數 1.02）；2003-06 起（模擬）介於 0.62～1.36（中位數 1.01）。</p>
+<p>結果對照（方案 5 對方案 1）：2015 起年化 +19.31% 對 +20.85%，最大回撤 −31.1% 對 −34.0%，最差 12 個月 −21.4% 對 −26.4%；2003-06 起（模擬）年化 +12.94% 對 +14.73%，最大回撤 −55.8% 對 −55.8%，回本時間 80 個月 對 39 個月。</p>
+<h2 id="sec-7">六、不同起點的 10 年比較</h2>
+<p>每個起點年份第一個交易日開始、做滿 10 個日曆年，列各方案的資金加權年化（IRR）；方案 5 在 2014 年以前只有模擬，不列入本表。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">期間</th>
+<th style="text-align: left;">單筆買進持有 0050</th>
+<th style="text-align: left;">每月定期定額</th>
+<th style="text-align: left;">定期定額＋大跌加碼（同預算）</th>
+<th style="text-align: left;">0050／現金 80／20 每年再平衡</th>
+<th style="text-align: left;">0050／現金 60／40 每年再平衡</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2004-01～2013-12</td>
+<td style="text-align: left;"><span class="up">+5.9%</span></td>
+<td style="text-align: left;"><span class="up">+6.3%</span></td>
+<td style="text-align: left;"><span class="up">+6.3%</span></td>
+<td style="text-align: left;"><span class="up">+5.3%</span></td>
+<td style="text-align: left;"><span class="up">+4.3%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2005-01～2014-12</td>
+<td style="text-align: left;"><span class="up">+7.3%</span></td>
+<td style="text-align: left;"><span class="up">+8.0%</span></td>
+<td style="text-align: left;"><span class="up">+7.9%</span></td>
+<td style="text-align: left;"><span class="up">+6.4%</span></td>
+<td style="text-align: left;"><span class="up">+5.2%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2006-01～2015-12</td>
+<td style="text-align: left;"><span class="up">+5.7%</span></td>
+<td style="text-align: left;"><span class="up">+5.4%</span></td>
+<td style="text-align: left;"><span class="up">+5.4%</span></td>
+<td style="text-align: left;"><span class="up">+5.1%</span></td>
+<td style="text-align: left;"><span class="up">+4.2%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2007-01～2016-12</td>
+<td style="text-align: left;"><span class="up">+5.3%</span></td>
+<td style="text-align: left;"><span class="up">+7.8%</span></td>
+<td style="text-align: left;"><span class="up">+7.8%</span></td>
+<td style="text-align: left;"><span class="up">+4.8%</span></td>
+<td style="text-align: left;"><span class="up">+4.0%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2008-01～2017-12</td>
+<td style="text-align: left;"><span class="up">+6.4%</span></td>
+<td style="text-align: left;"><span class="up">+10.1%</span></td>
+<td style="text-align: left;"><span class="up">+10.0%</span></td>
+<td style="text-align: left;"><span class="up">+5.7%</span></td>
+<td style="text-align: left;"><span class="up">+4.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2009-01～2018-12</td>
+<td style="text-align: left;"><span class="up">+11.4%</span></td>
+<td style="text-align: left;"><span class="up">+7.7%</span></td>
+<td style="text-align: left;"><span class="up">+7.6%</span></td>
+<td style="text-align: left;"><span class="up">+9.4%</span></td>
+<td style="text-align: left;"><span class="up">+7.2%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2010-01～2019-12</td>
+<td style="text-align: left;"><span class="up">+8.8%</span></td>
+<td style="text-align: left;"><span class="up">+11.2%</span></td>
+<td style="text-align: left;"><span class="up">+11.1%</span></td>
+<td style="text-align: left;"><span class="up">+7.2%</span></td>
+<td style="text-align: left;"><span class="up">+5.5%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2011-01～2020-12</td>
+<td style="text-align: left;"><span class="up">+10.4%</span></td>
+<td style="text-align: left;"><span class="up">+14.8%</span></td>
+<td style="text-align: left;"><span class="up">+14.7%</span></td>
+<td style="text-align: left;"><span class="up">+8.5%</span></td>
+<td style="text-align: left;"><span class="up">+6.6%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2012-01～2021-12</td>
+<td style="text-align: left;"><span class="up">+14.8%</span></td>
+<td style="text-align: left;"><span class="up">+16.7%</span></td>
+<td style="text-align: left;"><span class="up">+16.5%</span></td>
+<td style="text-align: left;"><span class="up">+12.0%</span></td>
+<td style="text-align: left;"><span class="up">+9.1%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2013-01～2022-12</td>
+<td style="text-align: left;"><span class="up">+10.5%</span></td>
+<td style="text-align: left;"><span class="up">+10.1%</span></td>
+<td style="text-align: left;"><span class="up">+9.9%</span></td>
+<td style="text-align: left;"><span class="up">+8.7%</span></td>
+<td style="text-align: left;"><span class="up">+6.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2014-01～2023-12</td>
+<td style="text-align: left;"><span class="up">+12.2%</span></td>
+<td style="text-align: left;"><span class="up">+12.6%</span></td>
+<td style="text-align: left;"><span class="up">+12.4%</span></td>
+<td style="text-align: left;"><span class="up">+10.0%</span></td>
+<td style="text-align: left;"><span class="up">+7.7%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2015-01～2024-12</td>
+<td style="text-align: left;"><span class="up">+14.9%</span></td>
+<td style="text-align: left;"><span class="up">+17.8%</span></td>
+<td style="text-align: left;"><span class="up">+17.6%</span></td>
+<td style="text-align: left;"><span class="up">+12.3%</span></td>
+<td style="text-align: left;"><span class="up">+9.4%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2016-01～2025-12</td>
+<td style="text-align: left;"><span class="up">+19.5%</span></td>
+<td style="text-align: left;"><span class="up">+21.3%</span></td>
+<td style="text-align: left;"><span class="up">+21.0%</span></td>
+<td style="text-align: left;"><span class="up">+15.9%</span></td>
+<td style="text-align: left;"><span class="up">+12.2%</span></td>
+</tr>
+</tbody>
+</table></div>
+<p>13 個起點中，單筆的 IRR 高於定期定額 3 次（多數時候定期定額較高，但兩者不能直接比：單筆在起點就有全部的錢，定期定額的錢是十年間陸續存入）；方案 3（同預算）減方案 2 介於 −0.24～−0.05 個百分點；80／20 減單筆介於 −3.62～−0.53 個百分點。</p>
+<h2 id="sec-8">七、資料與交叉驗證</h2>
+<ul>
+<li>加權指數：FinMind TAIEX（1999-01-05 起，快取）接交易所指數檔；兩者重疊 2,871 天收盤最大差 0.00 點。0050：2003-06-30 起，2015 年以前為 FinMind 快取（2,865 天），之後為本系統資料庫與交易所每日檔；00631L：2015-01-05 起。載入與還原沿用 <code>scripts/backtest_market_drop.py</code> 的函式（該報告另以證交所月報核對過 2015 年以前的指數與 0050 行情）。本次執行不連網。</li>
+<li>獨立重算（寫報告前執行，對不上就不寫）：以原始收盤價（不經還原程式）逐日買進，遇除息／分割日把持有單位乘上「除權息前價÷參考價」，期末以原始收盤價賣出；IRR 改用牛頓法求解（本模組用二分法）。跌 3% 訊號日也由原始指數檔重算，157 天完全相同。</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">樣本</th>
+<th style="text-align: left;">除息／分割事件</th>
+<th style="text-align: left;">單筆倍數（本模組）</th>
+<th style="text-align: left;">單筆倍數（原始檔重算）</th>
+<th style="text-align: left;">定期定額 IRR（本模組）</th>
+<th style="text-align: left;">定期定額 IRR（原始檔重算）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2003-06 起</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">24.537087</td>
+<td style="text-align: left;">24.537087</td>
+<td style="text-align: left;"><span class="up">+16.7190%</span></td>
+<td style="text-align: left;"><span class="up">+16.7190%</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2015 起</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">9.304475</td>
+<td style="text-align: left;">9.304475</td>
+<td style="text-align: left;"><span class="up">+26.0054%</span></td>
+<td style="text-align: left;"><span class="up">+26.0054%</span></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>與 <code>backtest-market-drop.md</code> 的買進持有一致：2015-01-05 起 0050 買進持有總報酬 +830.4%，本報告方案 1 倍數 9.30。</li>
+</ul>
+<h2 id="sec-9">八、限制</h2>
+<ul>
+<li>只有一條歷史路徑：台股 2003 年以來長期上漲（0050 含息約 25 倍），愈早全部投入愈有利；未來走勢不同，方案的先後次序可能不同（第六節可看起點不同時的差異）。</li>
+<li>現金報酬設為 0：現金放活存或定存（約年 1～1.7%）時，有現金部位的方案（4a、4b、5、3 的預備金）年化約多「現金比重×利率」，例如 80／20 約多 0.2～0.3 個百分點、50／50 約多 0.5～0.9 個百分點（粗估，未計算）。</li>
+<li>收盤價成交、零股與整股不分、未計最低手續費與滑價；定期定額小額扣款若適用最低手續費，成本會高於本報告。</li>
+<li>2014 年以前的正2 是模擬：用 2015 年起實際落差逐日扣除，但當年的費用與追蹤誤差未必相同；正2 曾在單日大跌時大幅虧損（見 <code>backtest-market-drop.md</code>），槓桿 ETF 也有清算或合併的風險。</li>
+<li>稅負（股利所得、二代健保補充保費）未計；含息還原價假設股利全數再投入。</li>
+<li>本報告是描述性比較，沒有預先登記，也沒有檢定；非投資建議。</li>
+</ul>
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<p class="feedback">對這一頁有意見？<a class="feedback-link" href="https://github.com/vincent-tsai-tw/stock-research-site/issues/new?title=%E5%96%AE%E7%AD%86%E3%80%81%E5%AE%9A%E6%9C%9F%E5%AE%9A%E9%A1%8D%E3%80%81%E5%A4%A7%E8%B7%8C%E5%8A%A0%E7%A2%BC%E3%80%81%E5%86%8D%E5%B9%B3%E8%A1%A1%E8%88%87%E6%AD%A32%EF%BC%8B%E7%8F%BE%E9%87%91&amp;body=%0A%0A---%0A%E9%A0%81%E9%9D%A2%EF%BC%9A%E5%96%AE%E7%AD%86%E3%80%81%E5%AE%9A%E6%9C%9F%E5%AE%9A%E9%A1%8D%E3%80%81%E5%A4%A7%E8%B7%8C%E5%8A%A0%E7%A2%BC%E3%80%81%E5%86%8D%E5%B9%B3%E8%A1%A1%E8%88%87%E6%AD%A32%EF%BC%8B%E7%8F%BE%E9%87%91%0A%E7%B6%B2%E5%9D%80%EF%BC%9Ahttps%3A%2F%2Fvincent-tsai-tw.github.io%2Fstock-research-site%2Fbacktest%2Fbacktest-etf-simple-plans.html%0A" target="_blank" rel="noopener" aria-label="留言：在 GitHub 為這一頁開一則公開 issue（另開視窗）">留言</a><span class="feedback-note">（公開於 GitHub，需登入）</span></p><script>(function(){var a=document.querySelector("a.feedback-link");if(!a)return;var NEW="https://github.com/vincent-tsai-tw/stock-research-site/issues/new",SUF=" \u00b7 \u53f0\u80a1\u7814\u7a76",RULE="---",PAGE="\u9801\u9762\uff1a",URL="\u7db2\u5740\uff1a";function fill(){var t=document.title;if(t.slice(-SUF.length)===SUF)t=t.slice(0,-SUF.length);var u=location.href;a.href=NEW+"?title="+encodeURIComponent(t)+"&body="+encodeURIComponent("\n\n"+RULE+"\n"+PAGE+t+"\n"+URL+u+"\n");}["pointerdown","touchstart","focus","click"].forEach(function(n){a.addEventListener(n,fill,{passive:true});});fill();})();</script>
+<div class="notes"></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-17 10:32。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){var was=body.classList.contains("nav-open");body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}else if(was&&opener&&document.activeElement&&document.activeElement.closest(".side"))opener.focus();}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var next=isDark()?"light":"dark";document.documentElement.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}syncTheme();}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  /* the theme button is a toggle for the dark theme; aria-pressed follows the theme in use */
+  var darkQuery=window.matchMedia("(prefers-color-scheme: dark)");
+  function isDark(){var cur=document.documentElement.getAttribute("data-theme");return cur?cur==="dark":darkQuery.matches;}
+  function syncTheme(){var b=document.querySelector('[data-action="theme"]');if(b)b.setAttribute("aria-pressed",String(isDark()));}
+  if(darkQuery.addEventListener)darkQuery.addEventListener("change",syncTheme);else if(darkQuery.addListener)darkQuery.addListener(syncTheme);
+  syncTheme();
+  /* while the phone sheet is open (its close button showing), Tab and Shift+Tab cycle through its visible controls */
+  function trapTab(e){var close=document.querySelector(".side-close");
+    if(!body.classList.contains("nav-open")||!close||!close.getClientRects().length)return;
+    var items=[].filter.call(document.querySelectorAll(".side a[href], .side button"),function(x){return x.getClientRects().length;});
+    if(!items.length)return;
+    var at=document.activeElement,inside=at&&at.closest&&at.closest(".side"),edge=e.shiftKey?items[0]:items[items.length-1];
+    if(!inside||at===edge){e.preventDefault();(e.shiftKey?items[items.length-1]:items[0]).focus();}}
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}else if(e.key==="Tab")trapTab(e);});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+  /* section links only while the page title keeps at least TITLE_MIN px (or its full width);
+     long reports with many sections fold the links into the menu instead of squeezing the title */
+  var TITLE_MIN=240, title=document.querySelector(".localnav-title"), links=document.querySelector(".localnav-links");
+  function fit(){if(!title||!links)return;body.classList.remove("nav-compact");if(!links.offsetWidth)return;
+    if(title.clientWidth<Math.min(title.scrollWidth,TITLE_MIN))body.classList.add("nav-compact");else sectionMenu(false);}
+  var fitT;window.addEventListener("resize",function(){clearTimeout(fitT);fitT=setTimeout(fit,100);});fit();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("role","img");s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        /* rows are stored by column (research/site/packing.py) */
+        if(d.columns)d.rows=d.columns.length?d.columns[0].map(function(x,i){return d.columns.map(function(c){return c[i];});}):[];
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

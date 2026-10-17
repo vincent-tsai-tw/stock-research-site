@@ -1,0 +1,586 @@
+/* Design v3. Layout: developer-docs sidebar (fixed from 1068px, a sheet below), a sticky
+   translucent local nav, one reading column of at most 760px. Typography and colours are the
+   values measured on apple.com/tw and developer.apple.com on 2026-10-08; see
+   docs/design/design-review-2026-10-08.md. Chinese text keeps normal tracking, as Apple's
+   Taiwan site does. Up/down colours follow the Taiwan convention (red up, green down) and
+   passed the colour-vision check in both themes.
+   Contrast (audit 2026-10-11, docs/design/audit-2026-10-11.md): #86868b is 3.6:1 on white, so
+   it stays for strokes and icons (3:1 is enough there) while text that used it takes
+   --text-soft, #6e6e73 in light (5.1:1) and #86868b in dark (5.8:1). Small grey chips (tags,
+   capsules, buttons, the search field) sit on --chip, #f5f5f7 in light and #1d1d1f in dark,
+   where #6e6e73, the link blues and #a1a1a6 all clear 4.5:1 (on #e8e8ed they were 4.2:1). */
+:root{
+  color-scheme:light;
+  --bg:#ffffff;--bg-alt:#f5f5f7;--bg-raised:#ffffff;
+  --text:#1d1d1f;--text-2:#6e6e73;--text-3:#86868b;
+  --sep:#d2d2d7;--fill:#e8e8ed;--hover:#f5f5f7;
+  --link:#0066cc;--focus:#0071e3;
+  --up:#d70015;--down:#1d7a36;--pill-up:#d70015;--pill-down:#1d7a36;--pill-flat:#6e6e73;--seg-on:#ffffff;
+  --text-soft:#6e6e73;--chip:#f5f5f7;
+  --chrome:rgba(255,255,255,.72);--scrim:rgba(0,0,0,.32);--sheet-shadow:0 0 40px rgba(0,0,0,.18);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro TC","SF Pro Text","PingFang TC","Helvetica Neue","Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;
+  --side:260px;--nav-h:52px;--gutter:20px;--col:760px;
+  --ease:cubic-bezier(.32,.72,0,1);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#000000;--bg-alt:#161617;--bg-raised:#1d1d1f;
+    --text:#f5f5f7;--text-2:#a1a1a6;--text-3:#86868b;
+    --sep:#424245;--fill:#333336;--hover:#1d1d1f;
+    --link:#2997ff;--focus:#2997ff;
+    --up:#ff453a;--down:#1f9a44;--seg-on:#636366;
+    --text-soft:#86868b;--chip:#1d1d1f;
+    --chrome:rgba(22,22,23,.72);--scrim:rgba(0,0,0,.56);--sheet-shadow:0 0 40px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#000000;--bg-alt:#161617;--bg-raised:#1d1d1f;
+  --text:#f5f5f7;--text-2:#a1a1a6;--text-3:#86868b;
+  --sep:#424245;--fill:#333336;--hover:#1d1d1f;
+  --link:#2997ff;--focus:#2997ff;
+  --up:#ff453a;--down:#1f9a44;--seg-on:#636366;
+  --text-soft:#86868b;--chip:#1d1d1f;
+  --chrome:rgba(22,22,23,.72);--scrim:rgba(0,0,0,.56);--sheet-shadow:0 0 40px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.47059 var(--font);letter-spacing:normal;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+p{margin:0}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:8px;z-index:100;padding:8px 14px;border-radius:8px;background:var(--bg-raised);color:var(--text)}
+.skip:focus{left:8px}
+.nowrap{white-space:nowrap}
+
+/* icon buttons: feedback on press */
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;border-radius:8px;color:var(--text);
+  transition:background-color .15s,transform .1s ease-out}
+.icon-btn:hover{background:var(--hover)}
+.icon-btn:active{transform:scale(.92)}
+.icon-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.icon-btn svg .fill{fill:currentColor;stroke:none}
+
+/* local nav: translucent, a hairline appears only once content scrolls under it */
+.localnav{position:sticky;top:0;z-index:30;padding-top:env(safe-area-inset-top,0px);
+  background:var(--chrome);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}
+.localnav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--sep);opacity:0;transition:opacity .2s}
+body.scrolled .localnav::after{opacity:1}
+.localnav-bar{display:flex;align-items:center;gap:6px;height:var(--nav-h);padding:0 calc(var(--gutter) - 8px)}
+.localnav-title{flex:1;min-width:0;padding-left:4px;font-size:17px;line-height:1.2;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.localnav-title:hover{text-decoration:none}
+.localnav-links{display:none;align-items:center;gap:24px;margin-right:12px}
+.localnav-links a{font-size:12px;line-height:16px;color:var(--text);opacity:.88}
+.localnav-links a:hover{opacity:1;color:var(--link);text-decoration:none}
+.localnav-menu{padding:4px var(--gutter) 12px;background:var(--bg);border-bottom:1px solid var(--sep)}
+.localnav-menu a{display:block;padding:12px 0;font-size:17px;line-height:1.3;color:var(--text);border-top:1px solid var(--sep)}
+.localnav-menu a:first-child{border-top:0}
+
+/* sidebar (developer-docs pattern): 14px grey items, the current page in semibold */
+.side{position:fixed;top:0;bottom:0;left:0;z-index:50;display:flex;flex-direction:column;width:min(300px,86vw);
+  background:var(--bg);border-right:1px solid var(--sep);overflow-y:auto;overscroll-behavior:contain;
+  padding-top:env(safe-area-inset-top,0px);transform:translateX(-100%);
+  /* closed, the sheet is also invisible, so Tab never walks through links that are off screen;
+     visibility flips only after the slide-out has finished */
+  visibility:hidden;transition:transform .38s var(--ease),box-shadow .38s,visibility 0s .38s}
+.side-head{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);padding:0 12px 0 24px;flex:none}
+.brand{font-size:17px;line-height:1.2;font-weight:600;color:var(--text)}
+.brand:hover{text-decoration:none}
+.side-body{padding:4px 24px 40px}
+.side-group+.side-group{margin-top:22px}
+.side-group h2{margin:0 0 6px;font-size:14px;line-height:18px;font-weight:600;color:var(--text)}
+.side ul{list-style:none;margin:0;padding:0}
+.side li a{display:block;padding:5px 0;font-size:14px;line-height:18px;color:var(--text-2)}
+.side li a:hover{color:var(--text);text-decoration:none}
+.side li.current a{color:var(--text);font-weight:600}
+.side .side-month,.side .side-sub{margin:10px 0 2px;font-size:12px;line-height:16px;color:var(--text-soft)}
+.side .side-month:first-child,.side .side-sub:first-child{margin-top:0}
+.side .soon{font-size:14px;line-height:18px;color:var(--text-soft)}
+.scrim{position:fixed;inset:0;z-index:40;background:var(--scrim);opacity:0;pointer-events:none;transition:opacity .3s}
+body.nav-open .side{transform:none;box-shadow:var(--sheet-shadow);visibility:visible;transition:transform .38s var(--ease),box-shadow .38s}
+body.nav-open .scrim{opacity:1;pointer-events:auto}
+
+/* reading column */
+.main{padding:0 var(--gutter)}
+.report{max-width:var(--col);margin:0 auto}
+.hero{padding:40px 0 4px}
+.eyebrow{margin-bottom:10px;font-size:14px;line-height:20px;font-weight:600;color:var(--text-2)}
+.headline{margin:0;font-size:28px;line-height:1.14286;font-weight:600;letter-spacing:normal;text-wrap:balance}
+/* Like apple.com/tw, a clause never breaks mid-phrase when it fits on one line */
+.headline .clause{display:inline-block}
+.headline,.subhead,.report h2,.stat-label,.ev-title{word-break:keep-all;overflow-wrap:anywhere}
+.subhead{margin-top:14px;font-size:19px;line-height:1.36842;font-weight:600;letter-spacing:.012em;color:var(--text-2);text-wrap:pretty}
+.subhead .lead{color:var(--text)}
+.report .lead-in{color:var(--text)}  /* bold lead sentence before the grey note */
+
+/* stats: big numbers with a grey caption, separated by a hairline, no boxes */
+.stats{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}
+.stat{min-width:0;padding-top:14px;border-top:1px solid var(--sep);color:var(--text)}
+.stat-value{font-size:34px;line-height:1.06;font-weight:600;white-space:nowrap}
+.stat-value .unit{margin-left:4px;font-size:17px;font-weight:600;color:var(--text-2)}
+.stat.up .stat-value{color:var(--up)}
+.stat.down .stat-value{color:var(--down)}
+.stat-label{margin-top:8px;font-size:14px;line-height:20px;font-weight:600}
+.stat-note{margin-top:2px;font-size:12px;line-height:16px;color:var(--text-2)}
+
+/* sections */
+.report h2{margin:56px 0 0;font-size:24px;line-height:1.16667;font-weight:600;text-wrap:balance}
+.report h2+p{margin-top:8px;color:var(--text-2)}
+.report h3{margin:28px 0 8px;font-size:17px;line-height:1.47059;font-weight:600}
+.report p+p{margin-top:12px}
+.report ul:not([class]){margin:12px 0 0;padding-left:1.2em}
+.report ul:not([class]) li+li{margin-top:6px}
+.report strong{font-weight:600}
+.report code{font-size:15px;padding:1px 6px;border-radius:6px;background:var(--bg-alt)}
+
+/* tables: spec-sheet style, hairlines only */
+.table-wrap{overflow-x:auto;margin:20px 0 0;-webkit-overflow-scrolling:touch}
+.report table{width:100%;border-collapse:collapse;font-size:14px;line-height:20px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.report th{padding:0 12px 8px;font-size:12px;line-height:16px;font-weight:400;color:var(--text-2);text-align:right;border-bottom:1px solid var(--sep)}
+.report td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--sep)}
+.report th:first-child,.report td:first-child{text-align:left;padding-left:0;position:sticky;left:0;background:var(--bg)}
+.report th:last-child,.report td:last-child{padding-right:0}
+span.up{color:var(--up)}span.down{color:var(--down)}
+
+/* disclosure for the data behind a chart */
+details.data{margin-top:16px}
+details.more>summary{display:block;padding:12px 0;font-size:14px;line-height:20px;color:var(--link);cursor:pointer;list-style:none;border-bottom:1px solid var(--sep)}
+details.more>summary::-webkit-details-marker{display:none}
+details.more[open]>summary{display:none}
+details.data summary{display:inline-flex;align-items:center;gap:6px;font-size:14px;line-height:20px;color:var(--link);cursor:pointer;list-style:none}
+details.data summary::-webkit-details-marker{display:none}
+details.data summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+details.data[open] summary::after{transform:rotate(-135deg) translate(-2px,0)}
+details.data .data-body p{margin-top:16px;font-size:14px;color:var(--text-2)}
+
+/* segmented control (Apple style), CSS-only via radio inputs */
+.flows{margin-top:24px}
+.seg-input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.segmented{display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;padding:2px;border-radius:9px;background:var(--fill)}
+.segmented label{min-width:72px;padding:5px 14px;border-radius:7px;font-size:13px;line-height:18px;font-weight:600;text-align:center;color:var(--text);cursor:pointer;transition:background-color .2s}
+#flow-foreign:checked~.segmented label[for="flow-foreign"],
+#flow-trust:checked~.segmented label[for="flow-trust"],
+#flow-dealer:checked~.segmented label[for="flow-dealer"]{background:var(--seg-on);box-shadow:0 3px 8px rgba(0,0,0,.12),0 3px 1px rgba(0,0,0,.04)}
+#flow-foreign:focus-visible~.segmented label[for="flow-foreign"],
+#flow-trust:focus-visible~.segmented label[for="flow-trust"],
+#flow-dealer:focus-visible~.segmented label[for="flow-dealer"]{outline:2px solid var(--focus);outline-offset:1px}
+.flows .charts{display:none}
+#flow-foreign:checked~.charts[data-kind="foreign"],
+#flow-trust:checked~.charts[data-kind="trust"],
+#flow-dealer:checked~.charts[data-kind="dealer"]{display:grid}
+
+/* charts */
+.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px;margin-top:24px}
+.chart{margin:0;min-width:0}
+.chart-wide{margin-top:24px}
+.chart figcaption{margin-bottom:6px;font-size:14px;line-height:20px;font-weight:600}
+.chart-svg{display:block;width:100%;height:auto;overflow:visible}
+.chart-svg .axis{stroke:var(--sep);stroke-width:1}
+.chart-svg .bar.pos{fill:var(--up)}
+.chart-svg .bar.neg{fill:var(--down)}
+.chart-svg .bar.rev{fill:var(--link);opacity:.85}
+.chart-svg text{font-family:var(--font);font-size:12px}
+.chart-svg .val{fill:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.chart-svg .tick{fill:var(--text-2)}
+.chart-svg .name{fill:var(--text);font-size:13px}
+.chart-note{margin-top:14px;font-size:12px;line-height:16px;color:var(--text-2)}
+
+/* stocks-style list */
+.list-head{display:flex;justify-content:space-between;margin-top:24px;padding-bottom:8px;font-size:12px;line-height:16px;color:var(--text-2);border-bottom:1px solid var(--sep)}
+.stocks{list-style:none;margin:0;padding:0}
+.stocks li{display:grid;grid-template-columns:minmax(0,1fr) 64px 84px;align-items:center;gap:0 12px;padding:12px 0;border-bottom:1px solid var(--sep)}
+.stock-main{min-width:0}
+.stock-name{font-size:17px;line-height:22px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stock-code{margin-left:8px;font-size:13px;font-weight:400;color:var(--text-2)}
+.stock-sub{margin-top:2px;font-size:13px;line-height:18px;color:var(--text-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stock-facts{grid-column:1/-1}
+.report .stocks .stock-sub{margin-top:2px}  /* beats .report p+p (12px), as the design spec intends */
+.tag{display:inline-block;margin-left:8px;padding:1px 6px;border-radius:4px;font-size:11px;line-height:16px;font-weight:600;vertical-align:2px;color:var(--text-2);background:var(--chip)}
+.tag-ex{color:var(--text);background:transparent;box-shadow:inset 0 0 0 1px var(--sep)}
+.stock-spark svg{display:block;width:64px;height:28px}
+.spark polyline{fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.spark.pos polyline{stroke:var(--up)}.spark.neg polyline{stroke:var(--down)}.spark.zero polyline{stroke:var(--text-3)}
+.chg{justify-self:end;min-width:76px;padding:4px 8px;border-radius:6px;font-size:15px;line-height:20px;font-weight:600;text-align:right;color:#fff;background:var(--pill-flat);font-variant-numeric:tabular-nums}
+.chg.up{background:var(--pill-up)}.chg.down{background:var(--pill-down)}
+
+/* calendar-style events */
+.events{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--sep)}
+.events li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--sep)}
+.ev-date{display:flex;flex-direction:column;align-items:center;line-height:1}
+.ev-month{font-size:12px;line-height:16px;font-weight:600;color:var(--text-2)}
+.ev-day{font-size:28px;line-height:32px;font-weight:500;font-variant-numeric:tabular-nums}
+.ev-wd{font-size:12px;line-height:16px;color:var(--text-2)}
+.ev-title{font-size:17px;line-height:22px;font-weight:600}
+.ev-note{margin-top:2px;font-size:14px;line-height:20px;color:var(--text-2)}
+
+/* pager */
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:20px;border-top:1px solid var(--sep)}
+.pager a{display:flex;flex-direction:column;font-size:17px;line-height:22px}
+.pager a.next{text-align:right;margin-left:auto}
+.pager .dir{font-size:12px;line-height:16px;color:var(--text-2)}
+.pager a:hover{text-decoration:none}
+.pager a:hover .dir{color:var(--text)}
+
+/* footer: Apple-style grey band with small print */
+.footer{margin-top:72px;padding:24px var(--gutter) calc(32px + env(safe-area-inset-bottom,0px));background:var(--bg-alt)}
+.footer-inner{max-width:var(--col);margin:0 auto;font-size:12px;line-height:16px;color:var(--text-2)}
+.footer .notes ul{margin:0;padding:0 0 0 1.1em}
+.footer .notes li+li{margin-top:6px}
+.footer .notes .table-wrap{margin-top:8px}
+.footer .notes table{font-size:12px}
+.footer .notes td:first-child,.footer .notes th:first-child{background:var(--bg-alt)}
+.footer .legal{margin-top:16px;padding-top:12px;border-top:1px solid var(--sep)}
+/* 留言 (research/site/feedback.py): the footer's first line. The link's tap target is 24px tall
+   and 36px wide while its margin box keeps the 16px line, so the text around it does not move. */
+.footer .feedback{margin:0 0 16px}
+.footer .feedback a{display:inline-block;padding:4px 6px;margin:-4px -6px}
+@media print{.footer .feedback{display:none}}
+
+/* stock page */
+.stock-search{flex:0 1 150px;min-width:0}
+.stock-search input{width:100%;height:32px;padding:0 12px;border:0;border-radius:8px;font:inherit;font-size:14px;color:var(--text);background:var(--chip)}
+.stock-search input::placeholder{color:var(--text-2)}
+.quote{margin-top:10px;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.quote-price{font-size:40px;line-height:1.1;font-weight:600}
+/* on a phone the change always takes its own line: a price that fits beside it on one day and
+   not the next would make the chart jump while the reader scrubs */
+@media (max-width:480px){.quote{flex-direction:column;align-items:flex-start;gap:2px}}
+.quote-chg{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+.quote-chg.up{color:var(--up)}.quote-chg.down{color:var(--down)}
+.quote-meta{margin-top:6px;font-size:14px;line-height:20px;color:var(--text-2);font-variant-numeric:tabular-nums;min-height:20px}
+.segmented button{min-width:0;padding:5px 10px;white-space:nowrap;border-radius:7px;font-size:13px;line-height:18px;font-weight:600;color:var(--text);transition:background-color .2s}
+.segmented button[aria-pressed="true"]{background:var(--seg-on);box-shadow:0 3px 8px rgba(0,0,0,.12),0 3px 1px rgba(0,0,0,.04)}
+.range{margin-top:28px}
+.segmented.range{display:grid;width:100%}
+.flow-readout{margin-top:16px;min-height:20px;font-size:14px;line-height:20px;font-weight:600;font-variant-numeric:tabular-nums}
+/* a readout that wraps on phones keeps two lines, so the chart under the finger never jumps */
+@media (max-width:480px){.flow-readout.two-lines{min-height:40px}}
+.flow-chart{margin:8px 0 0}
+.chart-svg.scrub{touch-action:pan-y;cursor:crosshair}
+.chart-svg .hover-band{fill:var(--fill)}
+@media (min-width:734px){.stock-search{flex-basis:240px}}
+.price-chart{margin:16px 0 0}
+.chart-svg .grid{stroke:var(--sep);stroke-width:1}
+.chart-svg .vol{fill:var(--fill)}
+.chart-svg .area{stroke:none;opacity:.12}
+.chart-svg .area.up{fill:var(--up)}.chart-svg .area.down{fill:var(--down)}.chart-svg .area.flat{fill:var(--text-3)}
+.chart-svg .line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart-svg .line.up{stroke:var(--up)}.chart-svg .line.down{stroke:var(--down)}.chart-svg .line.flat{stroke:var(--text-3)}
+.chart-svg .cursor{stroke:var(--text-3);stroke-width:1}
+.chart-svg .dot{stroke:var(--bg);stroke-width:2}
+.chart-svg .ma{fill:none;stroke-width:1.5;stroke-linejoin:round}
+.chart-svg .ma20{stroke:var(--text-2)}
+.chart-svg .ma60{stroke:var(--text-3);stroke-dasharray:4 3}
+.ma-legend{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:4px 0;font-size:12px;line-height:16px;color:var(--text-2)}
+.ma-legend .key{display:inline-block;width:16px;height:0;border-top:1.5px solid var(--text-2)}
+.ma-legend .k60{margin-left:10px;border-top:1.5px dashed var(--text-3)}
+/* off: the keys fade and the label is struck through; the text itself keeps 4.5:1 */
+.ma-legend[aria-pressed="false"] .key{opacity:.35}
+.ma-legend[aria-pressed="false"]{text-decoration:line-through}
+.chart-svg .line.hold{stroke:var(--link)}.chart-svg .dot.hold{fill:var(--link)}
+.chart-svg .dot.up{fill:var(--up)}.chart-svg .dot.down{fill:var(--down)}.chart-svg .dot.flat{fill:var(--text-3)}
+.stat-value.small{font-size:20px;line-height:1.2}
+.spec{margin:20px 0 0;border-top:1px solid var(--sep)}
+.spec div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--sep)}
+.spec dt{font-size:14px;line-height:22px;color:var(--text-2)}
+.spec dd{margin:0;font-size:15px;line-height:22px;overflow-wrap:anywhere}
+.events li.empty-row{display:block;color:var(--text-2);font-size:14px;line-height:20px}
+.segmented.kinds{margin-top:20px}
+.stock-link{color:inherit}
+.mk-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.report table.text-table th,.report table.text-table td{text-align:left;white-space:normal;vertical-align:top}
+.report table.text-table td:first-child{white-space:nowrap}
+@media (max-width:480px){.report table.text-table td:first-child{white-space:normal;min-width:5em}}
+.mk-card{min-width:0;padding-top:14px;border-top:1px solid var(--sep)}
+.mk-name{font-size:14px;line-height:20px;font-weight:600;color:var(--text-2)}
+.mk-name a{color:inherit}.mk-name a:hover{color:var(--link);text-decoration:none}
+.mk-close{margin-top:4px;font-size:28px;line-height:1.1;font-weight:600;font-variant-numeric:tabular-nums}
+.mk-chg{margin-top:4px;font-size:15px;line-height:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.mk-chg.up{color:var(--up)}.mk-chg.down{color:var(--down)}
+.mk-spark{margin-top:10px}
+.mk-spark svg{display:block;width:100%;height:auto}
+.mk-meta{margin-top:6px;font-size:12px;line-height:17px;color:var(--text-2);font-variant-numeric:tabular-nums}
+@media (max-width:480px){.mk-cards{grid-template-columns:minmax(0,1fr)}}
+.watch-today{margin-top:48px}
+.watch-today[hidden]{display:none}
+.watch-sub{margin-top:8px;font-size:14px;line-height:20px;color:var(--text-2)}
+.watch-mark{margin-right:4px;font-size:12px;color:var(--link)}
+/* ---- stock page: 事件與股價反應 (event markers, readout, summaries, table) ----
+   Markers sit in a lane under the volume bars; each kind has its own shape (filled circle,
+   square, diamond, hollow diamond, plus) in grey, because red and green mean up and down.
+   The active marker turns to the text colour. Phones hide the date column; the date then
+   repeats in the event cell. */
+.chart-svg .mk{fill:var(--text-2);stroke:none}
+.chart-svg .mk.hollow{fill:var(--bg);stroke:var(--text-2);stroke-width:1.5}
+.chart-svg .mk.plus{fill:none;stroke:var(--text-2);stroke-width:2;stroke-linecap:round}
+.chart-svg .mk.on{fill:var(--text)}
+.chart-svg .mk.hollow.on,.chart-svg .mk.plus.on{stroke:var(--text)}
+.chart-svg .mk.hollow.on{fill:var(--bg)}
+.mk-icon{display:inline-block;flex:none;width:12px;height:12px;margin-right:6px;vertical-align:-1px;overflow:visible}
+.mk-icon .mk{fill:var(--text-2);stroke:none}
+.mk-icon .mk.hollow{fill:none;stroke:var(--text-2);stroke-width:1.5}
+.mk-icon .mk.plus{fill:none;stroke:var(--text-2);stroke-width:2;stroke-linecap:round}
+#e-sub{text-wrap:pretty}
+.react-readout{margin-top:8px;min-height:40px;font-size:14px;line-height:20px;font-variant-numeric:tabular-nums}
+.react-legend{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:12px;line-height:20px;color:var(--text-2)}
+.react-legend>span{display:inline-flex;align-items:center}
+.react-ev{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-weight:600}
+.react-line{display:block}
+.react-h,.react-raw{white-space:nowrap}
+.react-raw{color:var(--text-2)}
+.react-readout .muted,.react-table .muted{color:var(--text-soft)}
+.react-sum{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--sep)}
+.react-sum li{display:flex;align-items:baseline;padding:10px 0;font-size:14px;line-height:20px;border-bottom:1px solid var(--sep);font-variant-numeric:tabular-nums}
+.react-sum .mk-icon{position:relative;top:1px}
+.report table.react-table th.ev-cell,.report table.react-table td.ev-cell{text-align:left;white-space:normal;min-width:11em}
+.react-table .ev-name{font-weight:600;word-break:keep-all;overflow-wrap:anywhere}
+.react-table .ev-detail{word-break:keep-all;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px;font-size:12px;line-height:16px;color:var(--text-2)}
+.react-table .ev-when{display:none}
+.react-table tr[hidden]{display:none}
+@media (max-width:480px){
+  .report table.react-table .date-cell{display:none}
+  .report table.react-table th.ev-cell,.report table.react-table td.ev-cell{min-width:0;padding-left:0}
+  .report table.react-table th:not(.ev-cell),.report table.react-table td:not(.ev-cell){padding-left:6px}
+  .react-table .ev-when{display:inline}
+  .react-table .ev-when+.ev-more::before{content:" · "}
+}
+/* ---- end 事件與股價反應 ---- */
+/* rank page */
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.controls .segmented[hidden]{display:none}
+.controls .select-wrap[hidden]{display:none}
+/* valuation presets: segments sized by their labels, wrapping inside the track on a narrow
+   phone instead of pushing the page sideways */
+.segmented.val{display:inline-flex;flex-wrap:wrap;min-width:0;max-width:100%}
+button.industry-pick{text-align:left}
+button.industry-pick:hover{color:var(--link)}
+.industry{height:32px;padding:0 28px 0 12px;border:0;border-radius:9px;font:inherit;font-size:13px;font-weight:600;color:var(--text);background:var(--fill);-webkit-appearance:none;appearance:none}
+/* the select's chevron is a mask painted in --text-2, so it follows the theme and clears 3:1 on
+   --fill in both (#86868b on #e8e8ed was 2.97:1); a select has no ::after, hence the wrapper */
+.select-wrap{position:relative;display:inline-flex}
+.select-wrap::after{content:"";position:absolute;top:50%;right:8px;width:14px;height:14px;margin-top:-7px;pointer-events:none;background:var(--text-2);
+  -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>") no-repeat center/14px;
+  mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>") no-repeat center/14px}
+/* 欄位說明 under the rankings: header definitions that touch and keyboard readers can open */
+.col-notes{margin-top:8px}
+.col-notes>summary{padding:12px 0}  /* a 44px target, like the sidebar rows on phones */
+.col-notes dl{margin:0;font-size:14px;line-height:20px}
+.col-notes dt{margin-top:12px;font-weight:600;color:var(--text)}
+.col-notes dd{margin:2px 0 0;color:var(--text-2)}
+.count{margin-top:20px;min-height:20px;font-size:14px;line-height:20px;color:var(--text-2)}
+.rank-table th .sort{white-space:nowrap}
+.rank-table th .sort:hover{color:var(--text)}
+.rank-table th[aria-sort] .sort{color:var(--text);font-weight:600}
+.rank-table th[aria-sort="descending"] .sort::after{content:" ↓"}
+.rank-table th[aria-sort="ascending"] .sort::after{content:" ↑"}
+.rank-name{font-weight:600;color:var(--text)}
+a.rank-name:hover{color:var(--link);text-decoration:none}
+.sid{margin-left:6px;font-size:12px;color:var(--text-2)}
+.star{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;margin:-6px 2px -6px -8px;border-radius:8px;vertical-align:middle;color:var(--text-3)}
+.star svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.star:hover{background:var(--hover)}
+.star[aria-pressed="true"]{color:var(--link)}
+.star[aria-pressed="true"] svg{fill:currentColor}
+.rank-table td.muted{color:var(--text-soft)}
+.rank-table td.empty-cell{padding:28px 0;white-space:normal;color:var(--text-2)}
+.more-row{margin-top:20px}
+.more-btn,.watch-btn{padding:8px 18px;border-radius:980px;font-size:14px;line-height:20px;font-weight:600;color:var(--link);background:var(--chip)}
+.more-btn:active,.watch-btn:active{transform:scale(.97)}
+.watch-row{margin-top:14px}
+.watch-btn[aria-pressed="true"]{color:var(--text-2)}
+.stock-link:hover{text-decoration:none;color:var(--link)}
+
+@media (min-width:734px){
+  :root{--gutter:32px}
+  .localnav-title{font-size:21px}
+  .localnav-links{display:flex}
+  .localnav-more,.localnav-menu{display:none!important}
+  /* shell.html fit(): too many section links for the title, so they live in the menu */
+  body.nav-compact .localnav-links{display:none}
+  body.nav-compact .localnav-more{display:inline-flex!important}
+  body.nav-compact .localnav-menu:not([hidden]){display:block!important}
+  .hero{padding-top:56px}
+  .headline{font-size:40px;line-height:1.1}
+  .subhead{margin-top:16px;font-size:21px;line-height:1.38095;letter-spacing:.011em}
+  .stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px}
+  .stat-value{font-size:36px}
+  .report h2{margin-top:72px;font-size:28px;line-height:1.14286}
+  .stocks li{grid-template-columns:minmax(0,1fr) 96px 92px;gap:0 20px}
+  .stock-spark svg{width:96px}
+}
+@media (min-width:1068px){
+  .side{width:var(--side);transform:none;box-shadow:none;transition:none;visibility:visible}
+  .side-close,.side-open,.scrim{display:none!important}
+  .localnav,.main,.footer{margin-left:var(--side)}
+  .localnav-bar{padding:0 40px 0 44px}
+  .main{padding:0 48px}
+  .footer{padding-left:48px;padding-right:48px}
+  .hero{padding-top:64px}
+  .headline{font-size:48px;line-height:1.08349}
+  .stat-value{font-size:40px}
+  .report h2{font-size:32px;line-height:1.125}
+}
+@media (max-width:420px){
+  .charts{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition:none!important}
+}
+@media (prefers-reduced-transparency: reduce){
+  .localnav{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--sep:#86868b}
+  .localnav::after{opacity:1}
+}
+@media print{
+  .side,.scrim,.localnav,.pager{display:none!important}
+  .main,.footer{margin-left:0!important}
+}
+
+/* ── sidebar folding and report verdicts (research/site/build.py _side_group, status.py) ──
+   Each sidebar group heading is a button that folds its list; only the chevron moves (a
+   quarter turn), and not at all under reduced motion. The h2 keeps its old position: the
+   button's 5px padding is taken back by a negative margin. Verdict capsules carry their
+   status as text and stay grey on purpose, because red and green mean up and down here:
+   成立 / 部分成立 solid, 待確認 outlined, 不成立 / 未通過 a faint outline with the sidebar title
+   dropped to tertiary grey, 探索性 / 通過 a light fill. The banner under a report's headline
+   repeats the capsule with the reason. Rejected reports sit in the 封存 group (folded until
+   opened, its lists headed by section name in the month-label style); their page adds a
+   caption-size line under the banner, aligned with the banner's text (two classes, so it
+   keeps its 8px over .report p + p). */
+.side-group h2{margin:-5px 0 1px}
+.side-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;padding:5px 0;
+  font-weight:600;text-align:left;color:var(--text)}
+.side-toggle svg{flex:none;width:12px;height:12px;fill:none;stroke:var(--text-3);stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;transform:rotate(90deg);transition:transform .2s var(--ease)}
+.side-toggle[aria-expanded="false"] svg{transform:none}
+.side-toggle:hover svg{stroke:var(--text)}
+.side-items[hidden]{display:none}
+.side li.dim:not(.current) a{color:var(--text-soft)}
+.side li.dim:not(.current) a:hover{color:var(--text)}
+.cap{display:inline-block;padding:0 7px;border-radius:980px;font-size:11px;line-height:16px;font-weight:600;
+  white-space:nowrap;vertical-align:1px;letter-spacing:normal}
+.cap-supported,.cap-partial{color:var(--bg)}
+.cap-supported{background:var(--text)}
+.cap-partial{background:var(--text-2)}
+.cap-pending{color:var(--text);box-shadow:inset 0 0 0 1px var(--text-2)}
+.cap-rejected,.cap-failed{color:var(--text-2);box-shadow:inset 0 0 0 1px var(--sep)}
+.cap-exploratory{color:var(--text-2);background:var(--chip)}
+.cap-passed{color:var(--text);background:var(--chip)}
+.cap-stale{color:var(--text-2);outline:1px dashed var(--text-3);outline-offset:-1px}
+.verdict{margin-top:20px;padding:12px 16px;border-radius:12px;font-size:14px;line-height:20px;
+  color:var(--text-2);background:var(--bg-alt);word-break:keep-all;overflow-wrap:anywhere}
+.verdict-basis{font-weight:600;color:var(--text)}
+.verdict .cap{margin:0 8px 0 2px}
+/* the banner is --bg-alt, the chip colour in light mode, so filled capsules take the page colour */
+.verdict .cap-exploratory,.verdict .cap-passed{background:var(--bg)}
+.verdict+.archive-note{margin-top:8px;padding:0 16px;font-size:12px;line-height:16px;color:var(--text-soft)}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);
+  clip-path:inset(50%);white-space:nowrap;border:0}
+@media (prefers-reduced-motion: reduce){
+  .side-toggle svg{transition:none}
+}
+@media print{
+  .verdict{background:none;box-shadow:inset 0 0 0 1px var(--sep)}
+}
+
+/* ── 借券賣出 (stock page section; research/site/sbldata.py, stock.js drawLending) ──
+   Two balances on one lot axis from zero: lending short sales solid in the link colour, 融券
+   dashed grey. Neither is red or green, which mean up and down here. The legend sits above
+   the readout like the price chart's moving-average key. */
+.sbl-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:16px;font-size:12px;line-height:16px;color:var(--text-2)}
+.sbl-legend .key{display:inline-block;width:16px;height:0;border-top:2px solid var(--link)}
+.sbl-legend .k-short{margin-left:10px;border-top:2px dashed var(--text-2)}
+.chart-svg .line.sbl-short{stroke:var(--text-2);stroke-width:1.5;stroke-dasharray:4 3}
+.chart-svg .dot.sbl-short{fill:var(--text-2)}
+#sb-chart-box[hidden]{display:none}
+/* ── end 借券賣出 ── */
+
+/* ── 股癌觀點 page and the brief's 股癌最新一集 line (research/site/build.py
+   render_podcasts_page, render_podcast_line) ──
+   Episodes are a hairline list like the events. The summary reads as body text; topics are a
+   quiet grey line; stocks are pills: link blue on the light grey ground when they open a stock
+   page, outlined in the text colour when there is no page (foreign companies). Every row wraps,
+   so a 375px phone never scrolls sideways. Grey text uses --text-2 (contrast >= 4.5:1). */
+.report .pod-note{margin-top:28px;padding:12px 16px;border-radius:12px;font-size:14px;line-height:20px;
+  color:var(--text-2);background:var(--bg-alt);word-break:keep-all;overflow-wrap:anywhere}
+.report .pod-listen{margin-top:12px;font-size:14px;line-height:20px;color:var(--text-2)}
+.pod-list{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--sep)}
+.pod-ep{min-width:0;padding:20px 0 22px;border-bottom:1px solid var(--sep)}
+.report .pod-title{margin:0;font-size:19px;line-height:1.26316;font-weight:600}
+.pod-sub{margin-left:4px;font-weight:400}
+.report .pod-when{margin-top:2px;font-size:14px;line-height:20px;color:var(--text-2);font-variant-numeric:tabular-nums}
+.pod-lines{margin:12px 0 0;padding-left:1.2em}
+.pod-lines li{overflow-wrap:anywhere}
+.pod-lines li+li{margin-top:6px}
+.report .pod-pending{margin-top:12px;color:var(--text-2)}
+.pod-topics{list-style:none;display:flex;flex-wrap:wrap;margin:12px 0 0;padding:0;font-size:14px;line-height:20px;color:var(--text-2)}
+.pod-topics li+li::before{content:"·";margin:0 6px}
+.report .pod-label{margin-top:16px;font-size:12px;line-height:16px;font-weight:600;color:var(--text-2)}
+.pod-hint{margin-left:8px;font-weight:400}
+.pod-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0;padding:0}
+.pod-stocks{list-style:none;margin:6px 0 0;padding:0}
+.pod-stocks li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:4px 0}
+.pod-chip{display:inline-flex;align-items:baseline;gap:6px;max-width:100%;padding:4px 12px;border-radius:980px;
+  font-size:14px;line-height:20px;font-weight:600;color:var(--link);background:var(--bg-alt);overflow-wrap:anywhere}
+a.pod-chip:hover{text-decoration:none;box-shadow:inset 0 0 0 1px var(--link)}
+.pod-chip.plain{color:var(--text);background:transparent;box-shadow:inset 0 0 0 1px var(--sep)}
+.pod-id{font-size:12px;font-weight:400;color:var(--text-2)}
+.pod-ctx{min-width:0;font-size:14px;line-height:20px;color:var(--text-2);overflow-wrap:anywhere}
+.report .pod-links{margin-top:14px;font-size:14px;line-height:20px;color:var(--text-2)}
+.report .pod-src{margin-top:4px;font-size:12px;line-height:16px;color:var(--text-2)}
+.report .pod-brief{margin-top:12px;color:var(--text);overflow-wrap:anywhere}
+@media (min-width:734px){
+  .report .pod-title{font-size:21px;line-height:1.19048}
+}
+/* ── end 股癌觀點 ── */
+
+/* ── touch targets on phones (Apple HIG 44pt) ──
+   Sidebar rows grow to 44px with padding, because stacked hit areas must not overlap. Segmented
+   controls keep their 28px look and get a 44px hit area from a transparent ::before; rows of
+   controls on the rank and market pages sit 12px apart, so neighbouring areas meet without
+   overlapping, and a wrapped valuation track opens its rows to 16px for the same reason.
+   Desktop and tablet widths are unchanged. */
+@media (max-width:480px){
+  .side li a,.side-toggle,.side .soon{padding:13px 0}  /* .soon keeps the row rhythm */
+  .brand{padding:12px 0}
+  .side-group h2{margin:-8px 0 0}
+  .side-group+.side-group{margin-top:14px}
+  .segmented button,.segmented label{position:relative}
+  .segmented button::before,.segmented label::before{content:"";position:absolute;left:0;right:0;top:50%;height:44px;margin-top:-22px}
+  .segmented.val{row-gap:16px}
+}
+
+/* ── 市場狀態 (market page; research/site/statedata.py, market.js drawRegime) ──
+   The daily brief's 市場狀態總表 as a hairline list, one row per indicator: the name with the
+   month its history starts, the latest value, a one-year percentile sparkline and the whole
+   percentile. The sparkline is a link-blue line like the page's other non-directional lines
+   (red and green mean up and down here), with a dashed guide at the 50th percentile. From
+   734px a row is one line with fixed value, sparkline and percentile columns, so they align
+   from row to row; narrower, it takes two lines: name and percentile, then value and
+   sparkline, which fits a 375px phone without sideways scrolling. */
+.ms-list{list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--sep)}
+.ms-row{display:grid;grid-template-columns:minmax(0,1fr) 112px;grid-template-areas:"name pct" "value spark";
+  align-items:center;gap:6px 16px;padding:12px 0;border-bottom:1px solid var(--sep)}
+.ms-name{grid-area:name;min-width:0;font-size:14px;line-height:20px;font-weight:600;word-break:keep-all;overflow-wrap:anywhere}
+.ms-since{display:block;font-size:12px;line-height:16px;font-weight:400;color:var(--text-2)}
+.ms-value{grid-area:value;min-width:0;font-size:17px;line-height:22px;font-weight:600;font-variant-numeric:tabular-nums;
+  word-break:keep-all;overflow-wrap:anywhere}
+.ms-spark{grid-area:spark;min-width:0}
+.ms-spark svg{display:block;width:100%;height:32px;overflow:visible}
+.ms-spark .mid{stroke:var(--text-3);stroke-width:1;stroke-dasharray:3 3}
+.ms-spark .line{fill:none;stroke:var(--link);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.ms-spark .dot{fill:var(--link);stroke:var(--bg);stroke-width:1.5}
+.ms-pct{grid-area:pct;font-size:14px;line-height:20px;color:var(--text-2);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ms-pct b{font-size:17px;font-weight:600;color:var(--text)}
+@media (min-width:734px){
+  .ms-row{grid-template-columns:minmax(0,1fr) 12em 120px 6.5em;grid-template-areas:"name value spark pct";row-gap:0}
+  .ms-value{text-align:right}
+}
+/* ── end 市場狀態 ── */

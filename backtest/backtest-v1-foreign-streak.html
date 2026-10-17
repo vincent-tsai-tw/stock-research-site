@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>法人連買（外資連續買超） · 台股研究</title>
+<meta name="build" content="2026-10-17 10:32">
+<link rel="stylesheet" href="../style.css">
+<script>(function(){try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到內容</a>
+<aside class="side" id="side" aria-label="報告目錄">
+<div class="side-head">
+<a class="brand" href="../index.html">台股研究</a>
+<button class="icon-btn side-close" type="button" data-action="side-close" aria-label="關閉目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav class="side-body">
+<div class="side-group" data-group="brief"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-brief"><span>每日晨報</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-brief">
+<ul>
+<li class="side-month">2026 年 10 月</li>
+<li><a href="../brief/brief-2026-10-16.html">10月16日 週五</a></li>
+<li><a href="../brief/brief-2026-10-15.html">10月15日 週四</a></li>
+<li><a href="../brief/brief-2026-10-14.html">10月14日 週三</a></li>
+<li><a href="../brief/brief-2026-10-13.html">10月13日 週二</a></li>
+<li><a href="../brief/brief-2026-10-12.html">10月12日 週一</a></li>
+<li><a href="../brief/brief-2026-10-08.html">10月8日 週四</a></li>
+<li><a href="../brief/brief-2026-10-07.html">10月7日 週三</a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="tools"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-tools"><span>市場與個股</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-tools">
+<ul><li><a href="../market/index.html">大盤走勢</a></li><li><a href="../rank/index.html">排行與自選</a></li><li><a href="../stock/index.html">個股走勢</a></li></ul>
+</div></div>
+<div class="side-group" data-group="calendar"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-calendar"><span>事件</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-calendar">
+<ul><li><a href="../events/index.html">未來事件</a></li></ul>
+</div></div>
+<div class="side-group" data-group="views"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-views"><span>觀點</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-views">
+<ul><li><a href="../podcasts/index.html">股癌觀點</a></li></ul>
+</div></div>
+<div class="side-group" data-group="weekly"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-weekly"><span>每週回顧</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-weekly">
+<ul>
+<li><a href="../weekly/weekly-2026-10-16.html">2026 第 42 週（10/12–10/16）</a></li>
+<li><a href="../weekly/weekly-2026-10-08.html">2026 第 41 週（10/5–10/8）</a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="progress"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-progress"><span>進度報告</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-progress">
+<ul>
+<li><a href="../progress/progress-2026-10-11.html">國慶連假 10/8～10/11</a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="backtest"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-backtest"><span>回測報告</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-backtest">
+<ul>
+<li><a href="../backtest/backtest-v1-tradability.html" title="研究性質：探索性 — 事後敏感度檢查，不改 v1 判定；年化報酬等於基準的來回成本樣本內只有 1.26%">策略 v1 可交易性與容量檢查 <span class="cap cap-exploratory">探索性</span></a></li>
+<li class="dim"><a href="../backtest/backtest-v1-strategy.html" title="判定：不成立 — 未通過：樣本內外每期平均超額 +0.61%／+1.33%，但超額 t 只有 1.3／1.4">策略 v1（營收年增率（公布後）、60 日動能） <span class="cap cap-rejected">不成立</span></a></li>
+<li><a href="../backtest/backtest-v1-filter.html" title="預先登記判定：待確認 — H11 濾網：最大回撤樣本內外都改善，夏普值樣本內 0.47 → 0.44 未改善">策略 v1 加大盤趨勢濾網（H11） <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../backtest/backtest-v1-diagnosis.html" title="研究性質：探索性 — 不改 v1 判定；照樣本外估計 t ≥ 3 需 16.7 年資料，前 5 期占樣本外超額 127%">為什麼沒有通過，以及下一步 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../backtest/backtest-simple-rules-h18.html" title="預先登記判定：待確認 — H18c 均線持有：最大回撤樣本內外都較淺（-15.6% vs -34.0%、-21.3% vs -27.5%），樣本外夏普 1.72 低於 1.80；H18a、H18b 樣本外 9、3 筆少於 10，只描述">H18 預先登記判定 <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../backtest/backtest-market-drop.html" title="研究性質：探索性 — 描述性：2015 年起 0050 跌 3% 後持有 20 日超額 +3.74%（t 4.25），2003 年起只有 +0.69%（t 0.60）；當成獨立策略輸給買進持有">大盤單日跌 3% 買進 0050／00631L 回測 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../backtest/backtest-etf-simple-plans.html" title="研究性質：探索性 — 描述性：2003-06 起單筆持有 0050 年化 +14.73%、定期定額 IRR +16.72%；大跌加碼與定期定額的 IRR 差距在 0.25 個百分點以內；00631L 50%＋現金 50% 2015 起年化 +19.31%（0050 單筆 +20.85%）">單筆、定期定額、大跌加碼、再平衡與正2＋現金 <span class="cap cap-exploratory">探索性</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="factor"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-factor"><span>因子研究</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-factor">
+<ul>
+<li><a href="../factor/factor-study-v1.html" title="預先登記判定：部分成立 — H2 動能、H4 營收年增率、H6 持股持有 20 日成立（營收年增率樣本外 t 6.5）；H16a 借券賣出餘額持有 20 日成立（樣本外 t −4.1）；H3、H12、H13、H16b 不成立">單因子分組表 <span class="cap cap-partial">部分成立</span></a></li>
+<li><a href="../factor/factor-sbl-robustness.html" title="研究性質：探索性 — 描述性：H16a 20 日樣本外 −0.92% 扣掉五個控制後 −0.98%（t −4.4）；v1 排除借券最高五分之一後樣本外超額 +1.33% → +1.29%，不改判定">價差來源、獨立性與只做多的用途（探索性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../factor/factor-robustness.html" title="研究性質：探索性 — 描述性：營收、兩個動能與外資持股變化四個因子在 20 組子群中有 20 組樣本外價差為正（t ≥ 2 有 19 組），不改變判定">市場、流動性、年度與因子重疊（描述性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../factor/factor-revenue-accel-robustness.html" title="研究性質：探索性 — 描述性：營收加速 20 日樣本外 +0.42% 扣掉營收年增率後 −0.38%（t −2.1）；加進 v1 後樣本外每期超額 +1.33% → +1.11%，不改 H4 判定">價差來源、與營收年增率的獨立性、定義敏感度（探索性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../factor/factor-industry-momentum.html" title="預先登記判定：待確認 — H15 持有 20 日待確認（樣本外 +0.89%，t 2.4）；5、10 日不成立，不作為選股因子">產業動能（H15） <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../factor/factor-correlation.html" title="研究性質：探索性 — 只描述因子重疊與殘差價差，不重新判定；v1 兩因子樣本外等級相關 0.20">等級相關與殘差化價差（探索性） <span class="cap cap-exploratory">探索性</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="event"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-event"><span>事件研究</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-event">
+<ul>
+<li><a href="../event/event-study-revenue.html" title="研究性質：探索性 — 未預先登記；年增率 ≥ 50% 組 [0, +10] 樣本外平均超額 +1.86%，&lt; −20% 組 −0.95%">月營收公布後的超額報酬 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../event/event-study-revenue-decay.html" title="研究性質：探索性 — 描述性：晚 1 天進場少 0.46%／0.78%（樣本內／外），不改變 H4 判定">月營收訊號的衰減（描述性） <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../event/event-study-reduction.html" title="預先登記判定：待確認 — H7a 彌補虧損待確認（樣本外 −5.51%，t −2.00）；H7b 退還現金不成立">減資恢復買賣前後的超額報酬 <span class="cap cap-pending">待確認</span></a></li>
+<li><a href="../event/event-study-market-drop-cross-section.html" title="研究性質：探索性 — 描述性：大跌後個股 20 日平均 +6.40%（平常日 +0.96%）；高 β、當天跌最多、成交金額大者反彈較多（β 價差 +6.98%，t 5.02），但 β 效果隨大盤是否反彈而定">大盤單日跌 3% 後的個股橫斷面 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../event/event-study-dividend.html" title="研究性質：探索性 — 未預先登記；除息後 10 日平均累積超額 −0.19%（t −3.2），事件集中使 t 高估">除息日前後的超額報酬 <span class="cap cap-exploratory">探索性</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="quality"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-quality"><span>資料驗收</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-quality">
+<ul>
+<li><a href="../quality/valuation-data-quality.html" title="資料驗收：通過 — 5／5 項門檻達標；FinMind 抽樣 85,195 組一致率最低 99.9988%">估值資料（本益比、殖利率、股價淨值比）品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/universe-1.2-data-quality.html" title="資料驗收：通過 — 硬錯誤 0 檔；證交所 22,364 組比對收盤價與法人一致率 100.00%">Phase 1.2 全市場資料驗收報告 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/tdcc-data-quality.html" title="資料驗收：通過 — 5／5 項門檻達標；已存 2 週，價量檔普通股在集保檔缺 0 檔，與發行股數相差 1% 以內最低 94.4%；分級加總恆等式未判定">集保股權分散資料品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/sbl-data-quality.html" title="資料驗收：通過 — 8／8 項門檻達標；2,867 個交易日缺 0 天，恆等式一致率最低 99.9987%；FinMind 抽樣 30 檔 76,657 列各欄全同">借券賣出資料品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/pilot-1.2-data-quality.html" title="資料驗收：探索性 — 試點 50 檔，未設驗收門檻；與證交所 310 組比對收盤與法人一致 100.0%">Phase 1.2 試點資料品質報告 <span class="cap cap-exploratory">探索性</span></a></li>
+<li><a href="../quality/margin-data-quality.html" title="資料驗收：通過 — 6／6 項門檻達標；相鄰交易日前日餘額一致率 融資 99.47%、融券 99.94%">融資融券資料品質檢查 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/exchange-1.2c-data-quality.html" title="資料驗收：通過 — 2866 個交易日全量比對，價量與法人一致率 100.000%（含 1400 個以交易所值取代的法人數字）">Phase 1.2c 交易所資料與 FinMind 全歷史比對 <span class="cap cap-passed">通過</span></a></li>
+<li><a href="../quality/actions-1.2b-data-quality.html" title="資料驗收：通過 — 公司行為 22161 件，與前日收盤一致率 99.93%（門檻 99%）">Phase 1.2b 公司行為資料驗收報告 <span class="cap cap-passed">通過</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="archive" data-default="closed"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-archive"><span>封存</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-archive">
+<ul>
+<li class="side-sub">回測報告</li>
+<li class="current dim"><a href="../backtest/backtest-v1-foreign-streak.html" aria-current="page" title="預先登記判定：不成立 — H1：樣本外平均 +0.15%、勝率 44.6%，不如隨機基準（5 次抽樣平均）的 +0.24%、47.1%">法人連買（外資連續買超） <span class="cap cap-rejected">不成立</span></a></li>
+<li class="side-sub">事件研究</li>
+<li class="dim"><a href="../event/event-study-macro.html" title="預先登記判定：不成立 — H8～H10：FOMC、美國 CPI、結算日的樣本外差 t 1.23／0.39／0.66，都未達 3">FOMC、美國 CPI 與台指期結算日的台股波動 <span class="cap cap-rejected">不成立</span></a></li>
+<li class="dim"><a href="../event/event-study-fill.html" title="預先登記判定：不成立 — H14 當日填息：樣本外差 +0.75%（Welch t 1.34），未達 3">除權息當日填息與之後 20 日的超額報酬（H14） <span class="cap cap-rejected">不成立</span></a></li>
+</ul>
+</div></div>
+<div class="side-group" data-group="about"><h2><button class="side-toggle" type="button" aria-expanded="true" aria-controls="side-about"><span>關於</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6"/></svg></button></h2>
+<div class="side-items" id="side-about">
+<ul><li><a href="../about/index.html">說明與定義</a></li></ul>
+</div></div>
+<script>
+(function(){
+  var KEY="side-collapsed", OPEN="side-expanded", me=document.currentScript;
+  var nav=(me&&me.parentNode)||document.querySelector(".side-body");
+  if(!nav)return;
+  function stored(k){
+    try{var v=JSON.parse(localStorage.getItem(k)||"[]");return Array.isArray(v)?v:[];}
+    catch(e){return [];}
+  }
+  function remember(k,key,on){
+    var list=stored(k).filter(function(x){return x!==key;});if(on)list.push(key);
+    try{localStorage.setItem(k,JSON.stringify(list));}catch(err){}
+  }
+  function show(group,open){
+    var btn=group.querySelector(".side-toggle"), box=group.querySelector(".side-items");
+    if(!btn||!box)return;
+    btn.setAttribute("aria-expanded",String(open));box.hidden=!open;
+  }
+  function closedByDefault(g){return g.getAttribute("data-default")==="closed";}
+  var folded=stored(KEY), opened=stored(OPEN);
+  Array.prototype.forEach.call(nav.querySelectorAll(".side-group[data-group]"),function(g){
+    var key=g.getAttribute("data-group");
+    if(g.querySelector('[aria-current="page"]'))show(g,true);
+    else if(folded.indexOf(key)>=0)show(g,false);
+    else if(closedByDefault(g)&&opened.indexOf(key)>=0)show(g,true);
+  });
+  nav.addEventListener("click",function(e){
+    var btn=e.target.closest?e.target.closest(".side-toggle"):null;if(!btn)return;
+    var g=btn.closest(".side-group"), key=g.getAttribute("data-group");
+    var open=btn.getAttribute("aria-expanded")!=="true";
+    show(g,open);
+    remember(KEY,key,!open);
+    if(closedByDefault(g))remember(OPEN,key,open);
+  });
+})();
+</script>
+</nav>
+</aside>
+<div class="scrim" data-action="side-close" aria-hidden="true"></div>
+<header class="localnav">
+<div class="localnav-bar">
+<button class="icon-btn side-open" type="button" data-action="side-open" aria-controls="side" aria-expanded="false" aria-label="開啟報告目錄"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="localnav-title" href="#main">法人連買（外資連續買超）</a>
+<nav class="localnav-links" aria-label="本頁段落"><a href="#sec-1">執行摘要</a><a href="#sec-2">參數</a><a href="#sec-3">整體結果</a><a href="#sec-4">逐年</a><a href="#sec-5">市場別</a><a href="#sec-6">方法與限制</a></nav>
+<button class="icon-btn localnav-more" type="button" data-action="menu" aria-controls="localnav-menu" aria-expanded="false" aria-label="本頁段落"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<button class="icon-btn theme" type="button" data-action="theme" aria-label="深色模式" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" class="fill"/></svg></button>
+</div>
+<nav class="localnav-menu" id="localnav-menu" aria-label="本頁段落" hidden><a href="#sec-1">執行摘要</a><a href="#sec-2">參數</a><a href="#sec-3">整體結果</a><a href="#sec-4">逐年</a><a href="#sec-5">市場別</a><a href="#sec-6">方法與限制</a></nav>
+</header>
+<main class="main" id="main">
+<article class="report">
+<header class="hero">
+<p class="eyebrow">回測報告</p>
+<h1 class="headline">回測報告 v1：法人連買（外資連續買超）</h1>
+<p class="verdict" role="note"><span class="verdict-basis">預先登記判定：</span><span class="cap cap-rejected">不成立</span><span class="vh"> — </span><span class="verdict-reason">H1：樣本外平均 +0.15%、勝率 44.6%，不如隨機基準（5 次抽樣平均）的 +0.24%、47.1%</span></p>
+<p class="archive-note">本報告已封存：預先登記判定不成立，保留供查閱。</p>
+
+
+</header>
+<section class="watch-today" id="watch-today" data-root="../" hidden>
+<h2>自選股今日</h2>
+<p class="watch-sub" id="watch-sub"></p>
+<div class="table-wrap"><table class="rank-table watch-table"><thead><tr><th scope="col">名稱</th><th scope="col">收盤</th><th scope="col">漲跌</th><th scope="col">外資(張)</th><th scope="col">投信(張)</th><th scope="col">連買賣</th></tr></thead><tbody id="watch-body"></tbody></table></div>
+</section>
+<p>產生時間：2026-10-15 08:19</p>
+<p>資料窗口：FinMind 資料庫還原價與三大法人（2143 檔），訊號日 2015-01-30～2026-09-18</p>
+<p>非投資建議；本站不是持牌顧問，決策與下單由使用者自行負責。</p>
+<h2 id="sec-1">執行摘要</h2>
+<ul>
+<li>H1 法人連買優於隨機進場：<strong>不成立</strong>（成立條件見 <code>docs/research/preregistration-phase1.md</code>）。判斷：樣本內外都<strong>未優於同期隨機基準</strong>：以目前參數，法人連買單一訊號沒有可用的優勢。</li>
+<li>樣本外（2023-01-01 起）9825 筆交易：勝率 44.6%、平均報酬 +0.15%、中位數 −0.74%、t 1.8；同期隨機基準（每檔 5 次獨立抽樣的平均）7915 筆：勝率 47.1%、平均 +0.24%。</li>
+<li>隨機基準 5 次抽樣的樣本外平均報酬 +0.18%～+0.33%，跨次標準差 0.06%（單次抽樣的雜訊）；策略不受抽樣影響。</li>
+<li>樣本外最大回撤（每日等權重持有所有未平倉部位）：策略 −36.88%、基準 −34.71%。</li>
+<li>樣本內 15097 筆、全部 24922 筆；股票數 943。</li>
+</ul>
+<h2 id="sec-2">參數</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">參數</th>
+<th style="text-align: left;">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">連買天數</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">最低日均買超（張）</td>
+<td style="text-align: left;">500.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">連買期間漲幅上限</td>
+<td style="text-align: left;">10%</td>
+</tr>
+<tr>
+<td style="text-align: left;">20 日均成交金額門檻</td>
+<td style="text-align: left;">50 百萬</td>
+</tr>
+<tr>
+<td style="text-align: left;">持有天數上限</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;">停損</td>
+<td style="text-align: left;">8%</td>
+</tr>
+<tr>
+<td style="text-align: left;">停利</td>
+<td style="text-align: left;">15%</td>
+</tr>
+<tr>
+<td style="text-align: left;">來回成本</td>
+<td style="text-align: left;">0.471%</td>
+</tr>
+<tr>
+<td style="text-align: left;">樣本外起始</td>
+<td style="text-align: left;">2023-01-01</td>
+</tr>
+<tr>
+<td style="text-align: left;">隨機基準抽樣次數（每檔）</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">股票範圍</td>
+<td style="text-align: left;">all，不含 ETF，2143 檔</td>
+</tr>
+<tr>
+<td style="text-align: left;">價格</td>
+<td style="text-align: left;">還原價（22161 個公司行為事件）</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-3">整體結果</h2>
+<p>樣本外起始日：2023-01-01；股票數：943；出場原因：hold 18753、stop 4340、target 1829</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">分組</th>
+<th style="text-align: right;">樣本數</th>
+<th style="text-align: left;">勝率</th>
+<th style="text-align: left;">平均報酬</th>
+<th style="text-align: left;">中位數</th>
+<th style="text-align: left;">5% 分位</th>
+<th style="text-align: left;">最差單筆</th>
+<th style="text-align: left;">最大回撤</th>
+<th style="text-align: right;">t 值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">策略：全部</td>
+<td style="text-align: right;">24922</td>
+<td style="text-align: left;">44.1%</td>
+<td style="text-align: left;"><span class="down">−0.19%</span></td>
+<td style="text-align: left;"><span class="down">−0.71%</span></td>
+<td style="text-align: left;"><span class="down">−10.88%</span></td>
+<td style="text-align: left;"><span class="down">−17.62%</span></td>
+<td style="text-align: left;"><span class="down">−67.78%</span></td>
+<td style="text-align: right;"><span class="down">−4</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">策略：樣本內</td>
+<td style="text-align: right;">15097</td>
+<td style="text-align: left;">43.7%</td>
+<td style="text-align: left;"><span class="down">−0.42%</span></td>
+<td style="text-align: left;"><span class="down">−0.70%</span></td>
+<td style="text-align: left;"><span class="down">−10.75%</span></td>
+<td style="text-align: left;"><span class="down">−17.60%</span></td>
+<td style="text-align: left;"><span class="down">−60.98%</span></td>
+<td style="text-align: right;"><span class="down">−7.3</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">策略：樣本外</td>
+<td style="text-align: right;">9825</td>
+<td style="text-align: left;">44.6%</td>
+<td style="text-align: left;"><span class="up">+0.15%</span></td>
+<td style="text-align: left;"><span class="down">−0.74%</span></td>
+<td style="text-align: left;"><span class="down">−11.06%</span></td>
+<td style="text-align: left;"><span class="down">−17.62%</span></td>
+<td style="text-align: left;"><span class="down">−36.88%</span></td>
+<td style="text-align: right;">1.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">隨機基準：全部</td>
+<td style="text-align: right;">24922</td>
+<td style="text-align: left;">46.6%</td>
+<td style="text-align: left;"><span class="down">−0.02%</span></td>
+<td style="text-align: left;"><span class="down">−0.40%</span></td>
+<td style="text-align: left;"><span class="down">−10.31%</span></td>
+<td style="text-align: left;"><span class="down">−18.01%</span></td>
+<td style="text-align: left;"><span class="down">−49.47%</span></td>
+<td style="text-align: right;"><span class="down">−0.4</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">隨機基準：樣本內</td>
+<td style="text-align: right;">17007</td>
+<td style="text-align: left;">46.4%</td>
+<td style="text-align: left;"><span class="down">−0.14%</span></td>
+<td style="text-align: left;"><span class="down">−0.41%</span></td>
+<td style="text-align: left;"><span class="down">−10.26%</span></td>
+<td style="text-align: left;"><span class="down">−17.52%</span></td>
+<td style="text-align: left;"><span class="down">−49.47%</span></td>
+<td style="text-align: right;"><span class="down">−2.8</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">隨機基準：樣本外</td>
+<td style="text-align: right;">7915</td>
+<td style="text-align: left;">47.1%</td>
+<td style="text-align: left;"><span class="up">+0.24%</span></td>
+<td style="text-align: left;"><span class="down">−0.35%</span></td>
+<td style="text-align: left;"><span class="down">−10.40%</span></td>
+<td style="text-align: left;"><span class="down">−17.97%</span></td>
+<td style="text-align: left;"><span class="down">−34.71%</span></td>
+<td style="text-align: right;">2.9</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-4">逐年（依訊號年份）</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: right;">年份</th>
+<th style="text-align: right;">樣本數</th>
+<th style="text-align: left;">勝率</th>
+<th style="text-align: left;">平均報酬</th>
+<th style="text-align: left;">中位數</th>
+<th style="text-align: left;">5% 分位</th>
+<th style="text-align: left;">最差單筆</th>
+<th style="text-align: right;">t 值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">1354</td>
+<td style="text-align: left;">37.7%</td>
+<td style="text-align: left;"><span class="down">−1.57%</span></td>
+<td style="text-align: left;"><span class="down">−1.49%</span></td>
+<td style="text-align: left;"><span class="down">−11.51%</span></td>
+<td style="text-align: left;"><span class="down">−16.61%</span></td>
+<td style="text-align: right;"><span class="down">−8.4</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2016</td>
+<td style="text-align: right;">1513</td>
+<td style="text-align: left;">45.3%</td>
+<td style="text-align: left;"><span class="down">−0.10%</span></td>
+<td style="text-align: left;"><span class="down">−0.47%</span></td>
+<td style="text-align: left;"><span class="down">−9.38%</span></td>
+<td style="text-align: left;"><span class="down">−14.92%</span></td>
+<td style="text-align: right;"><span class="down">−0.7</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2017</td>
+<td style="text-align: right;">1659</td>
+<td style="text-align: left;">45.4%</td>
+<td style="text-align: left;"><span class="up">+0.25%</span></td>
+<td style="text-align: left;"><span class="down">−0.47%</span></td>
+<td style="text-align: left;"><span class="down">−9.17%</span></td>
+<td style="text-align: left;"><span class="down">−16.09%</span></td>
+<td style="text-align: right;">1.6</td>
+</tr>
+<tr>
+<td style="text-align: right;">2018</td>
+<td style="text-align: right;">1533</td>
+<td style="text-align: left;">38.9%</td>
+<td style="text-align: left;"><span class="down">−1.30%</span></td>
+<td style="text-align: left;"><span class="down">−1.16%</span></td>
+<td style="text-align: left;"><span class="down">−11.11%</span></td>
+<td style="text-align: left;"><span class="down">−16.93%</span></td>
+<td style="text-align: right;"><span class="down">−7.7</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2019</td>
+<td style="text-align: right;">1608</td>
+<td style="text-align: left;">48.0%</td>
+<td style="text-align: left;"><span class="up">+0.12%</span></td>
+<td style="text-align: left;"><span class="down">−0.18%</span></td>
+<td style="text-align: left;"><span class="down">−9.37%</span></td>
+<td style="text-align: left;"><span class="down">−14.62%</span></td>
+<td style="text-align: right;">0.8</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td style="text-align: right;">2072</td>
+<td style="text-align: left;">48.0%</td>
+<td style="text-align: left;"><span class="up">+0.49%</span></td>
+<td style="text-align: left;"><span class="down">−0.19%</span></td>
+<td style="text-align: left;"><span class="down">−10.47%</span></td>
+<td style="text-align: left;"><span class="down">−17.19%</span></td>
+<td style="text-align: right;">2.9</td>
+</tr>
+<tr>
+<td style="text-align: right;">2021</td>
+<td style="text-align: right;">3023</td>
+<td style="text-align: left;">44.7%</td>
+<td style="text-align: left;"><span class="down">−0.14%</span></td>
+<td style="text-align: left;"><span class="down">−0.78%</span></td>
+<td style="text-align: left;"><span class="down">−11.62%</span></td>
+<td style="text-align: left;"><span class="down">−17.60%</span></td>
+<td style="text-align: right;"><span class="down">−0.9</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">2335</td>
+<td style="text-align: left;">40.1%</td>
+<td style="text-align: left;"><span class="down">−1.40%</span></td>
+<td style="text-align: left;"><span class="down">−1.52%</span></td>
+<td style="text-align: left;"><span class="down">−11.25%</span></td>
+<td style="text-align: left;"><span class="down">−17.09%</span></td>
+<td style="text-align: right;"><span class="down">−9.7</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">2553</td>
+<td style="text-align: left;">45.6%</td>
+<td style="text-align: left;"><span class="up">+0.23%</span></td>
+<td style="text-align: left;"><span class="down">−0.47%</span></td>
+<td style="text-align: left;"><span class="down">−9.81%</span></td>
+<td style="text-align: left;"><span class="down">−16.83%</span></td>
+<td style="text-align: right;">1.6</td>
+</tr>
+<tr>
+<td style="text-align: right;">2024</td>
+<td style="text-align: right;">2563</td>
+<td style="text-align: left;">42.9%</td>
+<td style="text-align: left;"><span class="down">−0.30%</span></td>
+<td style="text-align: left;"><span class="down">−1.03%</span></td>
+<td style="text-align: left;"><span class="down">−11.23%</span></td>
+<td style="text-align: left;"><span class="down">−17.11%</span></td>
+<td style="text-align: right;"><span class="down">−1.9</span></td>
+</tr>
+<tr>
+<td style="text-align: right;">2025</td>
+<td style="text-align: right;">2444</td>
+<td style="text-align: left;">46.4%</td>
+<td style="text-align: left;"><span class="up">+0.37%</span></td>
+<td style="text-align: left;"><span class="down">−0.47%</span></td>
+<td style="text-align: left;"><span class="down">−10.60%</span></td>
+<td style="text-align: left;"><span class="down">−17.62%</span></td>
+<td style="text-align: right;">2.2</td>
+</tr>
+<tr>
+<td style="text-align: right;">2026</td>
+<td style="text-align: right;">2265</td>
+<td style="text-align: left;">43.6%</td>
+<td style="text-align: left;"><span class="up">+0.35%</span></td>
+<td style="text-align: left;"><span class="down">−1.21%</span></td>
+<td style="text-align: left;"><span class="down">−12.14%</span></td>
+<td style="text-align: left;"><span class="down">−17.14%</span></td>
+<td style="text-align: right;">1.6</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-5">市場別</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">市場</th>
+<th style="text-align: right;">樣本數</th>
+<th style="text-align: left;">勝率</th>
+<th style="text-align: left;">平均報酬</th>
+<th style="text-align: left;">中位數</th>
+<th style="text-align: left;">5% 分位</th>
+<th style="text-align: left;">最差單筆</th>
+<th style="text-align: right;">t 值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">tpex</td>
+<td style="text-align: right;">2683</td>
+<td style="text-align: left;">43.1%</td>
+<td style="text-align: left;"><span class="down">−0.20%</span></td>
+<td style="text-align: left;"><span class="down">−1.43%</span></td>
+<td style="text-align: left;"><span class="down">−12.23%</span></td>
+<td style="text-align: left;"><span class="down">−17.51%</span></td>
+<td style="text-align: right;"><span class="down">−1.1</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">twse</td>
+<td style="text-align: right;">22239</td>
+<td style="text-align: left;">44.2%</td>
+<td style="text-align: left;"><span class="down">−0.19%</span></td>
+<td style="text-align: left;"><span class="down">−0.65%</span></td>
+<td style="text-align: left;"><span class="down">−10.66%</span></td>
+<td style="text-align: left;"><span class="down">−17.62%</span></td>
+<td style="text-align: right;"><span class="down">−3.9</span></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="sec-6">方法與限制</h2>
+<ul>
+<li>訊號日收盤後決定，次一交易日開盤進場；出場為停損、停利或持有期滿的收盤價；每筆扣來回成本。</li>
+<li>隨機基準：同一檔股票、同樣出場規則、與策略同筆數的隨機進場日；進場日均勻分布在整段歷史，因此依訊號日切成樣本內／外後筆數與策略不同，但同一期間內可直接比較。</li>
+<li>隨機進場日逐檔以固定種子（0）加股票代號產生，只取決於該檔的資料與策略筆數；其他股票的訊號或股票範圍變動不會改變它。</li>
+<li>隨機基準每檔獨立抽樣 5 次（第 k 次用該檔種子序列的第 k 個子串流，第 0 次即單次抽樣的結果），各次分別計算統計量後取平均：表中基準列的樣本數為各次平均（四捨五入）、t 值與最大回撤為各次的平均；各次樣本外平均報酬的標準差列在執行摘要，代表單次抽樣的雜訊。策略列不受抽樣次數影響。</li>
+<li>最大回撤：把每天所有未平倉部位等權重持有（每日再平衡）算出日報酬曲線後計算；不是把各筆交易報酬串成資金曲線。</li>
+<li>交易在時間上重疊，t 值只是粗略指標，不是正式檢定。</li>
+<li>還原價由除權息、減資、分割事件回溯調整；事件表完整性見 1.2b 驗收報告。</li>
+<li>不含流動性衝擊與滑價；上櫃股票風險較高，見市場別表。</li>
+</ul>
+
+</article>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<p class="feedback">對這一頁有意見？<a class="feedback-link" href="https://github.com/vincent-tsai-tw/stock-research-site/issues/new?title=%E6%B3%95%E4%BA%BA%E9%80%A3%E8%B2%B7%EF%BC%88%E5%A4%96%E8%B3%87%E9%80%A3%E7%BA%8C%E8%B2%B7%E8%B6%85%EF%BC%89&amp;body=%0A%0A---%0A%E9%A0%81%E9%9D%A2%EF%BC%9A%E6%B3%95%E4%BA%BA%E9%80%A3%E8%B2%B7%EF%BC%88%E5%A4%96%E8%B3%87%E9%80%A3%E7%BA%8C%E8%B2%B7%E8%B6%85%EF%BC%89%0A%E7%B6%B2%E5%9D%80%EF%BC%9Ahttps%3A%2F%2Fvincent-tsai-tw.github.io%2Fstock-research-site%2Fbacktest%2Fbacktest-v1-foreign-streak.html%0A" target="_blank" rel="noopener" aria-label="留言：在 GitHub 為這一頁開一則公開 issue（另開視窗）">留言</a><span class="feedback-note">（公開於 GitHub，需登入）</span></p><script>(function(){var a=document.querySelector("a.feedback-link");if(!a)return;var NEW="https://github.com/vincent-tsai-tw/stock-research-site/issues/new",SUF=" \u00b7 \u53f0\u80a1\u7814\u7a76",RULE="---",PAGE="\u9801\u9762\uff1a",URL="\u7db2\u5740\uff1a";function fill(){var t=document.title;if(t.slice(-SUF.length)===SUF)t=t.slice(0,-SUF.length);var u=location.href;a.href=NEW+"?title="+encodeURIComponent(t)+"&body="+encodeURIComponent("\n\n"+RULE+"\n"+PAGE+t+"\n"+URL+u+"\n");}["pointerdown","touchstart","focus","click"].forEach(function(n){a.addEventListener(n,fill,{passive:true});});fill();})();</script>
+<div class="notes"></div>
+<p class="legal">非投資建議。本站為個人研究紀錄，決策與下單由使用者自行負責。資料來源：FinMind、臺灣證券交易所、證券櫃檯買賣中心。頁面產生於 2026-10-17 10:32。</p>
+</div>
+</footer>
+<script>
+(function(){
+  var body=document.body, opener=document.querySelector(".side-open"), more=document.querySelector(".localnav-more"), menu=document.getElementById("localnav-menu");
+  function side(open){var was=body.classList.contains("nav-open");body.classList.toggle("nav-open",open);if(opener)opener.setAttribute("aria-expanded",String(open));if(open){var cur=document.querySelector(".side .current a")||document.querySelector(".side a");if(cur)cur.focus({preventScroll:true});}else if(was&&opener&&document.activeElement&&document.activeElement.closest(".side"))opener.focus();}
+  function sectionMenu(open){if(!menu)return;menu.hidden=!open;if(more)more.setAttribute("aria-expanded",String(open));}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-action]");
+    if(t){var a=t.getAttribute("data-action");
+      if(a==="side-open")side(true);else if(a==="side-close")side(false);else if(a==="menu")sectionMenu(menu.hidden);
+      else if(a==="theme"){var next=isDark()?"light":"dark";document.documentElement.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(err){}syncTheme();}
+      return;}
+    if(e.target.closest(".localnav-menu a"))sectionMenu(false);
+    if(e.target.closest(".side a"))side(false);
+  });
+  /* the theme button is a toggle for the dark theme; aria-pressed follows the theme in use */
+  var darkQuery=window.matchMedia("(prefers-color-scheme: dark)");
+  function isDark(){var cur=document.documentElement.getAttribute("data-theme");return cur?cur==="dark":darkQuery.matches;}
+  function syncTheme(){var b=document.querySelector('[data-action="theme"]');if(b)b.setAttribute("aria-pressed",String(isDark()));}
+  if(darkQuery.addEventListener)darkQuery.addEventListener("change",syncTheme);else if(darkQuery.addListener)darkQuery.addListener(syncTheme);
+  syncTheme();
+  /* while the phone sheet is open (its close button showing), Tab and Shift+Tab cycle through its visible controls */
+  function trapTab(e){var close=document.querySelector(".side-close");
+    if(!body.classList.contains("nav-open")||!close||!close.getClientRects().length)return;
+    var items=[].filter.call(document.querySelectorAll(".side a[href], .side button"),function(x){return x.getClientRects().length;});
+    if(!items.length)return;
+    var at=document.activeElement,inside=at&&at.closest&&at.closest(".side"),edge=e.shiftKey?items[0]:items[items.length-1];
+    if(!inside||at===edge){e.preventDefault();(e.shiftKey?items[items.length-1]:items[0]).focus();}}
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){side(false);sectionMenu(false);}else if(e.key==="Tab")trapTab(e);});
+  function onScroll(){body.classList.toggle("scrolled",window.scrollY>2);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+  /* section links only while the page title keeps at least TITLE_MIN px (or its full width);
+     long reports with many sections fold the links into the menu instead of squeezing the title */
+  var TITLE_MIN=240, title=document.querySelector(".localnav-title"), links=document.querySelector(".localnav-links");
+  function fit(){if(!title||!links)return;body.classList.remove("nav-compact");if(!links.offsetWidth)return;
+    if(title.clientWidth<Math.min(title.scrollWidth,TITLE_MIN))body.classList.add("nav-compact");else sectionMenu(false);}
+  var fitT;window.addEventListener("resize",function(){clearTimeout(fitT);fitT=setTimeout(fit,100);});fit();
+})();
+  /* watchlist stars on candidate names, shared with the rank and stock pages via localStorage */
+  try{
+    var watch=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    document.querySelectorAll("a.stock-link").forEach(function(a){
+      var id=(a.getAttribute("href")||"").split("?id=")[1]||"";
+      if(watch.indexOf(id)<0)return;
+      var s=document.createElement("span");s.className="watch-mark";s.setAttribute("role","img");s.setAttribute("aria-label","自選");s.textContent="★";
+      a.parentNode.insertBefore(s,a);
+    });
+  }catch(e){}
+  /* the reader's watchlist, read from the rankings file; only fetched when the list has stocks */
+  try{
+    var sec=document.getElementById("watch-today"), wl=JSON.parse(localStorage.getItem("watchlist")||"[]");
+    if(sec&&wl.length){
+      var meta=document.querySelector('meta[name="build"]'), v=meta&&meta.content?"?v="+encodeURIComponent(meta.content):"";
+      var root=sec.getAttribute("data-root")||"";
+      fetch(root+"stock/data/rank.json"+v).then(function(r){return r.json();}).then(function(d){
+        /* rows are stored by column (research/site/packing.py) */
+        if(d.columns)d.rows=d.columns.length?d.columns[0].map(function(x,i){return d.columns.map(function(c){return c[i];});}):[];
+        var idx={};d.cols.forEach(function(c,i){idx[c]=i;});
+        var rows=d.rows.filter(function(a){return wl.indexOf(a[idx.id])>=0;});
+        if(!rows.length)return;
+        function f(n,dp){return Number(n).toLocaleString("zh-TW",{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+        function sg(n,dp){var r=Number(n.toFixed(dp));return r===0?f(0,dp):(r>0?"+":"−")+f(Math.abs(r),dp);}
+        function cls(n){return n>0?"up":n<0?"down":"";}
+        var tb=document.getElementById("watch-body");tb.innerHTML="";
+        rows.sort(function(a,b){return wl.indexOf(a[idx.id])-wl.indexOf(b[idx.id]);}).forEach(function(a){
+          var tr=document.createElement("tr"), name=document.createElement("td");
+          var link=document.createElement(a[idx.page]?"a":"span");link.className="rank-name";link.textContent=a[idx.name];
+          if(a[idx.page])link.href=root+"stock/index.html?id="+encodeURIComponent(a[idx.id]);
+          name.appendChild(link);var sid=document.createElement("span");sid.className="sid";sid.textContent=a[idx.id];name.appendChild(sid);
+          tr.appendChild(name);
+          var chg=a[idx.chg], st=a[idx.streak];
+          [[f(a[idx.close],2),""],
+           [chg===null?"不比價":sg(chg*100,2)+"%",chg===null?"":cls(chg)],
+           [sg(a[idx.f1],0),cls(a[idx.f1])],[sg(a[idx.t1],0),cls(a[idx.t1])],
+           [st?(st>0?"買 ":"賣 ")+Math.abs(st):"—",cls(st)]].forEach(function(c){
+            var td=document.createElement("td");
+            if(c[1]){var s=document.createElement("span");s.className=c[1];s.textContent=c[0];td.appendChild(s);}else td.textContent=c[0];
+            tr.appendChild(td);
+          });
+          tb.appendChild(tr);
+        });
+        document.getElementById("watch-sub").textContent="你在這個瀏覽器加入的自選股，資料截至 "+d.as_of+"。";
+        sec.hidden=false;
+      }).catch(function(){});
+    }
+  }catch(e){}
+</script>
+</body>
+</html>

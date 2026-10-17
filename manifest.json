@@ -1,0 +1,356 @@
+{
+ "built": "2026-10-17 10:32",
+ "pages": [
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-16",
+   "title": "2026-10-16 晨報",
+   "label": "10月16日 週五",
+   "path": "brief/brief-2026-10-16.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-15",
+   "title": "2026-10-15 晨報",
+   "label": "10月15日 週四",
+   "path": "brief/brief-2026-10-15.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-14",
+   "title": "2026-10-14 晨報",
+   "label": "10月14日 週三",
+   "path": "brief/brief-2026-10-14.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-13",
+   "title": "2026-10-13 晨報",
+   "label": "10月13日 週二",
+   "path": "brief/brief-2026-10-13.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-12",
+   "title": "2026-10-12 晨報",
+   "label": "10月12日 週一",
+   "path": "brief/brief-2026-10-12.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-08",
+   "title": "2026-10-08 晨報",
+   "label": "10月8日 週四",
+   "path": "brief/brief-2026-10-08.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "brief",
+   "slug": "brief-2026-10-07",
+   "title": "2026-10-07 晨報",
+   "label": "10月7日 週三",
+   "path": "brief/brief-2026-10-07.html",
+   "status": null,
+   "group": "brief"
+  },
+  {
+   "section": "weekly",
+   "slug": "weekly-2026-10-16",
+   "title": "每週回顧：2026 第 42 週（10/12–10/16）",
+   "label": "2026 第 42 週（10/12–10/16）",
+   "path": "weekly/weekly-2026-10-16.html",
+   "status": null,
+   "group": "weekly"
+  },
+  {
+   "section": "weekly",
+   "slug": "weekly-2026-10-08",
+   "title": "每週回顧：2026 第 41 週（10/5–10/8）",
+   "label": "2026 第 41 週（10/5–10/8）",
+   "path": "weekly/weekly-2026-10-08.html",
+   "status": null,
+   "group": "weekly"
+  },
+  {
+   "section": "progress",
+   "slug": "progress-2026-10-11",
+   "title": "進度報告：國慶連假 10/8～10/11",
+   "label": "國慶連假 10/8～10/11",
+   "path": "progress/progress-2026-10-11.html",
+   "status": null,
+   "group": "progress"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-tradability",
+   "title": "策略 v1 可交易性與容量檢查",
+   "label": "策略 v1 可交易性與容量檢查",
+   "path": "backtest/backtest-v1-tradability.html",
+   "status": "exploratory",
+   "group": "backtest"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-strategy",
+   "title": "回測報告 v1：策略 v1（營收年增率（公布後）、60 日動能）",
+   "label": "策略 v1（營收年增率（公布後）、60 日動能）",
+   "path": "backtest/backtest-v1-strategy.html",
+   "status": "rejected",
+   "group": "backtest"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-foreign-streak",
+   "title": "回測報告 v1：法人連買（外資連續買超）",
+   "label": "法人連買（外資連續買超）",
+   "path": "backtest/backtest-v1-foreign-streak.html",
+   "status": "rejected",
+   "group": "archive"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-filter",
+   "title": "回測報告：策略 v1 加大盤趨勢濾網（H11）",
+   "label": "策略 v1 加大盤趨勢濾網（H11）",
+   "path": "backtest/backtest-v1-filter.html",
+   "status": "pending",
+   "group": "backtest"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-v1-diagnosis",
+   "title": "策略 v1 診斷：為什麼沒有通過，以及下一步",
+   "label": "為什麼沒有通過，以及下一步",
+   "path": "backtest/backtest-v1-diagnosis.html",
+   "status": "exploratory",
+   "group": "backtest"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-simple-rules-h18",
+   "title": "簡單大盤策略回測：H18 預先登記判定",
+   "label": "H18 預先登記判定",
+   "path": "backtest/backtest-simple-rules-h18.html",
+   "status": "pending",
+   "group": "backtest"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-market-drop",
+   "title": "大盤單日跌 3% 買進 0050／00631L 回測",
+   "label": "大盤單日跌 3% 買進 0050／00631L 回測",
+   "path": "backtest/backtest-market-drop.html",
+   "status": "exploratory",
+   "group": "backtest"
+  },
+  {
+   "section": "backtest",
+   "slug": "backtest-etf-simple-plans",
+   "title": "0050 簡單方案比較：單筆、定期定額、大跌加碼、再平衡與正2＋現金",
+   "label": "單筆、定期定額、大跌加碼、再平衡與正2＋現金",
+   "path": "backtest/backtest-etf-simple-plans.html",
+   "status": "exploratory",
+   "group": "backtest"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-study-v1",
+   "title": "因子研究 v1：單因子分組表",
+   "label": "單因子分組表",
+   "path": "factor/factor-study-v1.html",
+   "status": "partial",
+   "group": "factor"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-sbl-robustness",
+   "title": "借券賣出因子（H16a）穩健度：價差來源、獨立性與只做多的用途（探索性）",
+   "label": "價差來源、獨立性與只做多的用途（探索性）",
+   "path": "factor/factor-sbl-robustness.html",
+   "status": "exploratory",
+   "group": "factor"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-robustness",
+   "title": "因子穩健度：市場、流動性、年度與因子重疊（描述性）",
+   "label": "市場、流動性、年度與因子重疊（描述性）",
+   "path": "factor/factor-robustness.html",
+   "status": "exploratory",
+   "group": "factor"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-revenue-accel-robustness",
+   "title": "營收年增率加速因子（H4 `rev_accel`）穩健度：價差來源、與營收年增率的獨立性、定義敏感度（探索性）",
+   "label": "價差來源、與營收年增率的獨立性、定義敏感度（探索性）",
+   "path": "factor/factor-revenue-accel-robustness.html",
+   "status": "exploratory",
+   "group": "factor"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-industry-momentum",
+   "title": "因子研究：產業動能（H15）",
+   "label": "產業動能（H15）",
+   "path": "factor/factor-industry-momentum.html",
+   "status": "pending",
+   "group": "factor"
+  },
+  {
+   "section": "factor",
+   "slug": "factor-correlation",
+   "title": "因子結構探索：等級相關與殘差化價差（探索性）",
+   "label": "等級相關與殘差化價差（探索性）",
+   "path": "factor/factor-correlation.html",
+   "status": "exploratory",
+   "group": "factor"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-revenue",
+   "title": "事件研究：月營收公布後的超額報酬",
+   "label": "月營收公布後的超額報酬",
+   "path": "event/event-study-revenue.html",
+   "status": "exploratory",
+   "group": "event"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-revenue-decay",
+   "title": "事件研究：月營收訊號的衰減（描述性）",
+   "label": "月營收訊號的衰減（描述性）",
+   "path": "event/event-study-revenue-decay.html",
+   "status": "exploratory",
+   "group": "event"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-reduction",
+   "title": "事件研究：減資恢復買賣前後的超額報酬",
+   "label": "減資恢復買賣前後的超額報酬",
+   "path": "event/event-study-reduction.html",
+   "status": "pending",
+   "group": "event"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-market-drop-cross-section",
+   "title": "大盤單日跌 3% 後的個股橫斷面",
+   "label": "大盤單日跌 3% 後的個股橫斷面",
+   "path": "event/event-study-market-drop-cross-section.html",
+   "status": "exploratory",
+   "group": "event"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-macro",
+   "title": "事件研究：FOMC、美國 CPI 與台指期結算日的台股波動",
+   "label": "FOMC、美國 CPI 與台指期結算日的台股波動",
+   "path": "event/event-study-macro.html",
+   "status": "rejected",
+   "group": "archive"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-fill",
+   "title": "事件研究：除權息當日填息與之後 20 日的超額報酬（H14）",
+   "label": "除權息當日填息與之後 20 日的超額報酬（H14）",
+   "path": "event/event-study-fill.html",
+   "status": "rejected",
+   "group": "archive"
+  },
+  {
+   "section": "event",
+   "slug": "event-study-dividend",
+   "title": "事件研究：除息日前後的超額報酬",
+   "label": "除息日前後的超額報酬",
+   "path": "event/event-study-dividend.html",
+   "status": "exploratory",
+   "group": "event"
+  },
+  {
+   "section": "quality",
+   "slug": "valuation-data-quality",
+   "title": "估值資料（本益比、殖利率、股價淨值比）品質檢查",
+   "label": "估值資料（本益比、殖利率、股價淨值比）品質檢查",
+   "path": "quality/valuation-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "universe-1.2-data-quality",
+   "title": "Phase 1.2 全市場資料驗收報告",
+   "label": "Phase 1.2 全市場資料驗收報告",
+   "path": "quality/universe-1.2-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "tdcc-data-quality",
+   "title": "集保股權分散資料品質檢查",
+   "label": "集保股權分散資料品質檢查",
+   "path": "quality/tdcc-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "sbl-data-quality",
+   "title": "借券賣出資料品質檢查",
+   "label": "借券賣出資料品質檢查",
+   "path": "quality/sbl-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "pilot-1.2-data-quality",
+   "title": "Phase 1.2 試點資料品質報告",
+   "label": "Phase 1.2 試點資料品質報告",
+   "path": "quality/pilot-1.2-data-quality.html",
+   "status": "exploratory",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "margin-data-quality",
+   "title": "融資融券資料品質檢查",
+   "label": "融資融券資料品質檢查",
+   "path": "quality/margin-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "exchange-1.2c-data-quality",
+   "title": "Phase 1.2c 交易所資料與 FinMind 全歷史比對",
+   "label": "Phase 1.2c 交易所資料與 FinMind 全歷史比對",
+   "path": "quality/exchange-1.2c-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  },
+  {
+   "section": "quality",
+   "slug": "actions-1.2b-data-quality",
+   "title": "Phase 1.2b 公司行為資料驗收報告",
+   "label": "Phase 1.2b 公司行為資料驗收報告",
+   "path": "quality/actions-1.2b-data-quality.html",
+   "status": "passed",
+   "group": "quality"
+  }
+ ]
+}
